@@ -48,7 +48,7 @@ $i   = 0;
 						$label = get_sub_field( 'info_tabs_tabs_label' );
 						$tid   = $uid . '-' . $i;
 						?>
-						<button class="info-tabs__btn" role="tab" aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>" data-tab="<?php echo esc_attr( $tid ); ?>"><?php echo esc_html( $label ); ?></button>
+						<button type="button" class="info-tabs__btn" role="tab" aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>" data-tab="<?php echo esc_attr( $tid ); ?>"><?php echo esc_html( $label ); ?></button>
 						<?php
 						$i++;
 					endwhile;

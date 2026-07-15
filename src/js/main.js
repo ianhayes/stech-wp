@@ -8,4 +8,5 @@
  * (header scroll state, skip-link focus) live in ./partials/.
  */
 import './blocks.js';
+import './partials/interactive.js';
 import './partials/header.js';
