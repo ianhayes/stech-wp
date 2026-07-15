@@ -67,7 +67,15 @@ $i   = 0;
 						<div class="info-tabs__panel" id="tab-<?php echo esc_attr( $tid ); ?>" role="tabpanel" aria-labelledby="btn-<?php echo esc_attr( $tid ); ?>" data-panel="<?php echo esc_attr( $tid ); ?>" aria-hidden="<?php echo 0 === $i ? 'false' : 'true'; ?>">
 							<?php if ( $alert ) : ?>
 								<div class="info-tabs__panel__alert">
-									<?php echo stech_icon( $alert_icon ?: 'alert-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?>
+									<?php
+									// Validate the icon name — fall back to a real icon if the
+									// stored value is empty OR an unknown name (returns '').
+									$alert_svg = stech_icon( $alert_icon );
+									if ( '' === $alert_svg ) {
+										$alert_svg = stech_icon( 'alert-01' );
+									}
+									echo $alert_svg; // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset.
+									?>
 									<span><?php echo wp_kses_post( $alert ); ?></span>
 								</div>
 							<?php endif; ?>

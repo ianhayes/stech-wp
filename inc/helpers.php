@@ -164,9 +164,14 @@ function stech_nav( $location, callable $fallback ) {
  * otherwise builds Home › Ancestors › Current.
  */
 function stech_breadcrumb() {
+	// Use Yoast's breadcrumb only when it actually returns a trail (the feature
+	// can be installed-but-disabled, in which case it returns an empty string).
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
-		yoast_breadcrumb( '<nav class="breadcrumb" aria-label="Breadcrumb">', '</nav>' );
-		return;
+		$yoast = yoast_breadcrumb( '<nav class="breadcrumb" aria-label="Breadcrumb">', '</nav>', false );
+		if ( '' !== trim( wp_strip_all_tags( (string) $yoast ) ) ) {
+			echo $yoast; // phpcs:ignore WordPress.Security.EscapeOutput — Yoast-escaped.
+			return;
+		}
 	}
 
 	$items = array( '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'stech' ) . '</a>' );
