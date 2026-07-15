@@ -76,7 +76,7 @@ $render_logo = static function ( $logo, $item_class, $decorative = false ) {
 if ( $static_grid ) :
 	$style = $columns > 0 ? ' style="--logo-cols:' . esc_attr( $columns ) . '"' : '';
 	?>
-	<section<?php stech_block_attrs( $block, 'logo-grid' ); ?>>
+	<section<?php stech_block_attrs( $block, 'logo-grid block block--tight' ); ?>>
 		<div class="logo-grid__row"<?php echo $style; // phpcs:ignore WordPress.Security.EscapeOutput — escaped above. ?>>
 			<?php foreach ( $logos as $logo ) : ?>
 				<?php $render_logo( $logo, 'logo-grid__logo' ); ?>
@@ -86,7 +86,7 @@ if ( $static_grid ) :
 	<?php
 else :
 	?>
-	<section<?php stech_block_attrs( $block, 'logo-marquee' ); ?>>
+	<section<?php stech_block_attrs( $block, 'logo-marquee block block--tight' ); ?>>
 		<div class="logo-marquee__track">
 			<?php foreach ( $logos as $logo ) : ?>
 				<?php $render_logo( $logo, 'logo-marquee__logo' ); ?>

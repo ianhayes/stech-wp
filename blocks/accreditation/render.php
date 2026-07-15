@@ -29,7 +29,7 @@ if ( ! $overline && ! $heading && ! $lede && ! $has_logos && $is_preview ) {
 $name_link = stech_link( $org_name );
 $dir_link  = stech_link( $link );
 ?>
-<section<?php stech_block_attrs( $block, 'accreditation-section' ); ?>>
+<section<?php stech_block_attrs( $block, 'block accreditation-section' ); ?>>
 	<div class="container">
 		<div class="accreditation">
 			<?php if ( $overline ) : ?>

@@ -60,7 +60,7 @@ if ( ! $heading && ! $cards && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'related' ); ?>>
+<section<?php stech_block_attrs( $block, 'block related' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="section-head">

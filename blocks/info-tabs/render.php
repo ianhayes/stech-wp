@@ -26,7 +26,7 @@ if ( ! $eyebrow && ! $heading && ! $has_tabs ) {
 $uid = 'it-' . substr( md5( $block['id'] ?? uniqid( '', true ) ), 0, 8 );
 $i   = 0;
 ?>
-<section<?php stech_block_attrs( $block, 'info-tabs' ); ?>>
+<section<?php stech_block_attrs( $block, 'block info-tabs' ); ?>>
 	<div class="info-tabs__container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="info-tabs__head">

@@ -22,7 +22,7 @@ if ( ! $heading && ! $eyebrow && ! $has_cards ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'videos' ); ?>>
+<section<?php stech_block_attrs( $block, 'block videos' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="section-head">

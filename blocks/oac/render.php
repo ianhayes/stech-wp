@@ -25,7 +25,7 @@ if ( ! $heading && ! $overline && ! $intro && ! $has_orgs && ! $has_logos ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'oac-section' ); ?>>
+<section<?php stech_block_attrs( $block, 'block oac-section' ); ?>>
 	<div class="oac">
 		<?php if ( $overline ) : ?>
 			<span class="overline"><?php echo esc_html( $overline ); ?></span>

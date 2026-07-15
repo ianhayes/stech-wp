@@ -23,7 +23,7 @@ if ( ! $heading && ! $text && ! ( $image && ! empty( $image['ID'] ) ) && $is_pre
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'cta-split' ); ?>>
+<section<?php stech_block_attrs( $block, 'block cta-split' ); ?>>
 	<div class="container">
 		<div class="cta-split__inner">
 			<div class="cta-split__media">

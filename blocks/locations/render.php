@@ -26,7 +26,7 @@ if ( ! $overline && ! $heading && ! $has_cards && ! $map_embed && empty( $map['l
 	return;
 }
 
-$classes = 'locations';
+$classes = 'block locations';
 if ( $scroll ) {
 	$classes .= ' locations--scroll';
 }

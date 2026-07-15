@@ -24,7 +24,7 @@ if ( ! $has_cards ) {
 // Card background/positioning modifiers, in order.
 $modifiers = array( 'a', 'b' );
 ?>
-<section<?php stech_block_attrs( $block, 'community' ); ?>>
+<section<?php stech_block_attrs( $block, 'block community' ); ?>>
 	<div class="container">
 		<div class="community__grid">
 			<?php

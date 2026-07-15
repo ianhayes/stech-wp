@@ -25,7 +25,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'programs program-selector' ); ?>>
+<section<?php stech_block_attrs( $block, 'block programs program-selector' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading || $lede ) : ?>
 			<div class="section-head">

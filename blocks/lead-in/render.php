@@ -23,16 +23,20 @@ if ( ! $overline && ! $heading && ! $body && $is_preview ) {
 
 $extra = $center ? 'lead-in lead-in--center' : 'lead-in';
 ?>
-<div<?php stech_block_attrs( $block, $extra ); ?>>
-	<?php if ( $overline ) : ?>
-		<span class="overline"><?php echo esc_html( $overline ); ?></span>
-	<?php endif; ?>
+<section<?php stech_block_attrs( $block, 'block' ); ?>>
+	<div class="container">
+		<div class="<?php echo esc_attr( $extra ); ?>">
+			<?php if ( $overline ) : ?>
+				<span class="overline"><?php echo esc_html( $overline ); ?></span>
+			<?php endif; ?>
 
-	<?php if ( $heading ) : ?>
-		<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
-	<?php endif; ?>
+			<?php if ( $heading ) : ?>
+				<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+			<?php endif; ?>
 
-	<?php if ( $body ) : ?>
-		<?php echo wp_kses_post( $body ); ?>
-	<?php endif; ?>
-</div>
+			<?php if ( $body ) : ?>
+				<?php echo wp_kses_post( $body ); ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>

@@ -23,7 +23,7 @@ if ( ! $heading && ! $text && ! $image && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'tuition' ); ?>>
+<section<?php stech_block_attrs( $block, 'block tuition' ); ?>>
 	<div class="container">
 		<div class="tuition__inner">
 			<?php if ( $image && ! empty( $image['ID'] ) ) : ?>

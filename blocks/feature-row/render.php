@@ -24,7 +24,7 @@ if ( ! $heading && ! $text && ! ( $image && ! empty( $image['ID'] ) ) && $is_pre
 	return;
 }
 
-$base = 'feature-row' . ( $flip ? ' feature-row--flip' : '' );
+$base = 'block feature-row' . ( $flip ? ' feature-row--flip' : '' );
 ?>
 <section<?php stech_block_attrs( $block, $base ); ?>>
 	<div class="container">

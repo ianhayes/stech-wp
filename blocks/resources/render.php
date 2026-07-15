@@ -20,7 +20,7 @@ if ( ! $heading && ! $has_items && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'resources' ); ?>>
+<section<?php stech_block_attrs( $block, 'block resources' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="section-head">

@@ -22,7 +22,9 @@ if ( ! $head_label && ! $head_value && ! $total_label && empty( $rows ) && $is_p
 	return;
 }
 ?>
-<div<?php stech_block_attrs( $block, 'price-table' ); ?>>
+<section<?php stech_block_attrs( $block, 'block' ); ?>>
+	<div class="container">
+		<div class="price-table">
 	<?php if ( $head_label || $head_value ) : ?>
 		<div class="price-table__row price-table__row--head">
 			<span class="price-table__label"><?php echo esc_html( $head_label ); ?></span>
@@ -53,4 +55,6 @@ if ( ! $head_label && ! $head_value && ! $total_label && empty( $rows ) && $is_p
 			<span class="price-table__value"><?php echo esc_html( $total_value ); ?></span>
 		</div>
 	<?php endif; ?>
-</div>
+		</div>
+	</div>
+</section>

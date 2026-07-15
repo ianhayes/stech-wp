@@ -21,7 +21,7 @@ if ( ! $quote && ! $name && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'testimonial' ); ?>>
+<section<?php stech_block_attrs( $block, 'block testimonial' ); ?>>
 	<div class="testimonial__bg-icon"><img src="<?php echo esc_url( STECH_IMG . '/shared/paw.svg' ); ?>" alt=""></div>
 	<div class="container">
 		<div class="testimonial__card">

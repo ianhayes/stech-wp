@@ -25,28 +25,32 @@ if ( ! $overline && ! $body && ! $has_image && $is_preview ) {
 
 $base = 'prose' . ( $has_image ? ' prose--media' : '' );
 ?>
-<div<?php stech_block_attrs( $block, $base ); ?>>
-	<?php if ( $has_image ) : ?>
-		<div class="prose__media">
-			<?php
-			echo wp_get_attachment_image(
-				(int) $image['ID'],
-				'stech-card',
-				false,
-				array( 'alt' => $image['alt'] ?? '' )
-			);
-			?>
-		</div>
-		<div class="prose__body">
-			<?php if ( $overline ) : ?>
-				<span class="overline"><?php echo esc_html( $overline ); ?></span>
+<section<?php stech_block_attrs( $block, 'block' ); ?>>
+	<div class="container">
+		<div class="<?php echo esc_attr( $base ); ?>">
+			<?php if ( $has_image ) : ?>
+				<div class="prose__media">
+					<?php
+					echo wp_get_attachment_image(
+						(int) $image['ID'],
+						'stech-card',
+						false,
+						array( 'alt' => $image['alt'] ?? '' )
+					);
+					?>
+				</div>
+				<div class="prose__body">
+					<?php if ( $overline ) : ?>
+						<span class="overline"><?php echo esc_html( $overline ); ?></span>
+					<?php endif; ?>
+					<?php echo wp_kses_post( $body ); ?>
+				</div>
+			<?php else : ?>
+				<?php if ( $overline ) : ?>
+					<span class="overline"><?php echo esc_html( $overline ); ?></span>
+				<?php endif; ?>
+				<?php echo wp_kses_post( $body ); ?>
 			<?php endif; ?>
-			<?php echo wp_kses_post( $body ); ?>
 		</div>
-	<?php else : ?>
-		<?php if ( $overline ) : ?>
-			<span class="overline"><?php echo esc_html( $overline ); ?></span>
-		<?php endif; ?>
-		<?php echo wp_kses_post( $body ); ?>
-	<?php endif; ?>
-</div>
+	</div>
+</section>

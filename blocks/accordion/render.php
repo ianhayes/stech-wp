@@ -21,7 +21,7 @@ if ( ! $heading && ! $has_items && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'block' ); ?>>
+<section<?php stech_block_attrs( $block, 'faq block' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="section-head">

@@ -24,7 +24,7 @@ if ( ! $heading && ! $has_items ) {
 }
 
 // Column variant → modifier class ( 2 = default, no modifier ).
-$base = 'checklist';
+$base = 'block checklist';
 if ( '3' === $columns ) {
 	$base .= ' checklist--3';
 } elseif ( '4' === $columns ) {

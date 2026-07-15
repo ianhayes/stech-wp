@@ -24,7 +24,7 @@ if ( ! $heading && ! $overline && ! $has_cards ) {
 }
 
 ?>
-<section<?php stech_block_attrs( $block, 'why' ); ?>>
+<section<?php stech_block_attrs( $block, 'block why' ); ?>>
 	<div class="container">
 		<?php if ( $overline || $heading || $lede ) : ?>
 			<div class="section-head">

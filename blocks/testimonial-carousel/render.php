@@ -100,7 +100,7 @@ $render_card = static function ( $slide ) {
 // Group the slides into pages of two.
 $pages = array_chunk( $slides, 2 );
 ?>
-<section<?php stech_block_attrs( $block, 'testimonial' ); ?>>
+<section<?php stech_block_attrs( $block, 'block testimonial' ); ?>>
 	<div class="testimonial__bg-icon" aria-hidden="true"><?php stech_the_svg( 'icon', array( 'aria-hidden' => 'true' ) ); ?></div>
 	<div class="container">
 		<div class="testimonial-carousel" data-carousel>

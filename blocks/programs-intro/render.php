@@ -24,7 +24,7 @@ if ( ! $eyebrow && ! $heading && ! $text && ! $cards && $is_preview ) {
 }
 
 ?>
-<section<?php stech_block_attrs( $block, 'programs-intro' ); ?>>
+<section<?php stech_block_attrs( $block, 'block programs-intro' ); ?>>
 	<div class="container">
 		<div class="programs-intro__inner">
 			<div class="programs-intro__text">

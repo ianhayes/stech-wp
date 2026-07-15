@@ -67,7 +67,7 @@ $render_card = static function ( $args ) {
 	<?php
 };
 ?>
-<section<?php stech_block_attrs( $block, 'news' ); ?>>
+<section<?php stech_block_attrs( $block, 'block news' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading || $lede || $cta ) : ?>
 			<div class="news__head">
