@@ -18,7 +18,9 @@ add_action( 'init', function () {
 	register_post_type( 'program', array(
 		'labels'        => stech_pt_labels( 'Program', 'Programs' ),
 		'public'        => true,
-		'has_archive'   => 'programs',
+		// No CPT archive: /programs/ is the composed directory PAGE; single
+		// programs live at /programs/<slug>/ via the rewrite slug below.
+		'has_archive'   => false,
 		'menu_icon'     => 'dashicons-welcome-learn-more',
 		'menu_position' => 20,
 		'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
