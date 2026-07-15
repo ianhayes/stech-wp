@@ -23,23 +23,6 @@ if ( ! $heading && ! $overline && ! $has_cards ) {
 	return;
 }
 
-/**
- * Inline the contents of an uploaded SVG attachment so it recolours via
- * currentColor to match .why-card__icon. Returns '' when unavailable.
- */
-if ( ! function_exists( 'stech_why_inline_svg' ) ) {
-	function stech_why_inline_svg( $icon ) {
-		$id = is_array( $icon ) ? ( $icon['ID'] ?? $icon['id'] ?? 0 ) : ( is_numeric( $icon ) ? (int) $icon : 0 );
-		if ( ! $id ) {
-			return '';
-		}
-		$path = get_attached_file( $id );
-		if ( ! $path || ! is_readable( $path ) || 'svg' !== strtolower( pathinfo( $path, PATHINFO_EXTENSION ) ) ) {
-			return '';
-		}
-		return (string) file_get_contents( $path );
-	}
-}
 ?>
 <section<?php stech_block_attrs( $block, 'why' ); ?>>
 	<div class="container">
@@ -65,14 +48,11 @@ if ( ! function_exists( 'stech_why_inline_svg' ) ) {
 					$icon  = get_sub_field( 'why_cards_icon' );
 					$title = get_sub_field( 'why_cards_title' );
 					$text  = get_sub_field( 'why_cards_text' );
-					$svg   = stech_why_inline_svg( $icon );
 					?>
 					<div class="why-card">
-						<?php if ( $svg ) : ?>
-							<div class="why-card__icon" aria-hidden="true">
-								<?php echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput — trusted admin-uploaded asset. ?>
-							</div>
-						<?php endif; ?>
+						<div class="why-card__icon" aria-hidden="true">
+							<?php echo stech_icon( $icon ? $icon : 'feature-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?>
+						</div>
 						<?php if ( $title ) : ?>
 							<h3><?php echo esc_html( $title ); ?></h3>
 						<?php endif; ?>

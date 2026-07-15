@@ -44,9 +44,7 @@ if ( ! $heading && ! $has_items && $is_preview ) {
 					$url   = ! empty( $file['url'] ) ? esc_url( $file['url'] ) : '';
 					?>
 					<a class="resource" href="<?php echo $url ?: '#'; ?>"<?php echo $url ? ' download' : ''; ?>>
-						<span class="resource__icon" aria-hidden="true">
-							<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></svg>
-						</span>
+						<span class="resource__icon"><?php echo stech_icon( 'resicon-01' ); ?></span>
 						<span class="resource__body">
 							<?php if ( $title ) : ?>
 								<span class="resource__title"><?php echo esc_html( $title ); ?></span>
@@ -55,9 +53,7 @@ if ( ! $heading && ! $has_items && $is_preview ) {
 								<span class="resource__meta"><?php echo esc_html( $meta ); ?></span>
 							<?php endif; ?>
 						</span>
-						<span class="resource__arrow" aria-hidden="true">
-							<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-						</span>
+						<span class="resource__arrow"><?php echo stech_icon( 'resarrow-01' ); ?></span>
 					</a>
 				<?php endwhile; ?>
 			</div>

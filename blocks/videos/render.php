@@ -57,7 +57,7 @@ if ( ! $heading && ! $eyebrow && ! $has_cards ) {
 								);
 							}
 							?>
-							<span class="video-card__play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+							<span class="video-card__play" aria-hidden="true"><?php echo stech_icon( 'play-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></span>
 						</div>
 						<div class="video-card__body">
 							<?php if ( $tag ) : ?>

@@ -23,15 +23,6 @@ if ( ! $eyebrow && ! $heading && ! $text && ! $cards && $is_preview ) {
 	return;
 }
 
-/**
- * Inline stroke icons for the feature cards. Keys match the ACF select choices.
- * viewBox/stroke styling is supplied by .programs-intro__icon svg in the CSS.
- */
-$icons = array(
-	'arrow' => '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-	'clock' => '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
-	'home'  => '<svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>',
-);
 ?>
 <section<?php stech_block_attrs( $block, 'programs-intro' ); ?>>
 	<div class="container">
@@ -69,12 +60,8 @@ $icons = array(
 						$card_text = get_sub_field( 'programs_intro_cards_text' );
 						?>
 						<div class="programs-intro__card">
-							<div class="programs-intro__icon" aria-hidden="true">
-								<?php
-								if ( isset( $icons[ $icon ] ) ) {
-									echo $icons[ $icon ]; // phpcs:ignore WordPress.Security.EscapeOutput — trusted static markup.
-								}
-								?>
+							<div class="programs-intro__icon">
+								<?php echo stech_icon( $icon ?: 'prog-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted inline SVG. ?>
 							</div>
 							<div>
 								<?php if ( $card_head ) : ?>

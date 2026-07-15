@@ -59,10 +59,18 @@ $i   = 0;
 					$i = 0;
 					while ( have_rows( 'info_tabs_tabs' ) ) :
 						the_row();
-						$panel = get_sub_field( 'info_tabs_tabs_panel' );
-						$tid   = $uid . '-' . $i;
+						$panel      = get_sub_field( 'info_tabs_tabs_panel' );
+						$alert      = get_sub_field( 'info_tabs_tabs_alert' );
+						$alert_icon = get_sub_field( 'info_tabs_tabs_alert_icon' );
+						$tid        = $uid . '-' . $i;
 						?>
 						<div class="info-tabs__panel" data-panel="<?php echo esc_attr( $tid ); ?>" aria-hidden="<?php echo 0 === $i ? 'false' : 'true'; ?>">
+							<?php if ( $alert ) : ?>
+								<div class="info-tabs__panel__alert">
+									<?php echo stech_icon( $alert_icon ?: 'alert-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?>
+									<span><?php echo wp_kses_post( $alert ); ?></span>
+								</div>
+							<?php endif; ?>
 							<?php echo wp_kses_post( $panel ); ?>
 						</div>
 						<?php

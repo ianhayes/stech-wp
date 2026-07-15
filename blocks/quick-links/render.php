@@ -47,7 +47,12 @@ if ( ! function_exists( 'stech_quick_links_inline_svg' ) ) {
 			$icon_svg  = get_sub_field( 'quick_links_items_icon' );
 			$icon_name = get_sub_field( 'quick_links_items_icon_name' );
 
+			// Prefer an admin-uploaded SVG override; otherwise fall back to the
+			// design icon library. Always render an icon so spacing is preserved.
 			$svg = stech_quick_links_inline_svg( $icon_svg );
+			if ( '' === $svg ) {
+				$svg = stech_icon( $icon_name ?: 'quicklink-01' );
+			}
 
 			$href   = $link ? $link['url'] : '#';
 			$target = $link ? $link['target'] : '';
@@ -55,11 +60,7 @@ if ( ! function_exists( 'stech_quick_links_inline_svg' ) ) {
 			?>
 			<a class="quick-links__item" href="<?php echo $href; // esc'd in stech_link(). ?>"<?php echo $target . $rel; ?>>
 				<?php
-				if ( $svg ) {
-					echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput — trusted admin-uploaded asset.
-				} elseif ( $icon_name ) {
-					printf( '<span class="dashicons dashicons-%s" aria-hidden="true"></span>', esc_attr( $icon_name ) );
-				}
+				echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme/admin asset.
 				echo esc_html( $label );
 				?>
 			</a>

@@ -97,6 +97,6 @@ if ( have_rows( 'compare_table_columns' ) ) {
 	<?php endif; ?>
 
 	<?php if ( $footnote ) : ?>
-		<p class="text-note text-note--center"><?php echo wp_kses_post( $footnote ); ?></p>
+		<p class="text-note text-note--center" style="margin-top:16px"><?php echo wp_kses_post( $footnote ); ?></p>
 	<?php endif; ?>
 </section>

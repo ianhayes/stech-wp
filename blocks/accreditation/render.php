@@ -84,7 +84,7 @@ $dir_link  = stech_link( $link );
 			<?php endif; ?>
 
 			<?php if ( $dir_link ) : ?>
-				<p class="accreditation__link"><a href="<?php echo $dir_link['url']; ?>"<?php echo $dir_link['target'] . $dir_link['rel']; ?>><?php echo $dir_link['title'] ?: esc_html__( 'View directory', 'stech' ); ?> <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+				<p class="accreditation__link"><a href="<?php echo $dir_link['url']; ?>"<?php echo $dir_link['target'] . $dir_link['rel']; ?>><?php echo $dir_link['title'] ?: esc_html__( 'View directory', 'stech' ); ?> &rarr;</a></p>
 			<?php endif; ?>
 		</div>
 	</div>

@@ -72,7 +72,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 						<?php if ( $card_text ) : ?>
 							<p><?php echo esc_html( $card_text ); ?></p>
 						<?php endif; ?>
-						<span class="card-link"><?php echo $link && $link['title'] ? $link['title'] : esc_html__( 'Explore', 'stech' ); // title esc'd in helper. ?> <span class="arrow" aria-hidden="true">&rarr;</span></span>
+						<span class="card-link"><?php echo $link && $link['title'] ? $link['title'] : esc_html__( 'Explore', 'stech' ); // title esc'd in helper. ?> &rarr;</span>
 					</a>
 				<?php endwhile; ?>
 			</div>

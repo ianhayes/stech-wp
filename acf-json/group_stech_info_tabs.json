@@ -38,6 +38,29 @@
 					"wrapper": { "width": "100" }
 				},
 				{
+					"key": "field_stech_info_tabs_tabs_alert",
+					"label": "Alert Banner (optional)",
+					"name": "info_tabs_tabs_alert",
+					"type": "text",
+					"instructions": "Optional highlighted callout shown at the top of this panel, e.g. \"<strong>Apply by August 1.</strong> The fall cohort fills quickly.\" Leave blank to omit. Basic inline HTML (strong/em/a) allowed.",
+					"wrapper": { "width": "70" }
+				},
+				{
+					"key": "field_stech_info_tabs_tabs_alert_icon",
+					"label": "Alert Icon",
+					"name": "info_tabs_tabs_alert_icon",
+					"type": "select",
+					"instructions": "Icon shown beside the alert banner. Defaults to alert-01.",
+					"choices": {
+						"alert-01": "alert-01",
+						"alert-02": "alert-02"
+					},
+					"default_value": "alert-01",
+					"allow_null": 0,
+					"ui": 1,
+					"wrapper": { "width": "30" }
+				},
+				{
 					"key": "field_stech_info_tabs_tabs_panel",
 					"label": "Panel Content",
 					"name": "info_tabs_tabs_panel",

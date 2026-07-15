@@ -50,20 +50,12 @@ if ( '3' === $columns ) {
 				while ( have_rows( 'checklist_items' ) ) :
 					the_row();
 					$label = (string) get_sub_field( 'checklist_items_label' );
-					$desc  = (string) get_sub_field( 'checklist_items_description' );
 
-					if ( '' === $label && '' === $desc ) {
+					if ( '' === $label ) {
 						continue;
 					}
 					?>
-					<div class="checklist__item">
-						<span class="checklist__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
-						<?php if ( '' !== $desc ) : ?>
-							<div><strong><?php echo esc_html( $label ); ?></strong><br><?php echo esc_html( $desc ); ?></div>
-						<?php else : ?>
-							<?php echo esc_html( $label ); ?>
-						<?php endif; ?>
-					</div>
+					<div class="checklist__item"><span class="checklist__check"><?php echo stech_icon( 'check-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted inline SVG asset. ?></span><?php echo esc_html( $label ); ?></div>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>

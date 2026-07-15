@@ -40,13 +40,30 @@
 			"sub_fields": [
 				{
 					"key": "field_stech_why_cards_icon",
-					"label": "Icon (SVG)",
+					"label": "Icon",
 					"name": "why_cards_icon",
-					"type": "image",
-					"instructions": "Upload a single-colour SVG icon. It is inlined and recoloured to match the card.",
-					"return_format": "array",
-					"library": "all",
-					"mime_types": "svg",
+					"type": "select",
+					"instructions": "Choose a design icon for this card. Defaults to the first feature icon.",
+					"choices": {
+						"feature-01": "feature-01",
+						"feature-02": "feature-02",
+						"feature-03": "feature-03",
+						"feature-04": "feature-04",
+						"feature-05": "feature-05",
+						"feature-06": "feature-06",
+						"feature-07": "feature-07",
+						"feature-08": "feature-08",
+						"feature-09": "feature-09",
+						"feature-10": "feature-10",
+						"feature-11": "feature-11",
+						"feature-12": "feature-12",
+						"feature-13": "feature-13",
+						"feature-14": "feature-14"
+					},
+					"default_value": "feature-01",
+					"allow_null": 0,
+					"return_format": "value",
+					"ui": 1,
 					"wrapper": { "width": "100" }
 				},
 				{

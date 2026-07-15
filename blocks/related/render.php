@@ -99,7 +99,7 @@ if ( ! $heading && ! $cards && $is_preview ) {
 							<?php if ( $card['title'] ) : ?>
 								<h3><?php echo esc_html( $card['title'] ); ?></h3>
 							<?php endif; ?>
-							<span class="program-card__arrow"><?php echo $explore; // link title esc'd in stech_link(); fallback is a static string. ?> <span aria-hidden="true">&rarr;</span></span>
+							<span class="program-card__arrow"><?php echo $explore; // link title esc'd in stech_link(); fallback is a static string. ?> &rarr;</span>
 						</div>
 					</a>
 				<?php endforeach; ?>

@@ -61,7 +61,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 		</div>
 
 		<div class="carousel">
-			<button class="carousel__nav carousel__nav--prev" data-prev aria-label="<?php esc_attr_e( 'Previous', 'stech' ); ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+			<button class="carousel__nav carousel__nav--prev" data-prev aria-label="<?php esc_attr_e( 'Previous', 'stech' ); ?>"><?php echo stech_icon( 'nav-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
 			<div class="carousel__viewport">
 				<div class="carousel__track" data-track>
 					<?php if ( have_rows( 'program_selector_cards' ) ) : ?>
@@ -105,7 +105,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 					<?php endif; ?>
 				</div>
 			</div>
-			<button class="carousel__nav carousel__nav--next" data-next aria-label="<?php esc_attr_e( 'Next', 'stech' ); ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+			<button class="carousel__nav carousel__nav--next" data-next aria-label="<?php esc_attr_e( 'Next', 'stech' ); ?>"><?php echo stech_icon( 'nav-02' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
 			<div class="carousel__pagination" data-dots></div>
 		</div>
 

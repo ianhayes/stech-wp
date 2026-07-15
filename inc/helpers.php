@@ -37,6 +37,45 @@ function stech_the_svg( $name, $attrs = array() ) {
 }
 
 /**
+ * Inline a design icon from src/img/icons (the 43 approved inline SVGs extracted
+ * from the brand system: feature-*, quicklink-*, prog-*, nav-*, play-*, check-*,
+ * resarrow-*, resicon-*, alert-*, ring-*). Decorative — rendered aria-hidden.
+ *
+ * @param string $name Icon file name without extension (e.g. 'feature-01').
+ * @return string Inline SVG, or '' if not found.
+ */
+function stech_icon( $name ) {
+	if ( ! $name ) {
+		return '';
+	}
+	$file = STECH_DIR . '/src/img/icons/' . sanitize_file_name( $name ) . '.svg';
+	return is_readable( $file ) ? file_get_contents( $file ) : '';
+}
+
+/** Echo helper for stech_icon(). */
+function stech_the_icon( $name ) {
+	echo stech_icon( $name ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset.
+}
+
+/**
+ * List available design icon names (for ACF select choices / editor pickers),
+ * optionally filtered by a name prefix (e.g. 'feature', 'quicklink', 'prog').
+ *
+ * @return string[] icon names.
+ */
+function stech_icon_choices( $prefix = '' ) {
+	$names = array();
+	foreach ( glob( STECH_DIR . '/src/img/icons/*.svg' ) as $f ) {
+		$n = basename( $f, '.svg' );
+		if ( '' === $prefix || 0 === strpos( $n, $prefix ) ) {
+			$names[] = $n;
+		}
+	}
+	sort( $names );
+	return $names;
+}
+
+/**
  * Normalise an ACF Link field (return format: array) into safe parts.
  * Returns null when empty.
  *

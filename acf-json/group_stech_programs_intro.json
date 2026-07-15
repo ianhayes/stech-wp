@@ -53,11 +53,12 @@
 					"name": "programs_intro_cards_icon",
 					"type": "select",
 					"choices": {
-						"arrow": "Arrow",
-						"clock": "Clock",
-						"home": "Home"
+						"prog-01": "Programs Icon 01",
+						"prog-02": "Programs Icon 02",
+						"prog-03": "Programs Icon 03",
+						"prog-04": "Programs Icon 04"
 					},
-					"default_value": "arrow",
+					"default_value": "prog-01",
 					"allow_null": 0,
 					"return_format": "value",
 					"wrapper": { "width": "30" }

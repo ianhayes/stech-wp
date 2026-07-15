@@ -25,10 +25,26 @@
 				},
 				{
 					"key": "field_stech_quick_links_items_icon_name",
-					"label": "Icon Name (fallback)",
+					"label": "Design Icon",
 					"name": "quick_links_items_icon_name",
-					"type": "text",
-					"instructions": "Optional Dashicon name (e.g. \"welcome-learn-more\") used when no SVG is uploaded.",
+					"type": "select",
+					"instructions": "Design icon from the STECH library, used when no SVG is uploaded. Defaults to the first icon so the tile is never empty.",
+					"choices": {
+						"quicklink-01": "quicklink-01",
+						"quicklink-02": "quicklink-02",
+						"quicklink-03": "quicklink-03",
+						"quicklink-04": "quicklink-04",
+						"quicklink-05": "quicklink-05",
+						"quicklink-06": "quicklink-06",
+						"quicklink-07": "quicklink-07",
+						"quicklink-08": "quicklink-08",
+						"quicklink-09": "quicklink-09",
+						"quicklink-10": "quicklink-10"
+					},
+					"default_value": "quicklink-01",
+					"allow_null": 0,
+					"ui": 1,
+					"return_format": "value",
 					"wrapper": { "width": "33" }
 				},
 				{

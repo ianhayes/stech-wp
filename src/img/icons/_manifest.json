@@ -1,0 +1,174 @@
+{
+ "quicklink-01": {
+  "context": "quick-links__item",
+  "file": "all-blocks.html"
+ },
+ "quicklink-02": {
+  "context": "quick-links__item",
+  "file": "all-blocks.html"
+ },
+ "quicklink-03": {
+  "context": "quick-links__item",
+  "file": "all-blocks.html"
+ },
+ "quicklink-04": {
+  "context": "quick-links__item",
+  "file": "all-blocks.html"
+ },
+ "quicklink-05": {
+  "context": "quick-links__item",
+  "file": "all-blocks.html"
+ },
+ "prog-01": {
+  "context": "programs-intro__icon",
+  "file": "all-blocks.html"
+ },
+ "prog-02": {
+  "context": "programs-intro__icon",
+  "file": "all-blocks.html"
+ },
+ "prog-03": {
+  "context": "programs-intro__icon",
+  "file": "all-blocks.html"
+ },
+ "nav-01": {
+  "context": "carousel__nav",
+  "file": "all-blocks.html"
+ },
+ "nav-02": {
+  "context": "carousel__nav",
+  "file": "all-blocks.html"
+ },
+ "alert-01": {
+  "context": "info-tabs__panel__alert",
+  "file": "all-blocks.html"
+ },
+ "ring-01": {
+  "context": "stat-ring__circle",
+  "file": "all-blocks.html"
+ },
+ "play-01": {
+  "context": "video-card__play",
+  "file": "all-blocks.html"
+ },
+ "check-01": {
+  "context": "checklist__check",
+  "file": "all-blocks.html"
+ },
+ "misc-01": {
+  "context": "misc",
+  "file": "all-blocks.html"
+ },
+ "resicon-01": {
+  "context": "resource__icon",
+  "file": "all-blocks.html"
+ },
+ "resarrow-01": {
+  "context": "resource__arrow",
+  "file": "all-blocks.html"
+ },
+ "quicklink-06": {
+  "context": "quick-links__item",
+  "file": "index.html"
+ },
+ "quicklink-07": {
+  "context": "quick-links__item",
+  "file": "index.html"
+ },
+ "quicklink-08": {
+  "context": "quick-links__item",
+  "file": "index.html"
+ },
+ "quicklink-09": {
+  "context": "quick-links__item",
+  "file": "index.html"
+ },
+ "quicklink-10": {
+  "context": "quick-links__item",
+  "file": "index.html"
+ },
+ "nav-03": {
+  "context": "carousel__nav",
+  "file": "index.html"
+ },
+ "nav-04": {
+  "context": "carousel__nav",
+  "file": "index.html"
+ },
+ "feature-01": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "feature-02": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "feature-03": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "feature-04": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "feature-05": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "feature-06": {
+  "context": "why-card__icon",
+  "file": "index.html"
+ },
+ "prog-04": {
+  "context": "programs-intro__icon",
+  "file": "programs.html"
+ },
+ "alert-02": {
+  "context": "info-tabs__panel__alert",
+  "file": "practical-nursing.html"
+ },
+ "feature-07": {
+  "context": "why-card__icon",
+  "file": "example-about.html"
+ },
+ "feature-08": {
+  "context": "why-card__icon",
+  "file": "example-about.html"
+ },
+ "feature-09": {
+  "context": "why-card__icon",
+  "file": "example-about.html"
+ },
+ "resicon-02": {
+  "context": "resource__icon",
+  "file": "example-contact.html"
+ },
+ "resarrow-02": {
+  "context": "resource__arrow",
+  "file": "example-contact.html"
+ },
+ "feature-10": {
+  "context": "why-card__icon",
+  "file": "example-cost-aid.html"
+ },
+ "feature-11": {
+  "context": "why-card__icon",
+  "file": "example-cost-aid.html"
+ },
+ "feature-12": {
+  "context": "why-card__icon",
+  "file": "example-cost-aid.html"
+ },
+ "feature-13": {
+  "context": "why-card__icon",
+  "file": "example-cost-aid.html"
+ },
+ "feature-14": {
+  "context": "why-card__icon",
+  "file": "example-cost-aid.html"
+ },
+ "resarrow-03": {
+  "context": "resource__arrow",
+  "file": "example-cost-aid.html"
+ }
+}
