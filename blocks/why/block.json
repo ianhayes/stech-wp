@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/why",
+	"title": "Why STECH",
+	"description": "Three-up icon cards making the case for the college, with an eyebrow, heading and lede.",
+	"category": "stech",
+	"icon": "awards",
+	"keywords": ["why", "reasons", "benefits", "icon cards", "features"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"why_overline": "Why Southwest Tech",
+				"why_heading": "Training that transforms careers",
+				"why_lede": "Hands-on, competency-based education built with industry — so you graduate ready to work.",
+				"why_cards_0_why_cards_title": "Hands-On",
+				"why_cards_0_why_cards_text": "Real labs, real tools, from day one.",
+				"why_cards": 1
+			}
+		}
+	}
+}

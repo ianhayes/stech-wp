@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/hero",
+	"title": "Homepage Hero",
+	"description": "Full-bleed photo hero with pill, display headline, paragraph and two CTAs.",
+	"category": "stech",
+	"icon": "cover-image",
+	"keywords": ["hero", "homepage", "banner", "header", "cover"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"hero_pill": "Cedar City, Utah",
+				"hero_headline": "Build a career",
+				"hero_headline_accent": "in less time.",
+				"hero_text": "Hands-on, competency-based training that gets you working sooner — and for less."
+			}
+		}
+	}
+}

@@ -1,0 +1,78 @@
+{
+	"key": "group_stech_gallery",
+	"title": "Block: Gallery",
+	"fields": [
+		{
+			"key": "field_stech_gallery_eyebrow",
+			"label": "Eyebrow",
+			"name": "gallery_eyebrow",
+			"type": "text",
+			"instructions": "Short overline label above the heading, e.g. \"On Campus\".",
+			"wrapper": { "width": "40" }
+		},
+		{
+			"key": "field_stech_gallery_heading",
+			"label": "Heading",
+			"name": "gallery_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Life at Southwest Tech\".",
+			"wrapper": { "width": "60" }
+		},
+		{
+			"key": "field_stech_gallery_items",
+			"label": "Items",
+			"name": "gallery_items",
+			"type": "repeater",
+			"instructions": "Bento grid images. Mix default, tall and wide sizes for a dynamic layout.",
+			"layout": "block",
+			"button_label": "Add Image",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_gallery_items_image",
+					"label": "Image",
+					"name": "gallery_items_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"required": 1,
+					"wrapper": { "width": "60" }
+				},
+				{
+					"key": "field_stech_gallery_items_size",
+					"label": "Size",
+					"name": "gallery_items_size",
+					"type": "select",
+					"instructions": "Grid footprint for this image.",
+					"choices": {
+						"default": "Default",
+						"tall": "Tall",
+						"wide": "Wide"
+					},
+					"default_value": "default",
+					"allow_null": 0,
+					"multiple": 0,
+					"ui": 0,
+					"return_format": "value",
+					"wrapper": { "width": "40" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/gallery" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

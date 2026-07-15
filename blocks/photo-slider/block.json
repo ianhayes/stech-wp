@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/photo-slider",
+	"title": "Photo Slider",
+	"description": "Full-bleed photo carousel with captions and dot navigation.",
+	"category": "stech",
+	"icon": "images-alt2",
+	"keywords": ["slider", "carousel", "photo", "gallery", "slideshow"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"photo_slider_slides": [
+					{ "photo_slider_slide_eyebrow": "Trades", "photo_slider_slide_caption": "Electrical apprentices train on live systems." },
+					{ "photo_slider_slide_eyebrow": "Culinary", "photo_slider_slide_caption": "From knife skills to plating in a working kitchen." }
+				]
+			}
+		}
+	}
+}

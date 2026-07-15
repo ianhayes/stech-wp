@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/accordion",
+	"title": "Accordion / FAQ",
+	"description": "Expandable question-and-answer list with animated panels.",
+	"category": "stech",
+	"icon": "editor-ul",
+	"keywords": ["accordion", "faq", "questions", "toggle", "expand"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"accordion_eyebrow": "FAQs",
+				"accordion_heading": "Common questions",
+				"accordion_items": [
+					{
+						"accordion_items_question": "Do I need a high school diploma to apply?",
+						"accordion_items_answer": "<p>Most programs require a diploma or GED, but some offer concurrent enrollment for high school students.</p>"
+					},
+					{
+						"accordion_items_question": "How much does tuition cost?",
+						"accordion_items_answer": "<p>Tuition is $95 per credit hour. High school students attend free.</p>"
+					}
+				]
+			}
+		}
+	}
+}

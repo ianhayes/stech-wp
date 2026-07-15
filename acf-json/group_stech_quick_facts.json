@@ -1,0 +1,59 @@
+{
+	"key": "group_stech_quick_facts",
+	"title": "Block: Quick Facts",
+	"fields": [
+		{
+			"key": "field_stech_quick_facts_facts",
+			"label": "Facts",
+			"name": "quick_facts_facts",
+			"type": "repeater",
+			"instructions": "Add up to six compact facts. Number can be a figure (95%, $95) or a short word (Day, ACEN).",
+			"layout": "table",
+			"button_label": "Add fact",
+			"min": 0,
+			"max": 6,
+			"sub_fields": [
+				{
+					"key": "field_stech_quick_facts_num",
+					"label": "Number / Value",
+					"name": "num",
+					"type": "text",
+					"instructions": "e.g. \"11mo\", \"38\", \"95%\", \"$95\", or a word like \"Day\".",
+					"wrapper": { "width": "35" }
+				},
+				{
+					"key": "field_stech_quick_facts_num_is_text",
+					"label": "Word value",
+					"name": "num_is_text",
+					"type": "true_false",
+					"instructions": "Enable when the value is a word (e.g. Day, ACEN) so it renders at word size.",
+					"ui": 1,
+					"wrapper": { "width": "25" }
+				},
+				{
+					"key": "field_stech_quick_facts_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"instructions": "Short caption, e.g. \"Length\", \"Credits\".",
+					"wrapper": { "width": "40" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/quick-facts" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

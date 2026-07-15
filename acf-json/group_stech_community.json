@@ -1,0 +1,77 @@
+{
+	"key": "group_stech_community",
+	"title": "Block: Community",
+	"fields": [
+		{
+			"key": "field_stech_community_cards",
+			"label": "Cards",
+			"name": "community_cards",
+			"type": "repeater",
+			"instructions": "Two promo cards. The first uses the --a background/position, the second --b.",
+			"min": 1,
+			"max": 2,
+			"layout": "block",
+			"button_label": "Add Card",
+			"sub_fields": [
+				{
+					"key": "field_stech_community_cards_overline",
+					"label": "Overline",
+					"name": "community_cards_overline",
+					"type": "text",
+					"instructions": "Short kicker above the heading, e.g. \"Community\".",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_community_cards_heading",
+					"label": "Heading",
+					"name": "community_cards_heading",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_community_cards_text",
+					"label": "Text",
+					"name": "community_cards_text",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": "br",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_community_cards_button",
+					"label": "Button",
+					"name": "community_cards_button",
+					"type": "link",
+					"return_format": "array",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_community_cards_image",
+					"label": "Background Image",
+					"name": "community_cards_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "50" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/community" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

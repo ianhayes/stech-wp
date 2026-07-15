@@ -1,0 +1,73 @@
+{
+	"key": "group_stech_tuition",
+	"title": "Block: Tuition Spotlight",
+	"fields": [
+		{
+			"key": "field_stech_tuition_eyebrow",
+			"label": "Eyebrow",
+			"name": "tuition_eyebrow",
+			"type": "text",
+			"instructions": "Small overline label, e.g. \"Cost & Aid\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_tuition_heading",
+			"label": "Heading",
+			"name": "tuition_heading",
+			"type": "text",
+			"instructions": "Main headline, e.g. \"Career training that pays off\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_tuition_text",
+			"label": "Text",
+			"name": "tuition_text",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_tuition_image",
+			"label": "Image",
+			"name": "tuition_image",
+			"type": "image",
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_tuition_primary_button",
+			"label": "Primary Button",
+			"name": "tuition_primary_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_tuition_secondary_button",
+			"label": "Secondary Button (ghost)",
+			"name": "tuition_secondary_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/tuition" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

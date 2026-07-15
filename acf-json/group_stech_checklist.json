@@ -1,0 +1,84 @@
+{
+	"key": "group_stech_checklist",
+	"title": "Block: Checklist",
+	"fields": [
+		{
+			"key": "field_stech_checklist_overline",
+			"label": "Overline",
+			"name": "checklist_overline",
+			"type": "text",
+			"instructions": "Short overline above the heading, e.g. \"Before You Start\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_checklist_heading",
+			"label": "Heading",
+			"name": "checklist_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Your checklist\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_checklist_columns",
+			"label": "Columns",
+			"name": "checklist_columns",
+			"type": "select",
+			"instructions": "How many columns the checklist grid uses.",
+			"choices": {
+				"2": "2 columns",
+				"3": "3 columns",
+				"4": "4 columns"
+			},
+			"default_value": "2",
+			"allow_null": 0,
+			"multiple": 0,
+			"ui": 0,
+			"return_format": "value",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_checklist_items",
+			"label": "Items",
+			"name": "checklist_items",
+			"type": "repeater",
+			"instructions": "Add each checklist item.",
+			"layout": "block",
+			"button_label": "Add Item",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_checklist_items_label",
+					"label": "Label",
+					"name": "checklist_items_label",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_checklist_items_description",
+					"label": "Description",
+					"name": "checklist_items_description",
+					"type": "text",
+					"instructions": "Optional supporting line shown below the label.",
+					"wrapper": { "width": "50" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/checklist" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/price-table",
+	"title": "Price Table",
+	"description": "Two-column cost breakdown with a head row, itemised rows and an estimated total.",
+	"category": "stech",
+	"icon": "money",
+	"keywords": ["price", "pricing", "tuition", "cost", "table"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"price_table_head_label": "Estimated Cost",
+				"price_table_head_value": "Per Year",
+				"price_table_rows": [
+					{ "label": "Tuition", "sub": "$95 / credit hour × 30", "value": "$2,850" },
+					{ "label": "Books & supplies", "sub": "", "value": "$900" },
+					{ "label": "Student fees", "sub": "", "value": "$250" }
+				],
+				"price_table_total_label": "Estimated total",
+				"price_table_total_value": "$4,000"
+			}
+		}
+	}
+}

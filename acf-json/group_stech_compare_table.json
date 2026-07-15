@@ -1,0 +1,114 @@
+{
+	"key": "group_stech_compare_table",
+	"title": "Block: Comparison Table",
+	"fields": [
+		{
+			"key": "field_stech_compare_table_eyebrow",
+			"label": "Eyebrow",
+			"name": "compare_table_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Compare\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_compare_table_heading",
+			"label": "Heading",
+			"name": "compare_table_heading",
+			"type": "text",
+			"instructions": "Section title, e.g. \"How we stack up\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_compare_table_columns",
+			"label": "Columns",
+			"name": "compare_table_columns",
+			"type": "repeater",
+			"instructions": "Table column headers, left to right. Flag the STECH column to highlight it in both the header and body cells.",
+			"layout": "table",
+			"button_label": "Add Column",
+			"sub_fields": [
+				{
+					"key": "field_stech_compare_table_columns_label",
+					"label": "Header Label",
+					"name": "compare_table_columns_label",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "70" }
+				},
+				{
+					"key": "field_stech_compare_table_columns_highlight",
+					"label": "Highlight (STECH)",
+					"name": "compare_table_columns_highlight",
+					"type": "true_false",
+					"instructions": "Highlight this column as the STECH column.",
+					"ui": 1,
+					"wrapper": { "width": "30" }
+				}
+			]
+		},
+		{
+			"key": "field_stech_compare_table_rows",
+			"label": "Rows",
+			"name": "compare_table_rows",
+			"type": "repeater",
+			"instructions": "Table body rows. Add one cell per column, in the same order.",
+			"layout": "block",
+			"button_label": "Add Row",
+			"sub_fields": [
+				{
+					"key": "field_stech_compare_table_rows_cells",
+					"label": "Cells",
+					"name": "compare_table_rows_cells",
+					"type": "repeater",
+					"instructions": "One cell per column, left to right.",
+					"layout": "table",
+					"button_label": "Add Cell",
+					"sub_fields": [
+						{
+							"key": "field_stech_compare_table_rows_cells_value",
+							"label": "Value",
+							"name": "compare_table_rows_cells_value",
+							"type": "text",
+							"required": 1,
+							"wrapper": { "width": "70" }
+						},
+						{
+							"key": "field_stech_compare_table_rows_cells_is_yes",
+							"label": "Emphasise",
+							"name": "compare_table_rows_cells_is_yes",
+							"type": "true_false",
+							"instructions": "Style this cell as a positive/\"yes\" value.",
+							"ui": 1,
+							"wrapper": { "width": "30" }
+						}
+					]
+				}
+			]
+		},
+		{
+			"key": "field_stech_compare_table_footnote",
+			"label": "Footnote",
+			"name": "compare_table_footnote",
+			"type": "textarea",
+			"instructions": "Small note shown below the table, e.g. a source or disclaimer.",
+			"rows": 2,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/compare-table" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/quick-links",
+	"title": "Quick Links",
+	"description": "Horizontal icon-link strip on a blue band (Apply, Programs, Cost & Aid, Visit, Portal).",
+	"category": "stech",
+	"icon": "menu",
+	"keywords": ["quick links", "icon", "strip", "shortcuts", "links"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"quick_links_items": [
+					{ "quick_links_items_label": "Apply", "quick_links_items_link": { "url": "#" } },
+					{ "quick_links_items_label": "Programs", "quick_links_items_link": { "url": "#" } },
+					{ "quick_links_items_label": "Cost & Aid", "quick_links_items_link": { "url": "#" } },
+					{ "quick_links_items_label": "Visit", "quick_links_items_link": { "url": "#" } },
+					{ "quick_links_items_label": "Portal", "quick_links_items_link": { "url": "#" } }
+				]
+			}
+		}
+	}
+}

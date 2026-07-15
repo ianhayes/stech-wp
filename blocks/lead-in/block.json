@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/lead-in",
+	"title": "Lead-in",
+	"description": "Left-aligned intro text: overline, heading and one or two rich paragraphs.",
+	"category": "stech",
+	"icon": "editor-paragraph",
+	"keywords": ["lead", "intro", "overline", "heading", "text"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"lead_in_overline": "Who Can Apply",
+				"lead_in_heading": "Open to anyone ready to train",
+				"lead_in_body": "<p>Any person who declares a technical training objective is eligible for admission at Southwest Tech.</p>"
+			}
+		}
+	}
+}

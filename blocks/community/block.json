@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/community",
+	"title": "Community",
+	"description": "Two-up promo cards on image/dark backgrounds with overline, heading, text and ghost-white button.",
+	"category": "stech",
+	"icon": "groups",
+	"keywords": ["community", "promo", "partners", "cards", "2-up"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"community_cards_0_community_cards_overline": "Community",
+				"community_cards_0_community_cards_heading": "Workforce partners",
+				"community_cards_0_community_cards_text": "We build programs hand-in-hand with local employers.",
+				"community_cards_1_community_cards_overline": "Certificates",
+				"community_cards_1_community_cards_heading": "In-demand training",
+				"community_cards_1_community_cards_text": "Short, stackable certificates that lead to jobs.",
+				"community_cards": 2
+			}
+		}
+	}
+}

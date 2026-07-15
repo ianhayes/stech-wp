@@ -1,0 +1,70 @@
+{
+	"key": "group_stech_info_tabs",
+	"title": "Block: Info Tabs",
+	"fields": [
+		{
+			"key": "field_stech_info_tabs_eyebrow",
+			"label": "Eyebrow",
+			"name": "info_tabs_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Practical Nursing\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_info_tabs_heading",
+			"label": "Heading",
+			"name": "info_tabs_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Program Details\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_info_tabs_tabs",
+			"label": "Tabs",
+			"name": "info_tabs_tabs",
+			"type": "repeater",
+			"instructions": "Each tab shows a label in the vertical nav and reveals its rich-text panel. 3–5 tabs work best.",
+			"layout": "block",
+			"button_label": "Add Tab",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_info_tabs_tabs_label",
+					"label": "Tab Label",
+					"name": "info_tabs_tabs_label",
+					"type": "text",
+					"instructions": "Short nav label, e.g. \"Summary\", \"Outcomes\".",
+					"required": 1,
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_info_tabs_tabs_panel",
+					"label": "Panel Content",
+					"name": "info_tabs_tabs_panel",
+					"type": "wysiwyg",
+					"instructions": "Rich content for this tab. Headings, paragraphs, lists and definition lists are styled automatically.",
+					"tabs": "all",
+					"toolbar": "full",
+					"media_upload": 1,
+					"delay": 0,
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/info-tabs" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

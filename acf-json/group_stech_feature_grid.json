@@ -1,0 +1,87 @@
+{
+	"key": "group_stech_feature_grid",
+	"title": "Block: Feature Grid",
+	"fields": [
+		{
+			"key": "field_stech_feature_grid_overline",
+			"label": "Eyebrow",
+			"name": "feature_grid_overline",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Why STECH\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_feature_grid_heading",
+			"label": "Heading",
+			"name": "feature_grid_heading",
+			"type": "text",
+			"instructions": "Section headline, e.g. \"Built for your success\".",
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_feature_grid_lede",
+			"label": "Lede",
+			"name": "feature_grid_lede",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_feature_grid_cards",
+			"label": "Cards",
+			"name": "feature_grid_cards",
+			"type": "repeater",
+			"instructions": "Icon cards. Four across works best on desktop.",
+			"layout": "block",
+			"button_label": "Add Card",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_feature_grid_cards_icon",
+					"label": "Icon (SVG)",
+					"name": "feature_grid_cards_icon",
+					"type": "image",
+					"instructions": "Upload a single-colour SVG icon. It is inlined and recoloured to match the card.",
+					"return_format": "array",
+					"library": "all",
+					"mime_types": "svg",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_feature_grid_cards_title",
+					"label": "Title",
+					"name": "feature_grid_cards_title",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_feature_grid_cards_text",
+					"label": "Text",
+					"name": "feature_grid_cards_text",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": "br",
+					"wrapper": { "width": "50" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/feature-grid" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

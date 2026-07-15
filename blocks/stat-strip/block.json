@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/stat-strip",
+	"title": "Stat Strip",
+	"description": "Full-width band of big-number stats on the ink background with a blue top accent.",
+	"category": "stech",
+	"icon": "chart-bar",
+	"keywords": ["stat", "stats", "numbers", "metrics", "strip"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"stat_strip_stats_0_stat_strip_number": "24",
+				"stat_strip_stats_0_stat_strip_label": "Programs",
+				"stat_strip_stats_1_stat_strip_number": "93%",
+				"stat_strip_stats_1_stat_strip_label": "Job Placement",
+				"stat_strip_stats_2_stat_strip_number": "$95",
+				"stat_strip_stats_2_stat_strip_label": "Per Credit Hour",
+				"stat_strip_stats_3_stat_strip_number": "1yr",
+				"stat_strip_stats_3_stat_strip_label": "Or Less",
+				"stat_strip_stats": 4
+			}
+		}
+	}
+}

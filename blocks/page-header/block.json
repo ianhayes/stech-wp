@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/page-header",
+	"title": "Page Header",
+	"description": "Interior page header (B2) with breadcrumb, title, lede and CTAs. Blue-photo, flat-wash, plain and inline-form layouts.",
+	"category": "stech",
+	"icon": "align-full-width",
+	"keywords": ["page header", "interior", "breadcrumb", "hero", "title", "banner"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"page_header_layout": "blue-photo",
+				"page_header_title": "Programs",
+				"page_header_lede": "Twenty-four hands-on programs across health, trades, technology and service."
+			}
+		}
+	}
+}

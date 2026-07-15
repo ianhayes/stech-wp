@@ -1,0 +1,113 @@
+{
+	"key": "group_stech_accreditation",
+	"title": "Block: Accreditation",
+	"fields": [
+		{
+			"key": "field_stech_accreditation_overline",
+			"label": "Overline",
+			"name": "accreditation_overline",
+			"type": "text",
+			"instructions": "Small label above the heading, e.g. \"Accreditation\".",
+			"default_value": "Accreditation",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accreditation_heading",
+			"label": "Heading",
+			"name": "accreditation_heading",
+			"type": "text",
+			"instructions": "e.g. \"Accredited by ACEN\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accreditation_lede",
+			"label": "Body",
+			"name": "accreditation_lede",
+			"type": "textarea",
+			"instructions": "Short accreditation statement.",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_accreditation_logos",
+			"label": "Logo(s)",
+			"name": "accreditation_logos",
+			"type": "repeater",
+			"instructions": "Accrediting-body logo(s).",
+			"layout": "block",
+			"button_label": "Add logo",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_accreditation_logo_image",
+					"label": "Image",
+					"name": "accreditation_logo_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "100" }
+				}
+			]
+		},
+		{
+			"key": "field_stech_accreditation_org_name",
+			"label": "Accrediting Body (name + link)",
+			"name": "accreditation_org_name",
+			"type": "link",
+			"instructions": "Full name of the accrediting organisation, linked to its website.",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accreditation_address",
+			"label": "Address",
+			"name": "accreditation_address",
+			"type": "text",
+			"instructions": "Mailing address of the accrediting body.",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accreditation_status_label",
+			"label": "Status Label",
+			"name": "accreditation_status_label",
+			"type": "text",
+			"default_value": "Status:",
+			"wrapper": { "width": "30" }
+		},
+		{
+			"key": "field_stech_accreditation_status",
+			"label": "Status",
+			"name": "accreditation_status",
+			"type": "text",
+			"instructions": "Decision text, e.g. \"Continuing Accreditation.\"",
+			"wrapper": { "width": "70" }
+		},
+		{
+			"key": "field_stech_accreditation_link",
+			"label": "Directory Link (optional)",
+			"name": "accreditation_link",
+			"type": "link",
+			"instructions": "e.g. \"View ACEN directory\".",
+			"return_format": "array",
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/accreditation" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

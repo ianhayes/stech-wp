@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/inquiry-form",
+	"title": "Inquiry Form",
+	"description": "Request-info form card with overline, heading, intro and a Gravity Form (with static fallback).",
+	"category": "stech",
+	"icon": "feedback",
+	"keywords": ["inquiry", "form", "request info", "contact", "lead", "enroll"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"inquiry_form_overline": "Get Started",
+				"inquiry_form_heading": "Request Info",
+				"inquiry_form_intro": "We'll send program details and upcoming dates.",
+				"inquiry_form_small": "By submitting you agree to our <a href=\"#\">privacy policy</a>."
+			}
+		}
+	}
+}

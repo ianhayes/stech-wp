@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/steps",
+	"title": "Steps",
+	"description": "Numbered process grid — a short set of steps to complete, e.g. how to get enrolled.",
+	"category": "stech",
+	"icon": "list-view",
+	"keywords": ["steps", "process", "how to", "enroll", "numbered"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"steps_eyebrow": "How to Apply",
+				"steps_heading": "Four steps to get enrolled",
+				"steps_items": [
+					{ "steps_items_number": "1", "steps_items_heading": "Pick a Program", "steps_items_text": "Schedule a tour or meet with an academic advisor to get your questions answered." },
+					{ "steps_items_number": "2", "steps_items_heading": "Create an Account", "steps_items_text": "Creating a student account is free and helps us get you enrolled. Set yours up in minutes." },
+					{ "steps_items_number": "3", "steps_items_heading": "Explore Cost & Aid", "steps_items_text": "We'll help you explore aid options, from Pell Grants and scholarships to VA benefits." },
+					{ "steps_items_number": "4", "steps_items_heading": "Sign Up for Classes", "steps_items_text": "Enroll in person at our Cedar City campus, then start your hands-on training." }
+				]
+			}
+		}
+	}
+}

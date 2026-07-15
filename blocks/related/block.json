@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/related",
+	"title": "Related Programs",
+	"description": "3-up grid of related program cards. Pull from the Program CPT or add cards manually.",
+	"category": "stech",
+	"icon": "category",
+	"keywords": ["related", "programs", "cards", "explore", "grid"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"related_eyebrow": "Keep Exploring",
+				"related_heading": "Related programs",
+				"related_source": "manual",
+				"related_cards": [
+					{
+						"related_cards_tag": "Health Sciences",
+						"related_cards_title": "Surgical Technology"
+					},
+					{
+						"related_cards_tag": "Health Sciences",
+						"related_cards_title": "Medical Office Receptionist"
+					},
+					{
+						"related_cards_tag": "Service",
+						"related_cards_title": "Master Esthetician"
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"key": "group_stech_outcomes",
+	"title": "Block: Outcomes",
+	"fields": [
+		{
+			"key": "field_stech_outcomes_rings",
+			"label": "Stat Rings",
+			"name": "outcomes_rings",
+			"type": "repeater",
+			"instructions": "Animated circular stat rings (e.g. pass rate, job placement, completion).",
+			"layout": "block",
+			"button_label": "Add Ring",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_outcomes_ring_value",
+					"label": "Value",
+					"name": "outcomes_ring_value",
+					"type": "number",
+					"instructions": "The number the ring counts up to, e.g. 95.",
+					"required": 1,
+					"min": 0,
+					"max": 100,
+					"wrapper": { "width": "33" }
+				},
+				{
+					"key": "field_stech_outcomes_ring_suffix",
+					"label": "Suffix",
+					"name": "outcomes_ring_suffix",
+					"type": "text",
+					"instructions": "Appended after the value, e.g. \"%\".",
+					"default_value": "%",
+					"maxlength": 4,
+					"wrapper": { "width": "33" }
+				},
+				{
+					"key": "field_stech_outcomes_ring_label",
+					"label": "Label",
+					"name": "outcomes_ring_label",
+					"type": "text",
+					"instructions": "Short caption below the ring, e.g. \"NCLEX Pass Rate\".",
+					"required": 1,
+					"wrapper": { "width": "34" }
+				}
+			]
+		},
+		{
+			"key": "field_stech_outcomes_show_pie",
+			"label": "Show Placement Pie",
+			"name": "outcomes_show_pie",
+			"type": "true_false",
+			"instructions": "Add a placement breakdown pie chart alongside the rings.",
+			"ui": 1,
+			"default_value": 0
+		},
+		{
+			"key": "field_stech_outcomes_pie_label",
+			"label": "Pie Label",
+			"name": "outcomes_pie_label",
+			"type": "text",
+			"instructions": "Caption above the pie legend, e.g. \"Placement Breakdown\".",
+			"default_value": "Placement Breakdown",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_outcomes_show_pie", "operator": "==", "value": "1" }
+				]
+			]
+		},
+		{
+			"key": "field_stech_outcomes_pie_legend",
+			"label": "Pie Segments",
+			"name": "outcomes_pie_legend",
+			"type": "repeater",
+			"instructions": "Each row is a pie slice + legend entry. The chart colours are fixed to Amber (Employed LPN), Blue (Continuing Ed) and Gray (Non-Placement) in that order.",
+			"layout": "table",
+			"button_label": "Add Segment",
+			"min": 0,
+			"max": 3,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_outcomes_show_pie", "operator": "==", "value": "1" }
+				]
+			],
+			"sub_fields": [
+				{
+					"key": "field_stech_outcomes_legend_swatch",
+					"label": "Swatch",
+					"name": "outcomes_legend_swatch",
+					"type": "select",
+					"instructions": "Slice colour.",
+					"choices": {
+						"lpn": "Amber (Employed LPN)",
+						"continuing": "Blue (Continuing Ed)",
+						"non": "Gray (Non-Placement)"
+					},
+					"default_value": "lpn",
+					"return_format": "value",
+					"wrapper": { "width": "30" }
+				},
+				{
+					"key": "field_stech_outcomes_legend_label",
+					"label": "Label",
+					"name": "outcomes_legend_label",
+					"type": "text",
+					"instructions": "e.g. \"Employed LPN\".",
+					"required": 1,
+					"wrapper": { "width": "45" }
+				},
+				{
+					"key": "field_stech_outcomes_legend_value",
+					"label": "Percent",
+					"name": "outcomes_legend_value",
+					"type": "number",
+					"instructions": "Slice size, e.g. 28.",
+					"required": 1,
+					"min": 0,
+					"max": 100,
+					"wrapper": { "width": "25" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/outcomes" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

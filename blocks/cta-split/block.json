@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/cta-split",
+	"title": "CTA Split",
+	"description": "Image + text call-to-action on a dark blue split panel.",
+	"category": "stech",
+	"icon": "align-wide",
+	"keywords": ["cta", "call to action", "split", "image", "apply"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"cta_split_overline": "Ready?",
+				"cta_split_heading": "Take the first step",
+				"cta_split_text": "Apply free in minutes, or schedule a campus tour to see your future program in action."
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"key": "group_stech_quick_links",
+	"title": "Block: Quick Links",
+	"fields": [
+		{
+			"key": "field_stech_quick_links_items",
+			"label": "Links",
+			"name": "quick_links_items",
+			"type": "repeater",
+			"instructions": "Icon links shown across the blue strip (e.g. Apply, Programs, Cost & Aid, Visit, Portal). 5 works best on desktop.",
+			"layout": "block",
+			"button_label": "Add Link",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_quick_links_items_icon",
+					"label": "Icon (SVG)",
+					"name": "quick_links_items_icon",
+					"type": "image",
+					"instructions": "Upload a single-colour SVG icon. It is inlined and recoloured to match the strip.",
+					"return_format": "array",
+					"library": "all",
+					"mime_types": "svg",
+					"wrapper": { "width": "34" }
+				},
+				{
+					"key": "field_stech_quick_links_items_icon_name",
+					"label": "Icon Name (fallback)",
+					"name": "quick_links_items_icon_name",
+					"type": "text",
+					"instructions": "Optional Dashicon name (e.g. \"welcome-learn-more\") used when no SVG is uploaded.",
+					"wrapper": { "width": "33" }
+				},
+				{
+					"key": "field_stech_quick_links_items_label",
+					"label": "Label",
+					"name": "quick_links_items_label",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "33" }
+				},
+				{
+					"key": "field_stech_quick_links_items_link",
+					"label": "Link",
+					"name": "quick_links_items_link",
+					"type": "link",
+					"return_format": "array",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/quick-links" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

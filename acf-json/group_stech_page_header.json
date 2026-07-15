@@ -1,0 +1,208 @@
+{
+	"key": "group_stech_page_header",
+	"title": "Block: Page Header",
+	"fields": [
+		{
+			"key": "field_stech_page_header_layout",
+			"label": "Layout",
+			"name": "page_header_layout",
+			"type": "select",
+			"instructions": "Blue-photo = gradient over photo. Flat-wash = flat blue over photo. Plain = light text-led header, no photo. With form = two-column header + inquiry aside.",
+			"required": 1,
+			"choices": {
+				"blue-photo": "Blue photo (gradient)",
+				"flat-wash": "Blue photo (flat wash)",
+				"plain": "Plain (no photo)",
+				"with-form": "With inline form"
+			},
+			"default_value": "blue-photo",
+			"return_format": "value",
+			"allow_null": 0,
+			"multiple": 0,
+			"ui": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_bg_image",
+			"label": "Background Image",
+			"name": "page_header_bg_image",
+			"type": "image",
+			"instructions": "Behind the blue wash. Not used on the Plain layout.",
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"mime_types": "jpg,jpeg,png,webp",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "!=", "value": "plain" }
+				]
+			],
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_title",
+			"label": "Title (H1)",
+			"name": "page_header_title",
+			"type": "text",
+			"instructions": "Page title, e.g. \"Programs\" or \"Practical Nursing\".",
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_lede",
+			"label": "Lede",
+			"name": "page_header_lede",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_primary_button",
+			"label": "Primary Button",
+			"name": "page_header_primary_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_page_header_secondary_button",
+			"label": "Secondary Button (optional)",
+			"name": "page_header_secondary_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_page_header_show_paw",
+			"label": "Show Paw Mascot",
+			"name": "page_header_show_paw",
+			"type": "true_false",
+			"instructions": "Decorative bear paw watermark.",
+			"default_value": 1,
+			"ui": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_deadline_text",
+			"label": "Deadline Pill Text",
+			"name": "page_header_deadline_text",
+			"type": "text",
+			"instructions": "e.g. \"Fall cohort — apply by Aug 1\". Shows a pulsing dot.",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_facts",
+			"label": "Facts",
+			"name": "page_header_facts",
+			"type": "repeater",
+			"instructions": "Inline mini-stats under the header (e.g. 11 mo / Program Length).",
+			"layout": "table",
+			"button_label": "Add Fact",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"sub_fields": [
+				{
+					"key": "field_stech_page_header_facts_num",
+					"label": "Number",
+					"name": "num",
+					"type": "text",
+					"instructions": "e.g. \"11\", \"95%\", \"$95\".",
+					"wrapper": { "width": "35" }
+				},
+				{
+					"key": "field_stech_page_header_facts_unit",
+					"label": "Unit (optional)",
+					"name": "unit",
+					"type": "text",
+					"instructions": "Small inline unit, e.g. \"mo\".",
+					"wrapper": { "width": "25" }
+				},
+				{
+					"key": "field_stech_page_header_facts_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"instructions": "e.g. \"Program Length\".",
+					"wrapper": { "width": "40" }
+				}
+			],
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_form_overline",
+			"label": "Form Overline",
+			"name": "page_header_form_overline",
+			"type": "text",
+			"default_value": "Get Started",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_page_header_form_heading",
+			"label": "Form Heading",
+			"name": "page_header_form_heading",
+			"type": "text",
+			"default_value": "Request Info",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_page_header_form_intro",
+			"label": "Form Intro",
+			"name": "page_header_form_intro",
+			"type": "textarea",
+			"rows": 2,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_page_header_form_id",
+			"label": "Gravity Form ID",
+			"name": "page_header_form_id",
+			"type": "text",
+			"instructions": "ID of the Gravity Form to render in the inquiry aside. Leave blank to show the static placeholder form.",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_page_header_layout", "operator": "==", "value": "with-form" }
+				]
+			],
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/page-header" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

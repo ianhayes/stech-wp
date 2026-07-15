@@ -26,6 +26,7 @@ $stech_modules = array(
 	'inc/blocks.php',       // block.json auto-loader, ACF block category, allowed types
 	'inc/acf.php',          // ACF options pages, JSON save/load path, dependency notices
 	'inc/helpers.php',      // template helpers (get_links, svg, breadcrumb…)
+	'inc/redirects.php',    // migration 301 safety net (fallback to Redirection plugin)
 );
 
 foreach ( $stech_modules as $stech_module ) {

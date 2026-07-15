@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/statement",
+	"title": "Statement",
+	"description": "Large blockquote on a dark full-width band with a bear watermark.",
+	"category": "stech",
+	"icon": "format-quote",
+	"keywords": ["statement", "quote", "pull quote", "blockquote", "callout"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"statement_quote": "We don't just teach skills — we build careers that change families.",
+				"statement_citation": "— President, Southwest Tech",
+				"statement_show_bg_icon": true
+			}
+		}
+	}
+}

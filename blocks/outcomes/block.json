@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/outcomes",
+	"title": "Outcomes",
+	"description": "Animated stat rings and a placement pie chart for program outcomes.",
+	"category": "stech",
+	"icon": "chart-pie",
+	"keywords": ["outcomes", "stats", "rings", "placement", "pie", "results"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"outcomes_rings": [
+					{ "outcomes_ring_value": 95, "outcomes_ring_suffix": "%", "outcomes_ring_label": "NCLEX Pass Rate" },
+					{ "outcomes_ring_value": 93, "outcomes_ring_suffix": "%", "outcomes_ring_label": "Job Placement" },
+					{ "outcomes_ring_value": 88, "outcomes_ring_suffix": "%", "outcomes_ring_label": "Program Completion" }
+				],
+				"outcomes_show_pie": true,
+				"outcomes_pie_label": "Placement Breakdown",
+				"outcomes_pie_legend": [
+					{ "outcomes_legend_swatch": "lpn", "outcomes_legend_label": "Employed LPN", "outcomes_legend_value": 28 },
+					{ "outcomes_legend_swatch": "continuing", "outcomes_legend_label": "Continuing Ed", "outcomes_legend_value": 69 },
+					{ "outcomes_legend_swatch": "non", "outcomes_legend_label": "Non-Placement", "outcomes_legend_value": 3 }
+				]
+			}
+		}
+	}
+}

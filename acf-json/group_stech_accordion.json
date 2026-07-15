@@ -1,0 +1,67 @@
+{
+	"key": "group_stech_accordion",
+	"title": "Block: Accordion / FAQ",
+	"fields": [
+		{
+			"key": "field_stech_accordion_eyebrow",
+			"label": "Eyebrow",
+			"name": "accordion_eyebrow",
+			"type": "text",
+			"instructions": "Short overline above the heading, e.g. \"FAQs\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accordion_heading",
+			"label": "Heading",
+			"name": "accordion_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Common questions\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_accordion_items",
+			"label": "Items",
+			"name": "accordion_items",
+			"type": "repeater",
+			"instructions": "Each row is a question and its answer.",
+			"layout": "block",
+			"button_label": "Add question",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_accordion_items_question",
+					"label": "Question",
+					"name": "accordion_items_question",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_accordion_items_answer",
+					"label": "Answer",
+					"name": "accordion_items_answer",
+					"type": "wysiwyg",
+					"tabs": "all",
+					"toolbar": "basic",
+					"media_upload": 0,
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/accordion" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

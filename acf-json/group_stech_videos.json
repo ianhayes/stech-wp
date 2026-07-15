@@ -1,0 +1,82 @@
+{
+	"key": "group_stech_videos",
+	"title": "Block: Highlight Videos",
+	"fields": [
+		{
+			"key": "field_stech_videos_eyebrow",
+			"label": "Eyebrow",
+			"name": "videos_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Watch\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_videos_heading",
+			"label": "Heading",
+			"name": "videos_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Program highlights\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_videos_cards",
+			"label": "Video Cards",
+			"name": "videos_cards",
+			"type": "repeater",
+			"instructions": "Two-up video cards. Each links out to the video.",
+			"layout": "block",
+			"button_label": "Add Video Card",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_videos_card_thumb",
+					"label": "Thumbnail",
+					"name": "videos_card_thumb",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_videos_card_tag",
+					"label": "Tag",
+					"name": "videos_card_tag",
+					"type": "text",
+					"instructions": "Small label, e.g. \"Student Story\".",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_videos_card_title",
+					"label": "Title",
+					"name": "videos_card_title",
+					"type": "text",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_videos_card_url",
+					"label": "Video URL",
+					"name": "videos_card_url",
+					"type": "url",
+					"instructions": "Link to the video (YouTube, Vimeo, etc.).",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/videos" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

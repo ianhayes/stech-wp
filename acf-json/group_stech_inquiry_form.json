@@ -1,0 +1,86 @@
+{
+	"key": "group_stech_inquiry_form",
+	"title": "Block: Inquiry Form",
+	"fields": [
+		{
+			"key": "field_stech_inquiry_form_overline",
+			"label": "Overline",
+			"name": "inquiry_form_overline",
+			"type": "text",
+			"instructions": "Small eyebrow label above the heading, e.g. \"Get Started\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_inquiry_form_heading",
+			"label": "Heading",
+			"name": "inquiry_form_heading",
+			"type": "text",
+			"instructions": "Card heading (h3), e.g. \"Request Info\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_inquiry_form_intro",
+			"label": "Intro",
+			"name": "inquiry_form_intro",
+			"type": "textarea",
+			"instructions": "Short supporting sentence under the heading.",
+			"rows": 2,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_inquiry_form_large",
+			"label": "Large",
+			"name": "inquiry_form_large",
+			"type": "true_false",
+			"instructions": "Use the larger, wider variant with more generous spacing.",
+			"ui": 1,
+			"default_value": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_inquiry_form_gravity_form_id",
+			"label": "Gravity Form ID",
+			"name": "inquiry_form_gravity_form_id",
+			"type": "number",
+			"instructions": "ID of the Gravity Form to embed. Leave empty to show the static fallback form.",
+			"min": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_inquiry_form_button_label",
+			"label": "Button Label (fallback)",
+			"name": "inquiry_form_button_label",
+			"type": "text",
+			"instructions": "Submit button text used by the static fallback form only.",
+			"default_value": "Request Info",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_inquiry_form_small",
+			"label": "Small Print",
+			"name": "inquiry_form_small",
+			"type": "textarea",
+			"instructions": "Fine print under the form. Basic links allowed, e.g. a privacy policy link.",
+			"rows": 2,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/inquiry-form" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

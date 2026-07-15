@@ -1,0 +1,99 @@
+{
+	"key": "group_stech_programs_intro",
+	"title": "Block: Programs Intro",
+	"fields": [
+		{
+			"key": "field_stech_programs_intro_eyebrow",
+			"label": "Eyebrow",
+			"name": "programs_intro_eyebrow",
+			"type": "text",
+			"instructions": "Small overline label above the heading, e.g. \"Programs\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_programs_intro_heading",
+			"label": "Heading",
+			"name": "programs_intro_heading",
+			"type": "text",
+			"instructions": "Section headline, e.g. \"Training that works\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_programs_intro_text",
+			"label": "Text",
+			"name": "programs_intro_text",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_programs_intro_cta",
+			"label": "CTA Button",
+			"name": "programs_intro_cta",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_programs_intro_cards",
+			"label": "Feature Cards",
+			"name": "programs_intro_cards",
+			"type": "repeater",
+			"instructions": "Three icon feature cards.",
+			"min": 0,
+			"max": 3,
+			"layout": "block",
+			"button_label": "Add Card",
+			"sub_fields": [
+				{
+					"key": "field_stech_programs_intro_cards_icon",
+					"label": "Icon",
+					"name": "programs_intro_cards_icon",
+					"type": "select",
+					"choices": {
+						"arrow": "Arrow",
+						"clock": "Clock",
+						"home": "Home"
+					},
+					"default_value": "arrow",
+					"allow_null": 0,
+					"return_format": "value",
+					"wrapper": { "width": "30" }
+				},
+				{
+					"key": "field_stech_programs_intro_cards_heading",
+					"label": "Heading",
+					"name": "programs_intro_cards_heading",
+					"type": "text",
+					"wrapper": { "width": "70" }
+				},
+				{
+					"key": "field_stech_programs_intro_cards_text",
+					"label": "Text",
+					"name": "programs_intro_cards_text",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": "",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/programs-intro" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

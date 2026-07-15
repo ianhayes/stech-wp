@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/people",
+	"title": "Faculty & Staff",
+	"description": "Grid of avatar person cards for faculty and staff, from the Staff CPT or a manual list.",
+	"category": "stech",
+	"icon": "groups",
+	"keywords": ["people", "faculty", "staff", "team", "person", "bio"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"people_eyebrow": "Our People",
+				"people_heading": "Meet the faculty",
+				"people_source": "manual",
+				"people_cards": [
+					{
+						"people_cards_name": "Dr. Lena Park",
+						"people_cards_role": "Nursing Director",
+						"people_cards_bio": "20 years of clinical and teaching experience."
+					},
+					{
+						"people_cards_name": "Marco Reyes",
+						"people_cards_role": "Welding Instructor",
+						"people_cards_bio": "AWS-certified, 15 years in the field."
+					}
+				]
+			}
+		}
+	}
+}

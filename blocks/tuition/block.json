@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/tuition",
+	"title": "Tuition Spotlight",
+	"description": "Text-and-image cost pitch with eyebrow, heading, paragraph and two CTAs.",
+	"category": "stech",
+	"icon": "money-alt",
+	"keywords": ["tuition", "cost", "financial aid", "spotlight", "affordable"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"tuition_eyebrow": "Cost & Aid",
+				"tuition_heading": "Career training that pays off",
+				"tuition_text": "At $95 per credit hour — and free for high school students — STECH is one of the most affordable paths to a career in Utah."
+			}
+		}
+	}
+}

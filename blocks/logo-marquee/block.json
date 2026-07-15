@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/logo-marquee",
+	"title": "Logo Marquee",
+	"description": "Scrolling row of partner logos, or a static logo grid. Reduced-motion safe.",
+	"category": "stech",
+	"icon": "images-alt",
+	"keywords": ["logos", "marquee", "partners", "carousel", "grid"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"logo_marquee_static_grid": false,
+				"logo_marquee_logos": 6,
+				"logo_marquee_logos_0_logo_marquee_logo_alt": "Partner One",
+				"logo_marquee_logos_1_logo_marquee_logo_alt": "Partner Two",
+				"logo_marquee_logos_2_logo_marquee_logo_alt": "Partner Three",
+				"logo_marquee_logos_3_logo_marquee_logo_alt": "Partner Four",
+				"logo_marquee_logos_4_logo_marquee_logo_alt": "Partner Five",
+				"logo_marquee_logos_5_logo_marquee_logo_alt": "Partner Six"
+			}
+		}
+	}
+}

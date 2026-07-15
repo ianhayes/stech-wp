@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/gallery",
+	"title": "Gallery",
+	"description": "Bento image grid with tall and wide items for campus-life photos.",
+	"category": "stech",
+	"icon": "format-gallery",
+	"keywords": ["gallery", "bento", "images", "photos", "grid", "campus"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"gallery_eyebrow": "On Campus",
+				"gallery_heading": "Real labs. Real tools. Real work."
+			}
+		}
+	}
+}

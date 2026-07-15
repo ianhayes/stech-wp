@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/feature-grid",
+	"title": "Feature Grid",
+	"description": "Four-up icon feature cards with an eyebrow and heading.",
+	"category": "stech",
+	"icon": "screenoptions",
+	"keywords": ["feature", "grid", "icons", "cards", "why", "4-up"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"feature_grid_overline": "Why STECH",
+				"feature_grid_heading": "Built for your success",
+				"feature_grid_cards": [
+					{ "feature_grid_cards_title": "Career Focused", "feature_grid_cards_text": "Programs built with employers." },
+					{ "feature_grid_cards_title": "Flexible", "feature_grid_cards_text": "Day and evening options." },
+					{ "feature_grid_cards_title": "Affordable", "feature_grid_cards_text": "$95 per credit hour." },
+					{ "feature_grid_cards_title": "Supported", "feature_grid_cards_text": "Advising every step." }
+				],
+				"_feature_grid_cards": "field_stech_feature_grid_cards"
+			}
+		}
+	}
+}

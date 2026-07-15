@@ -1,0 +1,75 @@
+{
+	"key": "group_stech_steps",
+	"title": "Block: Steps",
+	"fields": [
+		{
+			"key": "field_stech_steps_eyebrow",
+			"label": "Eyebrow",
+			"name": "steps_eyebrow",
+			"type": "text",
+			"instructions": "Short overline above the heading, e.g. \"How to Apply\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_steps_heading",
+			"label": "Heading",
+			"name": "steps_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Four steps to get enrolled\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_steps_items",
+			"label": "Steps",
+			"name": "steps_items",
+			"type": "repeater",
+			"instructions": "Add each step in order. Best with four steps to fill the grid.",
+			"layout": "block",
+			"button_label": "Add Step",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_steps_items_number",
+					"label": "Number",
+					"name": "steps_items_number",
+					"type": "text",
+					"instructions": "Optional. Leave blank to auto-number by position.",
+					"wrapper": { "width": "20" }
+				},
+				{
+					"key": "field_stech_steps_items_heading",
+					"label": "Step Heading",
+					"name": "steps_items_heading",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "80" }
+				},
+				{
+					"key": "field_stech_steps_items_text",
+					"label": "Step Text",
+					"name": "steps_items_text",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": "",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/steps" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

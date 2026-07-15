@@ -1,0 +1,136 @@
+{
+	"key": "group_stech_program_selector",
+	"title": "Block: Program Selector",
+	"fields": [
+		{
+			"key": "field_stech_program_selector_eyebrow",
+			"label": "Eyebrow",
+			"name": "program_selector_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Programs\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_program_selector_heading",
+			"label": "Heading",
+			"name": "program_selector_heading",
+			"type": "text",
+			"instructions": "Section title, e.g. \"Explore our certificate programs\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_program_selector_lede",
+			"label": "Lede",
+			"name": "program_selector_lede",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_program_selector_filters",
+			"label": "Category Filters",
+			"name": "program_selector_filters",
+			"type": "repeater",
+			"instructions": "Filter buttons. The first row is the default (aria-pressed). Add an \"All Programs\" row with category \"all\" to show everything.",
+			"layout": "table",
+			"button_label": "Add Filter",
+			"sub_fields": [
+				{
+					"key": "field_stech_program_selector_filters_label",
+					"label": "Label",
+					"name": "program_selector_filters_label",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_program_selector_filters_category",
+					"label": "Category Key",
+					"name": "program_selector_filters_category",
+					"type": "text",
+					"instructions": "Lowercase key matched against each card's category, e.g. \"health\". Use \"all\" to show every card.",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				}
+			]
+		},
+		{
+			"key": "field_stech_program_selector_cards",
+			"label": "Program Cards",
+			"name": "program_selector_cards",
+			"type": "repeater",
+			"instructions": "Program cards shown in the carousel.",
+			"layout": "block",
+			"button_label": "Add Program",
+			"sub_fields": [
+				{
+					"key": "field_stech_program_selector_cards_image",
+					"label": "Image",
+					"name": "program_selector_cards_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "40" }
+				},
+				{
+					"key": "field_stech_program_selector_cards_title",
+					"label": "Title",
+					"name": "program_selector_cards_title",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "60" }
+				},
+				{
+					"key": "field_stech_program_selector_cards_tag",
+					"label": "Tag",
+					"name": "program_selector_cards_tag",
+					"type": "text",
+					"instructions": "Visible category badge, e.g. \"Health Sciences\".",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_program_selector_cards_category",
+					"label": "Category Key",
+					"name": "program_selector_cards_category",
+					"type": "text",
+					"instructions": "Lowercase filter key this card belongs to, e.g. \"health\". Must match a filter's Category Key.",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_program_selector_cards_link",
+					"label": "Link",
+					"name": "program_selector_cards_link",
+					"type": "link",
+					"return_format": "array",
+					"wrapper": { "width": "100" }
+				}
+			]
+		},
+		{
+			"key": "field_stech_program_selector_footer_button",
+			"label": "Footer Button (optional)",
+			"name": "program_selector_footer_button",
+			"type": "link",
+			"return_format": "array",
+			"instructions": "\"View All Certificates\" style button below the carousel.",
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/program-selector" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

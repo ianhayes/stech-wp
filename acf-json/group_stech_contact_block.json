@@ -1,0 +1,133 @@
+{
+	"key": "group_stech_contact_block",
+	"title": "Block: Contact Block",
+	"fields": [
+		{
+			"key": "field_stech_contact_block_overline",
+			"label": "Overline",
+			"name": "contact_block_overline",
+			"type": "text",
+			"instructions": "Small label above the heading, e.g. \"Contact\".",
+			"default_value": "Contact",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_heading",
+			"label": "Heading",
+			"name": "contact_block_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Get in touch\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_text",
+			"label": "Intro Text",
+			"name": "contact_block_text",
+			"type": "wysiwyg",
+			"instructions": "Short intro paragraph beneath the heading.",
+			"tabs": "all",
+			"toolbar": "basic",
+			"media_upload": 0,
+			"delay": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_contact_block_location_label",
+			"label": "Location Label",
+			"name": "contact_block_location_label",
+			"type": "text",
+			"instructions": "Optional bold label for the address block, e.g. \"Main Campus\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_contact_block_address",
+			"label": "Address",
+			"name": "contact_block_address",
+			"type": "textarea",
+			"instructions": "Optional postal address. Line breaks are preserved.",
+			"rows": 2,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_contact_block_phone",
+			"label": "Phone",
+			"name": "contact_block_phone",
+			"type": "text",
+			"instructions": "Displayed as a clickable tel: link.",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_email",
+			"label": "Email",
+			"name": "contact_block_email",
+			"type": "email",
+			"instructions": "Displayed as a clickable mailto: link.",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_form_overline",
+			"label": "Form Overline",
+			"name": "contact_block_form_overline",
+			"type": "text",
+			"instructions": "Small label above the form heading.",
+			"default_value": "Send a Message",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_form_heading",
+			"label": "Form Heading",
+			"name": "contact_block_form_heading",
+			"type": "text",
+			"instructions": "Heading for the form card, e.g. \"How can we help?\".",
+			"default_value": "How can we help?",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_gravity_form_id",
+			"label": "Gravity Form ID",
+			"name": "contact_block_gravity_form_id",
+			"type": "number",
+			"instructions": "ID of the Gravity Form to embed. Leave empty to show the static fallback form.",
+			"min": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_form_button_label",
+			"label": "Fallback Button Label",
+			"name": "contact_block_form_button_label",
+			"type": "text",
+			"instructions": "Label for the static fallback form button (ignored when a Gravity Form is set).",
+			"default_value": "Send Message",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_contact_block_form_small",
+			"label": "Fine Print",
+			"name": "contact_block_form_small",
+			"type": "wysiwyg",
+			"instructions": "Optional small print below the form, e.g. a privacy note.",
+			"tabs": "all",
+			"toolbar": "basic",
+			"media_upload": 0,
+			"delay": 0,
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/contact-block" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

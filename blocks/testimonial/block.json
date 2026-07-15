@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/testimonial",
+	"title": "Testimonial",
+	"description": "Single blockquote testimonial on a blue field with attribution.",
+	"category": "stech",
+	"icon": "format-quote",
+	"keywords": ["testimonial", "quote", "review", "student", "story"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"testimonial_quote": "STECH gave me a career in a year. I went from no experience to a licensed nurse with a job waiting.",
+				"testimonial_name": "Vibalia Raj",
+				"testimonial_role": "Practical Nursing, 2025"
+			}
+		}
+	}
+}

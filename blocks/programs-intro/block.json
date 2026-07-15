@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/programs-intro",
+	"title": "Programs Intro",
+	"description": "Two-column intro: heading, text and CTA beside three icon feature cards.",
+	"category": "stech",
+	"icon": "welcome-learn-more",
+	"keywords": ["programs", "intro", "features", "cards", "training"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"programs_intro_eyebrow": "Programs",
+				"programs_intro_heading": "Training that works",
+				"programs_intro_text": "Choose from 24 competency-based programs designed with industry to get you job-ready.",
+				"programs_intro_cards_0_programs_intro_cards_icon": "arrow",
+				"programs_intro_cards_0_programs_intro_cards_heading": "Hands-On",
+				"programs_intro_cards_0_programs_intro_cards_text": "Learn by doing in real labs and clinicals.",
+				"programs_intro_cards_1_programs_intro_cards_icon": "clock",
+				"programs_intro_cards_1_programs_intro_cards_heading": "Finish Faster",
+				"programs_intro_cards_1_programs_intro_cards_text": "Most programs in a year or less.",
+				"programs_intro_cards_2_programs_intro_cards_icon": "home",
+				"programs_intro_cards_2_programs_intro_cards_heading": "Affordable",
+				"programs_intro_cards_2_programs_intro_cards_text": "$95 per credit hour — free for high schoolers.",
+				"programs_intro_cards": 3
+			}
+		}
+	}
+}

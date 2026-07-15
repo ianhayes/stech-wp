@@ -1,0 +1,50 @@
+{
+	"key": "group_stech_statement",
+	"title": "Block: Statement",
+	"fields": [
+		{
+			"key": "field_stech_statement_quote",
+			"label": "Quote",
+			"name": "statement_quote",
+			"type": "textarea",
+			"instructions": "The statement or pull-quote. Displayed large and uppercase.",
+			"required": 1,
+			"rows": 3,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_statement_citation",
+			"label": "Citation",
+			"name": "statement_citation",
+			"type": "text",
+			"instructions": "Attribution, e.g. \"— President, Southwest Tech\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_statement_show_bg_icon",
+			"label": "Show background bear",
+			"name": "statement_show_bg_icon",
+			"type": "true_false",
+			"instructions": "Display the faint bear watermark behind the quote.",
+			"default_value": 1,
+			"ui": 1,
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/statement" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

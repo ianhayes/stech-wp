@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/testimonial-carousel",
+	"title": "Testimonial Carousel",
+	"description": "Paginated 2-up testimonial carousel with quotes, avatars and attribution.",
+	"category": "stech",
+	"icon": "format-quote",
+	"keywords": ["testimonial", "carousel", "quotes", "reviews", "students"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"testimonial_carousel_slides": [
+					{
+						"testimonial_carousel_quote": "I absolutely love Southwest Tech. The program helped me pursue my career goals and succeed in and out of the classroom.",
+						"testimonial_carousel_name": "Ashton Christensen",
+						"testimonial_carousel_role": "Practical Nursing Graduate"
+					},
+					{
+						"testimonial_carousel_quote": "The teachers, staff, and faculty all work together as a team to help each individual succeed.",
+						"testimonial_carousel_name": "Maria Jensen",
+						"testimonial_carousel_role": "Welding Graduate"
+					}
+				]
+			}
+		}
+	}
+}

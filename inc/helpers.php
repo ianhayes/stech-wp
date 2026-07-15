@@ -137,9 +137,9 @@ function stech_breadcrumb() {
 		foreach ( $ancestors as $ancestor ) {
 			$items[] = '<a href="' . esc_url( get_permalink( $ancestor ) ) . '">' . esc_html( get_the_title( $ancestor ) ) . '</a>';
 		}
-		$items[] = '<span aria-current="page">' . esc_html( get_the_title() ) . '</span>';
+		$items[] = '<span class="breadcrumb__current" aria-current="page">' . esc_html( get_the_title() ) . '</span>';
 	} elseif ( is_archive() ) {
-		$items[] = '<span aria-current="page">' . esc_html( get_the_archive_title() ) . '</span>';
+		$items[] = '<span class="breadcrumb__current" aria-current="page">' . esc_html( get_the_archive_title() ) . '</span>';
 	}
 
 	echo '<nav class="breadcrumb" aria-label="Breadcrumb">' . implode( ' <span class="breadcrumb__sep" aria-hidden="true">/</span> ', $items ) . '</nav>'; // phpcs:ignore WordPress.Security.EscapeOutput

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/quick-facts",
+	"title": "Quick Facts",
+	"description": "Compact 6-up strip of program facts on a dark band with a blue top accent.",
+	"category": "stech",
+	"icon": "info",
+	"keywords": ["quick facts", "stats", "figures", "program", "strip"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"quick_facts_facts": [
+					{ "num": "11mo", "label": "Length" },
+					{ "num": "38", "label": "Credits" },
+					{ "num": "95%", "label": "NCLEX" },
+					{ "num": "Day", "num_is_text": true, "label": "Schedule" },
+					{ "num": "$95", "label": "/ Credit" },
+					{ "num": "ACEN", "num_is_text": true, "label": "Accredited" }
+				]
+			}
+		}
+	}
+}

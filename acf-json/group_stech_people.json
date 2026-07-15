@@ -1,0 +1,132 @@
+{
+	"key": "group_stech_people",
+	"title": "Block: Faculty & Staff",
+	"fields": [
+		{
+			"key": "field_stech_people_eyebrow",
+			"label": "Eyebrow",
+			"name": "people_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Our People\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_people_heading",
+			"label": "Heading",
+			"name": "people_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Meet the faculty\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_people_source",
+			"label": "Source",
+			"name": "people_source",
+			"type": "select",
+			"instructions": "Where the cards come from.",
+			"choices": {
+				"manual": "Manual list",
+				"staff": "Staff CPT"
+			},
+			"default_value": "manual",
+			"return_format": "value",
+			"allow_null": 0,
+			"multiple": 0,
+			"ui": 0,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_people_count",
+			"label": "Number of Staff",
+			"name": "people_count",
+			"type": "number",
+			"instructions": "Maximum staff members to show (Staff CPT source only).",
+			"default_value": 8,
+			"min": 1,
+			"step": 1,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_people_source", "operator": "==", "value": "staff" }
+				]
+			],
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_people_centered",
+			"label": "Centered (single / featured)",
+			"name": "people_centered",
+			"type": "true_false",
+			"instructions": "Center a single card instead of the four-up grid (people__grid--center).",
+			"message": "Center the card(s)",
+			"default_value": 0,
+			"ui": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_people_cards",
+			"label": "People",
+			"name": "people_cards",
+			"type": "repeater",
+			"instructions": "Add a card per faculty or staff member.",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_people_source", "operator": "==", "value": "manual" }
+				]
+			],
+			"layout": "block",
+			"button_label": "Add Person",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_people_cards_avatar",
+					"label": "Avatar",
+					"name": "people_cards_avatar",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "stech-avatar",
+					"library": "all",
+					"wrapper": { "width": "30" }
+				},
+				{
+					"key": "field_stech_people_cards_name",
+					"label": "Name",
+					"name": "people_cards_name",
+					"type": "text",
+					"wrapper": { "width": "35" }
+				},
+				{
+					"key": "field_stech_people_cards_role",
+					"label": "Role",
+					"name": "people_cards_role",
+					"type": "text",
+					"instructions": "e.g. \"Nursing Director\".",
+					"wrapper": { "width": "35" }
+				},
+				{
+					"key": "field_stech_people_cards_bio",
+					"label": "Bio",
+					"name": "people_cards_bio",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": "",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/people" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

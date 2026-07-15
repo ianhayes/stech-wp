@@ -1,0 +1,87 @@
+{
+	"key": "group_stech_why",
+	"title": "Block: Why STECH",
+	"fields": [
+		{
+			"key": "field_stech_why_overline",
+			"label": "Eyebrow",
+			"name": "why_overline",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Why Southwest Tech\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_why_heading",
+			"label": "Heading",
+			"name": "why_heading",
+			"type": "text",
+			"instructions": "Section headline, e.g. \"Training that transforms careers\".",
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_why_lede",
+			"label": "Lede",
+			"name": "why_lede",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_why_cards",
+			"label": "Cards",
+			"name": "why_cards",
+			"type": "repeater",
+			"instructions": "Icon cards. Three across works best on desktop.",
+			"layout": "block",
+			"button_label": "Add Card",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_why_cards_icon",
+					"label": "Icon (SVG)",
+					"name": "why_cards_icon",
+					"type": "image",
+					"instructions": "Upload a single-colour SVG icon. It is inlined and recoloured to match the card.",
+					"return_format": "array",
+					"library": "all",
+					"mime_types": "svg",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_why_cards_title",
+					"label": "Title",
+					"name": "why_cards_title",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_why_cards_text",
+					"label": "Text",
+					"name": "why_cards_text",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": "br",
+					"wrapper": { "width": "50" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/why" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

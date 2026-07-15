@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/prose",
+	"title": "Prose",
+	"description": "Rich long-form content (headings, paragraphs, lists, quotes), optionally with a sticky left image.",
+	"category": "stech",
+	"icon": "text",
+	"keywords": ["prose", "rich text", "content", "narrative", "body"],
+	"textdomain": "stech",
+	"supports": {
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"prose_overline": "Our Story",
+				"prose_body": "<h2 class=\"h2\">About Southwest Tech</h2><p>Southwest Technical College is a public technical college in Cedar City, Utah, offering hands-on, competency-based training that prepares students for in-demand careers in less time and for less money.</p>"
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"key": "group_stech_testimonial",
+	"title": "Block: Testimonial",
+	"fields": [
+		{
+			"key": "field_stech_testimonial_quote",
+			"label": "Quote",
+			"name": "testimonial_quote",
+			"type": "textarea",
+			"instructions": "The testimonial quote. Rendered in Roboto Light (300).",
+			"required": 1,
+			"rows": 4,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_testimonial_avatar",
+			"label": "Avatar",
+			"name": "testimonial_avatar",
+			"type": "image",
+			"instructions": "Headshot of the person. Square works best.",
+			"return_format": "array",
+			"preview_size": "stech-avatar",
+			"library": "all",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_testimonial_name",
+			"label": "Name",
+			"name": "testimonial_name",
+			"type": "text",
+			"instructions": "Person's name, e.g. \"Vibalia Raj\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_testimonial_role",
+			"label": "Role",
+			"name": "testimonial_role",
+			"type": "text",
+			"instructions": "Program / year or title, e.g. \"Practical Nursing, 2025\".",
+			"wrapper": { "width": "50" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/testimonial" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

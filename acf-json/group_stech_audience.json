@@ -1,0 +1,103 @@
+{
+	"key": "group_stech_audience",
+	"title": "Block: Audience Qualifier",
+	"fields": [
+		{
+			"key": "field_stech_audience_eyebrow",
+			"label": "Eyebrow",
+			"name": "audience_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Who is STECH for?\"",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_audience_heading",
+			"label": "Heading",
+			"name": "audience_heading",
+			"type": "text",
+			"instructions": "Section headline, e.g. \"Find your path\".",
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_audience_lede",
+			"label": "Lede",
+			"name": "audience_lede",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_audience_cards",
+			"label": "Cards",
+			"name": "audience_cards",
+			"type": "repeater",
+			"instructions": "Numbered image cards — one per audience path.",
+			"layout": "block",
+			"button_label": "Add Card",
+			"min": 0,
+			"sub_fields": [
+				{
+					"key": "field_stech_audience_cards_number",
+					"label": "Number",
+					"name": "audience_cards_number",
+					"type": "text",
+					"instructions": "Optional. Leave blank to auto-number (01, 02, 03…).",
+					"wrapper": { "width": "25" }
+				},
+				{
+					"key": "field_stech_audience_cards_heading",
+					"label": "Heading",
+					"name": "audience_cards_heading",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "75" }
+				},
+				{
+					"key": "field_stech_audience_cards_image",
+					"label": "Background Image",
+					"name": "audience_cards_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_audience_cards_link",
+					"label": "Link",
+					"name": "audience_cards_link",
+					"type": "link",
+					"return_format": "array",
+					"instructions": "Link title becomes the card's \"Explore →\" label.",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_audience_cards_text",
+					"label": "Text",
+					"name": "audience_cards_text",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": "",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/audience" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

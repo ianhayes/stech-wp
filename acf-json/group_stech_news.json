@@ -1,0 +1,147 @@
+{
+	"key": "group_stech_news",
+	"title": "Block: News Grid",
+	"fields": [
+		{
+			"key": "field_stech_news_eyebrow",
+			"label": "Eyebrow",
+			"name": "news_eyebrow",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Newsroom\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_news_heading",
+			"label": "Heading",
+			"name": "news_heading",
+			"type": "text",
+			"instructions": "Section title, e.g. \"What's happening\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_news_lede",
+			"label": "Lede",
+			"name": "news_lede",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_news_cta",
+			"label": "Header Button",
+			"name": "news_cta",
+			"type": "link",
+			"instructions": "Optional \"All News\" button in the header. Defaults to \"All News\" when no label is set.",
+			"return_format": "array",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_news_source",
+			"label": "Card Source",
+			"name": "news_source",
+			"type": "select",
+			"instructions": "Pull the latest posts automatically, or curate cards by hand.",
+			"choices": {
+				"posts": "Latest Posts",
+				"manual": "Manual cards"
+			},
+			"default_value": "posts",
+			"return_format": "value",
+			"allow_null": 0,
+			"multiple": 0,
+			"ui": 0,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_news_count",
+			"label": "Number of Posts",
+			"name": "news_count",
+			"type": "number",
+			"instructions": "How many latest posts to show.",
+			"default_value": 3,
+			"min": 1,
+			"max": 12,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_news_source", "operator": "==", "value": "posts" }
+				]
+			],
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_news_cards",
+			"label": "Cards",
+			"name": "news_cards",
+			"type": "repeater",
+			"instructions": "Curated news cards.",
+			"layout": "block",
+			"button_label": "Add card",
+			"min": 0,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_news_source", "operator": "==", "value": "manual" }
+				]
+			],
+			"sub_fields": [
+				{
+					"key": "field_stech_news_cards_image",
+					"label": "Image",
+					"name": "news_cards_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_news_cards_tag",
+					"label": "Tag",
+					"name": "news_cards_tag",
+					"type": "text",
+					"instructions": "Small category pill, e.g. \"Programs\".",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_news_cards_heading",
+					"label": "Heading",
+					"name": "news_cards_heading",
+					"type": "text",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_news_cards_excerpt",
+					"label": "Excerpt",
+					"name": "news_cards_excerpt",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": "",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_news_cards_link",
+					"label": "Link",
+					"name": "news_cards_link",
+					"type": "link",
+					"return_format": "array",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/news" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

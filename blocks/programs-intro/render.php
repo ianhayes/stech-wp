@@ -1,0 +1,93 @@
+<?php
+/**
+ * Block: Programs Intro (stech/programs-intro)
+ * Two-column intro (text + CTA) beside three icon feature cards.
+ * Matches .programs-intro in the brand components.
+ *
+ * @package STECH
+ * @var array $block ACF block array.
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$eyebrow = get_field( 'programs_intro_eyebrow' );
+$heading = get_field( 'programs_intro_heading' );
+$text    = get_field( 'programs_intro_text' );
+$cta     = get_field( 'programs_intro_cta' );
+$cards   = get_field( 'programs_intro_cards' );
+
+$is_preview = ! empty( $block['is_preview'] );
+
+if ( ! $eyebrow && ! $heading && ! $text && ! $cards && $is_preview ) {
+	echo '<p class="acf-block-placeholder">' . esc_html__( 'Programs Intro — add a heading, text, CTA and up to three feature cards.', 'stech' ) . '</p>';
+	return;
+}
+
+/**
+ * Inline stroke icons for the feature cards. Keys match the ACF select choices.
+ * viewBox/stroke styling is supplied by .programs-intro__icon svg in the CSS.
+ */
+$icons = array(
+	'arrow' => '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+	'clock' => '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+	'home'  => '<svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>',
+);
+?>
+<section<?php stech_block_attrs( $block, 'programs-intro' ); ?>>
+	<div class="container">
+		<div class="programs-intro__inner">
+			<div class="programs-intro__text">
+				<?php if ( $eyebrow ) : ?>
+					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
+				<?php endif; ?>
+
+				<?php if ( $heading ) : ?>
+					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+				<?php endif; ?>
+
+				<?php if ( $text ) : ?>
+					<p><?php echo wp_kses_post( $text ); ?></p>
+				<?php endif; ?>
+
+				<?php
+				$c = stech_link( $cta );
+				if ( $c ) :
+					?>
+					<a class="btn btn--primary" href="<?php echo $c['url']; // esc'd in helper. ?>"<?php echo $c['target'] . $c['rel']; ?>>
+						<?php echo $c['title'] ?: esc_html__( 'Browse All', 'stech' ); ?> <span class="arrow" aria-hidden="true">&rarr;</span>
+					</a>
+				<?php endif; ?>
+			</div>
+
+			<?php if ( have_rows( 'programs_intro_cards' ) ) : ?>
+				<div class="programs-intro__cards">
+					<?php
+					while ( have_rows( 'programs_intro_cards' ) ) :
+						the_row();
+						$icon      = get_sub_field( 'programs_intro_cards_icon' );
+						$card_head = get_sub_field( 'programs_intro_cards_heading' );
+						$card_text = get_sub_field( 'programs_intro_cards_text' );
+						?>
+						<div class="programs-intro__card">
+							<div class="programs-intro__icon" aria-hidden="true">
+								<?php
+								if ( isset( $icons[ $icon ] ) ) {
+									echo $icons[ $icon ]; // phpcs:ignore WordPress.Security.EscapeOutput — trusted static markup.
+								}
+								?>
+							</div>
+							<div>
+								<?php if ( $card_head ) : ?>
+									<h4><?php echo esc_html( $card_head ); ?></h4>
+								<?php endif; ?>
+								<?php if ( $card_text ) : ?>
+									<p><?php echo esc_html( $card_text ); ?></p>
+								<?php endif; ?>
+							</div>
+						</div>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>

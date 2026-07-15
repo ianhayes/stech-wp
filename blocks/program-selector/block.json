@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/program-selector",
+	"title": "Program Selector",
+	"description": "Category filter buttons and a paginated program-card carousel.",
+	"category": "stech",
+	"icon": "filter",
+	"keywords": ["programs", "filter", "carousel", "certificates", "selector"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"program_selector_eyebrow": "Programs",
+				"program_selector_heading": "Explore our certificate programs",
+				"program_selector_lede": "Hands-on, competency-based training across health, trades, technology, and service.",
+				"program_selector_filters_0_program_selector_filters_label": "All Programs",
+				"program_selector_filters_0_program_selector_filters_category": "all",
+				"program_selector_filters": 1,
+				"program_selector_cards_0_program_selector_cards_tag": "Health Sciences",
+				"program_selector_cards_0_program_selector_cards_title": "Surgical Technology",
+				"program_selector_cards_0_program_selector_cards_category": "health",
+				"program_selector_cards": 1
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+{
+	"key": "group_stech_logo_marquee",
+	"title": "Block: Logo Marquee",
+	"fields": [
+		{
+			"key": "field_stech_logo_marquee_static_grid",
+			"label": "Static grid",
+			"name": "logo_marquee_static_grid",
+			"type": "true_false",
+			"instructions": "On: display logos as a fixed, non-animated grid (variant 41b). Off: scrolling marquee.",
+			"ui": 1,
+			"ui_on_text": "Grid",
+			"ui_off_text": "Marquee",
+			"default_value": 0,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_logo_marquee_columns",
+			"label": "Grid columns",
+			"name": "logo_marquee_columns",
+			"type": "number",
+			"instructions": "Number of columns for the static grid (sets --logo-cols). Ignored for the marquee.",
+			"default_value": 8,
+			"min": 2,
+			"max": 12,
+			"step": 1,
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_logo_marquee_static_grid", "operator": "==", "value": "1" }
+				]
+			],
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_logo_marquee_logos",
+			"label": "Logos",
+			"name": "logo_marquee_logos",
+			"type": "repeater",
+			"instructions": "Add each partner logo. Transparent PNG or SVG on a light background works best.",
+			"required": 1,
+			"layout": "block",
+			"button_label": "Add logo",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_logo_marquee_logo_image",
+					"label": "Logo",
+					"name": "logo_marquee_logo_image",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"required": 1,
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_logo_marquee_logo_alt",
+					"label": "Alt text (optional)",
+					"name": "logo_marquee_logo_alt",
+					"type": "text",
+					"instructions": "Overrides the image's own alt text. Leave blank to use the media library alt.",
+					"wrapper": { "width": "50" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/logo-marquee" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

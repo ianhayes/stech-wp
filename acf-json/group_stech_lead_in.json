@@ -1,0 +1,60 @@
+{
+	"key": "group_stech_lead_in",
+	"title": "Block: Lead-in",
+	"fields": [
+		{
+			"key": "field_stech_lead_in_overline",
+			"label": "Overline",
+			"name": "lead_in_overline",
+			"type": "text",
+			"instructions": "Short kicker above the heading, e.g. \"Who Can Apply\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_lead_in_heading",
+			"label": "Heading",
+			"name": "lead_in_heading",
+			"type": "text",
+			"instructions": "Section heading (rendered as an H2).",
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_lead_in_body",
+			"label": "Body",
+			"name": "lead_in_body",
+			"type": "wysiwyg",
+			"instructions": "One or two intro paragraphs.",
+			"tabs": "all",
+			"toolbar": "basic",
+			"media_upload": 0,
+			"delay": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_lead_in_center",
+			"label": "Center align",
+			"name": "lead_in_center",
+			"type": "true_false",
+			"instructions": "Center the overline, heading and text.",
+			"ui": 1,
+			"default_value": 0,
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/lead-in" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

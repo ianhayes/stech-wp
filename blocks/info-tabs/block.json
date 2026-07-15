@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/info-tabs",
+	"title": "Info Tabs",
+	"description": "Vertical tabbed information block with an eyebrow, heading and a set of tabs each revealing a rich-text panel.",
+	"category": "stech",
+	"icon": "table-row-after",
+	"keywords": ["tabs", "info", "tabbed", "program details", "vertical tabs"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"info_tabs_eyebrow": "Practical Nursing",
+				"info_tabs_heading": "Program Details"
+			}
+		}
+	}
+}

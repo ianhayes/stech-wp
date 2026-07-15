@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/feature-row",
+	"title": "Feature Row",
+	"description": "Side-image and text feature row, alternating left/right with an optional flip.",
+	"category": "stech",
+	"icon": "align-pull-left",
+	"keywords": ["feature", "row", "image", "split", "alternating"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"feature_row_eyebrow": "Hands-On",
+				"feature_row_heading": "Learn by doing",
+				"feature_row_text": "Every program is built around real labs, real tools, and real clinical hours — so you graduate ready to work."
+			}
+		}
+	}
+}

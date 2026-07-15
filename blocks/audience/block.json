@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/audience",
+	"title": "Audience Qualifier",
+	"description": "\"Find your path\" — 3-up numbered image cards that route visitors to the right audience path.",
+	"category": "stech",
+	"icon": "grid-view",
+	"keywords": ["audience", "qualifier", "find your path", "cards", "paths"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"audience_eyebrow": "Who is STECH for?",
+				"audience_heading": "Find your path",
+				"audience_lede": "Whether you're starting your career, still in high school, or building a new skill — there's a path here for you.",
+				"audience_cards": [
+					{ "audience_cards_heading": "High School", "audience_cards_text": "Get a head start with concurrent enrollment." },
+					{ "audience_cards_heading": "Adult Learners", "audience_cards_text": "Reskill fast with flexible, hands-on training." },
+					{ "audience_cards_heading": "Employers", "audience_cards_text": "Partner with us to build your workforce." }
+				]
+			}
+		}
+	}
+}

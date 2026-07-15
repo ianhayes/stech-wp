@@ -1,0 +1,70 @@
+{
+	"key": "group_stech_prose",
+	"title": "Block: Prose",
+	"fields": [
+		{
+			"key": "field_stech_prose_overline",
+			"label": "Overline",
+			"name": "prose_overline",
+			"type": "text",
+			"instructions": "Optional small kicker above the content, e.g. \"Our Story\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_prose_body",
+			"label": "Body",
+			"name": "prose_body",
+			"type": "wysiwyg",
+			"instructions": "Rich content — headings (h2/h3), paragraphs, lists and blockquotes.",
+			"tabs": "all",
+			"toolbar": "full",
+			"media_upload": 1,
+			"delay": 0,
+			"required": 1,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_prose_media",
+			"label": "With left image",
+			"name": "prose_media",
+			"type": "true_false",
+			"instructions": "Show a sticky image column to the left of the content (prose--media / 45b).",
+			"ui": 1,
+			"ui_on_text": "Yes",
+			"ui_off_text": "No",
+			"default_value": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_prose_image",
+			"label": "Image",
+			"name": "prose_image",
+			"type": "image",
+			"instructions": "Shown in the left column when \"With left image\" is on.",
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_prose_media", "operator": "==", "value": "1" }
+				]
+			],
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/prose" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

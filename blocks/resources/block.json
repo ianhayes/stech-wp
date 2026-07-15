@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/resources",
+	"title": "Resources",
+	"description": "A list of downloadable resources with a file icon, title and meta.",
+	"category": "stech",
+	"icon": "download",
+	"keywords": ["resources", "downloads", "files", "documents", "pdf"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"resources_eyebrow": "Downloads",
+				"resources_heading": "Helpful resources",
+				"resources_items": [
+					{ "resources_items_title": "Program Catalog 2026", "resources_items_meta": "PDF · 2.4 MB" },
+					{ "resources_items_title": "Financial Aid Guide", "resources_items_meta": "PDF · 1.1 MB" }
+				]
+			}
+		}
+	}
+}

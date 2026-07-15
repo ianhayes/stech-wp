@@ -1,0 +1,118 @@
+{
+	"key": "group_stech_locations",
+	"title": "Block: Locations",
+	"fields": [
+		{
+			"key": "field_stech_locations_overline",
+			"label": "Eyebrow",
+			"name": "locations_overline",
+			"type": "text",
+			"instructions": "Small overline above the heading, e.g. \"Campus Locations\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_locations_heading",
+			"label": "Heading",
+			"name": "locations_heading",
+			"type": "text",
+			"instructions": "Section headline, e.g. \"Where to find us\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_locations_map_embed",
+			"label": "Map Embed URL",
+			"name": "locations_map_embed",
+			"type": "url",
+			"instructions": "Paste a map embed URL (the src of a Google Maps or OpenStreetMap iframe). Overrides the pin below. Leave blank to use the map pin or show a placeholder.",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_locations_map",
+			"label": "Map Pin (optional)",
+			"name": "locations_map",
+			"type": "google_map",
+			"instructions": "Drop a pin to auto-generate a map embed when no Map Embed URL is set.",
+			"return_format": "array",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_locations_scroll",
+			"label": "Scrollable List",
+			"name": "locations_scroll",
+			"type": "true_false",
+			"instructions": "Enable for 5–10+ locations. Constrains the card list to a scrollable column.",
+			"ui": 1,
+			"ui_on_text": "On",
+			"ui_off_text": "Off",
+			"default_value": 0,
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_locations_cards",
+			"label": "Locations",
+			"name": "locations_cards",
+			"type": "repeater",
+			"instructions": "One card per campus or center.",
+			"layout": "block",
+			"button_label": "Add Location",
+			"min": 1,
+			"sub_fields": [
+				{
+					"key": "field_stech_locations_cards_name",
+					"label": "Name",
+					"name": "locations_cards_name",
+					"type": "text",
+					"required": 1,
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_locations_cards_street",
+					"label": "Street / Address",
+					"name": "locations_cards_street",
+					"type": "text",
+					"instructions": "e.g. \"757 W 800 S, Cedar City, UT 84720\".",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_locations_cards_phone",
+					"label": "Phone",
+					"name": "locations_cards_phone",
+					"type": "text",
+					"instructions": "Displayed as a tel: link.",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_locations_cards_email",
+					"label": "Email (optional)",
+					"name": "locations_cards_email",
+					"type": "email",
+					"instructions": "Displayed as a mailto: link.",
+					"wrapper": { "width": "50" }
+				},
+				{
+					"key": "field_stech_locations_cards_hours",
+					"label": "Hours (optional)",
+					"name": "locations_cards_hours",
+					"type": "text",
+					"instructions": "e.g. \"Mon–Fri, 8am–5pm\".",
+					"wrapper": { "width": "100" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/locations" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

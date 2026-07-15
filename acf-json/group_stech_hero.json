@@ -1,0 +1,92 @@
+{
+	"key": "group_stech_hero",
+	"title": "Block: Homepage Hero",
+	"fields": [
+		{
+			"key": "field_stech_hero_bg_image",
+			"label": "Background Image",
+			"name": "hero_bg_image",
+			"type": "image",
+			"instructions": "Full-bleed hero photo. Large landscape image recommended.",
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_hero_pill",
+			"label": "Pill / Location",
+			"name": "hero_pill",
+			"type": "text",
+			"instructions": "Small eyebrow pill, e.g. \"Cedar City, Utah\".",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_hero_headline",
+			"label": "Headline",
+			"name": "hero_headline",
+			"type": "text",
+			"instructions": "Display headline, e.g. \"Build a career\".",
+			"required": 1,
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_hero_headline_accent",
+			"label": "Headline Accent",
+			"name": "hero_headline_accent",
+			"type": "text",
+			"instructions": "Accented second line, shown in light blue, e.g. \"in less time.\"",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_hero_text",
+			"label": "Text",
+			"name": "hero_text",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br",
+			"wrapper": { "width": "100" }
+		},
+		{
+			"key": "field_stech_hero_primary_button",
+			"label": "Primary Button",
+			"name": "hero_primary_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_hero_ghost_button",
+			"label": "Ghost Button (optional)",
+			"name": "hero_ghost_button",
+			"type": "link",
+			"return_format": "array",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_hero_show_mascot",
+			"label": "Show Paw Mascot",
+			"name": "hero_show_mascot",
+			"type": "true_false",
+			"instructions": "Overlay the paw mascot in the lower corner.",
+			"ui": 1,
+			"default_value": 1,
+			"wrapper": { "width": "100" }
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/hero" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

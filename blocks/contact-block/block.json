@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/contact-block",
+	"title": "Contact Block",
+	"description": "Two-column contact section: info and details beside a message form.",
+	"category": "stech",
+	"icon": "email",
+	"keywords": ["contact", "form", "get in touch", "enquiry", "inquiry"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"contact_block_overline": "Contact",
+				"contact_block_heading": "Get in touch",
+				"contact_block_text": "Questions about programs, cost, or applying? Send a message and an advisor will get back to you within one business day.",
+				"contact_block_phone": "(435) 586-2899",
+				"contact_block_email": "info@stech.edu",
+				"contact_block_form_overline": "Send a Message",
+				"contact_block_form_heading": "How can we help?"
+			}
+		}
+	}
+}

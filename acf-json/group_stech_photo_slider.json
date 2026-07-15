@@ -1,0 +1,63 @@
+{
+	"key": "group_stech_photo_slider",
+	"title": "Block: Photo Slider",
+	"fields": [
+		{
+			"key": "field_stech_photo_slider_slides",
+			"label": "Slides",
+			"name": "photo_slider_slides",
+			"type": "repeater",
+			"instructions": "Add one row per slide. The carousel auto-advances; dots are generated automatically.",
+			"required": 1,
+			"min": 1,
+			"layout": "block",
+			"button_label": "Add Slide",
+			"sub_fields": [
+				{
+					"key": "field_stech_photo_slider_slide_image",
+					"label": "Image",
+					"name": "photo_slider_slide_image",
+					"type": "image",
+					"instructions": "Full-bleed photo. Landscape orientation works best.",
+					"required": 1,
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all",
+					"wrapper": { "width": "100" }
+				},
+				{
+					"key": "field_stech_photo_slider_slide_eyebrow",
+					"label": "Eyebrow",
+					"name": "photo_slider_slide_eyebrow",
+					"type": "text",
+					"instructions": "Short label above the caption, e.g. \"Trades\".",
+					"wrapper": { "width": "40" }
+				},
+				{
+					"key": "field_stech_photo_slider_slide_caption",
+					"label": "Caption",
+					"name": "photo_slider_slide_caption",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": "",
+					"wrapper": { "width": "60" }
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "block", "operator": "==", "value": "stech/photo-slider" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1720900000
+}

@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/locations",
+	"title": "Locations",
+	"description": "Campus locations with a map embed and a list of location cards.",
+	"category": "stech",
+	"icon": "location-alt",
+	"keywords": ["locations", "map", "campus", "address", "directions"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"locations_overline": "Campus Locations",
+				"locations_heading": "Where to find us",
+				"locations_cards": [
+					{
+						"locations_cards_name": "Main Campus — Cedar City",
+						"locations_cards_street": "757 W 800 S, Cedar City, UT 84720",
+						"locations_cards_phone": "(435) 586-2899",
+						"locations_cards_hours": "Mon–Fri, 8am–5pm"
+					},
+					{
+						"locations_cards_name": "Kane County Center — Kanab",
+						"locations_cards_street": "733 S Cowboy Way, Kanab, UT 84741",
+						"locations_cards_phone": "(435) 644-2899"
+					}
+				]
+			}
+		}
+	}
+}

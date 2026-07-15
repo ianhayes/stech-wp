@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/news",
+	"title": "News Grid",
+	"description": "3-up news cards with a section header and \"All News\" button. Pulls the latest posts or a manual card list.",
+	"category": "stech",
+	"icon": "admin-post",
+	"keywords": ["news", "newsroom", "posts", "grid", "cards"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"news_eyebrow": "Newsroom",
+				"news_heading": "What's happening",
+				"news_lede": "Updates on programs, events, and stories from students, faculty, and partners.",
+				"news_source": "manual",
+				"news_cards": [
+					{
+						"news_cards_tag": "Programs",
+						"news_cards_heading": "New surgical tech program launches",
+						"news_cards_excerpt": "Enrollment opens this fall for the region's first program."
+					},
+					{
+						"news_cards_tag": "Trades",
+						"news_cards_heading": "Electrical apprentices win state honors",
+						"news_cards_excerpt": "Students placed first at the regional competition."
+					},
+					{
+						"news_cards_tag": "Campus",
+						"news_cards_heading": "Culinary team caters community event",
+						"news_cards_excerpt": "Real-world service for hundreds of guests."
+					}
+				]
+			}
+		}
+	}
+}

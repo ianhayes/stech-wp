@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/mission-philosophy",
+	"title": "Mission & Philosophy",
+	"description": "Two-column mission and philosophy statement on a dark background, with an optional Ursa bear watermark.",
+	"category": "stech",
+	"icon": "testimonial",
+	"keywords": ["mission", "philosophy", "values", "about", "dark"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"mission_philosophy_columns": [
+					{
+						"mission_philosophy_col_overline": "Our Mission",
+						"mission_philosophy_col_heading": "Train for the work",
+						"mission_philosophy_col_paragraph": "<p>We prepare students for in-demand careers through hands-on, competency-based education built with industry.</p>"
+					},
+					{
+						"mission_philosophy_col_overline": "Our Philosophy",
+						"mission_philosophy_col_heading": "Everyone can learn",
+						"mission_philosophy_col_paragraph": "<p>Self-paced, mastery-based instruction meets every student where they are.</p>"
+					}
+				],
+				"mission_philosophy_ursa_watermark": true
+			}
+		}
+	}
+}

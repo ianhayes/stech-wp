@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/compare-table",
+	"title": "Comparison Table",
+	"description": "\"How we stack up\" comparison table with a highlighted STECH column and footnote.",
+	"category": "stech",
+	"icon": "editor-table",
+	"keywords": ["compare", "comparison", "table", "cost", "stack up"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"compare_table_eyebrow": "Compare",
+				"compare_table_heading": "How we stack up",
+				"compare_table_columns": [
+					{ "compare_table_columns_label": "Path", "compare_table_columns_highlight": false },
+					{ "compare_table_columns_label": "Time to Finish", "compare_table_columns_highlight": false },
+					{ "compare_table_columns_label": "Avg. Cost", "compare_table_columns_highlight": false },
+					{ "compare_table_columns_label": "STECH", "compare_table_columns_highlight": true }
+				],
+				"compare_table_rows": [
+					{ "compare_table_rows_cells": [
+						{ "compare_table_rows_cells_value": "Practical Nursing", "compare_table_rows_cells_is_yes": false },
+						{ "compare_table_rows_cells_value": "11 months", "compare_table_rows_cells_is_yes": false },
+						{ "compare_table_rows_cells_value": "$30k+ elsewhere", "compare_table_rows_cells_is_yes": false },
+						{ "compare_table_rows_cells_value": "$4k", "compare_table_rows_cells_is_yes": true }
+					] }
+				],
+				"compare_table_footnote": "Comparisons are estimates; actual cost varies by program and provider."
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/accreditation",
+	"title": "Accreditation",
+	"description": "Accreditation callout with overline, heading, body and accrediting-body logos.",
+	"category": "stech",
+	"icon": "awards",
+	"keywords": ["accreditation", "accredited", "acen", "certification", "logo"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"accreditation_overline": "Accreditation",
+				"accreditation_heading": "Accredited by ACEN",
+				"accreditation_lede": "The Practical Nursing program holds programmatic accreditation."
+			}
+		}
+	}
+}

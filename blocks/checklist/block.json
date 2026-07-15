@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stech/checklist",
+	"title": "Checklist",
+	"description": "Left-aligned section head with a checkmark grid of requirements. Supports 2, 3 or 4 columns.",
+	"category": "stech",
+	"icon": "yes-alt",
+	"keywords": ["checklist", "requirements", "before you start", "enroll", "tasks"],
+	"textdomain": "stech",
+	"supports": {
+		"align": ["full"],
+		"anchor": true,
+		"html": false,
+		"customClassName": true,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"checklist_overline": "Before You Start",
+				"checklist_heading": "Your checklist",
+				"checklist_columns": "2",
+				"checklist_items": [
+					{ "checklist_items_label": "Completed application" },
+					{ "checklist_items_label": "High school transcript or GED" },
+					{ "checklist_items_label": "Photo ID" },
+					{ "checklist_items_label": "FAFSA (for financial aid)" }
+				]
+			}
+		}
+	}
+}
