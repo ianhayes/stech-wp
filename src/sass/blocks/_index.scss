@@ -1,0 +1,10 @@
+// Block library aggregator.
+//
+// The approved brand system (base/_components.scss + base/_components-extended.scss)
+// already ships the styles for all 46 blocks, keyed by the same class names the
+// block render.php templates output — so most blocks need NO extra CSS here.
+//
+// Add an @import below ONLY for a block that needs a theme-specific override or
+// WordPress-editor adjustment beyond the approved components CSS.
+
+// (none yet)

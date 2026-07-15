@@ -1,0 +1,261 @@
+/* ============================================================================
+   STECH BRAND TOKENS  —  single source of truth
+   ----------------------------------------------------------------------------
+   Extracted verbatim from the approved Round 2 — Revised pages:
+     stech-theme-1-r2/index.html              (homepage)
+     stech-theme-1-r2/programs.html           (Programs index)
+     stech-theme-1-r2/practical-nursing.html  (Single Program template)
+
+   RULE: every literal value used across those three pages is captured here as
+   a variable. Pages/components must compose from these tokens — no new raw
+   hex, px, or rem values. If a value isn't here, it doesn't belong in the
+   STECH system. Bebas Neue is LOCKED at weight 500 (see --fw-display).
+
+   Last extracted: 2026-06-01
+   ============================================================================ */
+
+:root {
+
+  /* ========================================================================
+     1. COLOR
+     ======================================================================== */
+
+  /* --- Brand palette (STECH Branding Guide — the only official colors) --- */
+  --blue:         #047BC1;   /* Process Blue  — primary brand, links, CTAs, accents */
+  --stech-gray:   #656E7B;   /* PMS 5415      — body / secondary text, lede */
+  --ursa-gray:    #424242;   /* Black 7 C     — dark body text */
+  --ursa-white:   #DDDDDD;   /* Cool Grey 2 C — soft fills / dividers (brand ref) */
+
+  /* --- Derived theme colors (approved on the homepage, not in brand guide) --- */
+  --blue-dark:    #035d93;   /* button hover, gradient end, testimonial accents */
+  --blue-tint:    #E8F3FB;   /* icon tiles, news/video tag backgrounds */
+  --blue-soft:    #F4F9FC;   /* light surfaces, tuition bg, testimonial card */
+  --blue-light:   #7ec1ea;   /* on-dark accent text, eyebrow-on-dark, hero accent */
+  --ink:          #1a1a2e;   /* headings, dark sections, overlay base */
+  --footer-ink:   #0f0f1f;   /* footer background (one step darker than --ink) */
+  --surface:      #F7F8FA;   /* alternating section background */
+  --border:       #E5E7EB;   /* hairline borders + dividers */
+  --white:        #ffffff;
+
+  /* --- Functional / data-viz (intentional deviations, narrow use only) --- */
+  --data-amber:   #F4A942;   /* placement-pie LPN slice + legend swatch ONLY */
+  --form-required:#d4395a;   /* required-field asterisk ONLY */
+
+  /* --- RGB triples — for composing rgba() overlays/shadows from brand color --- */
+  --ink-rgb:        26, 26, 46;
+  --blue-rgb:       4, 123, 193;
+  --blue-dark-rgb:  3, 93, 147;
+  --white-rgb:      255, 255, 255;
+  --black-rgb:      0, 0, 0;
+
+  /* --- Common text-on-dark tints (white @ alpha) --- */
+  --on-dark-90:   rgba(255,255,255,0.90);  /* hero/body paragraph on dark */
+  --on-dark-88:   rgba(255,255,255,0.88);  /* card paragraph / cta paragraph */
+  --on-dark-85:   rgba(255,255,255,0.85);  /* utility bar links, breadcrumb */
+  --on-dark-75:   rgba(255,255,255,0.75);  /* footer body, stat labels */
+  --on-dark-70:   rgba(255,255,255,0.70);  /* footer links, signup label */
+  --on-dark-60:   rgba(255,255,255,0.60);  /* footer-bottom links, placeholders */
+  --on-dark-50:   rgba(255,255,255,0.50);  /* footer-bottom legal text */
+  --on-dark-border: rgba(255,255,255,0.15);/* dividers on dark (quick-links, etc.) */
+  --on-dark-rule:   rgba(255,255,255,0.12);/* footer top border */
+
+  /* ========================================================================
+     2. TYPOGRAPHY
+     ======================================================================== */
+
+  /* --- Families --- */
+  --font-display:   'Bebas Neue', sans-serif;     /* Tungsten substitute (web) */
+  --font-body:      'Roboto', sans-serif;
+  --font-condensed: 'Roboto Condensed', sans-serif;
+
+  /* --- Weights --- */
+  --fw-display: 500;   /* LOCKED — Bebas is ALWAYS 500, never 700 */
+  --fw-light:   300;   /* Roboto — testimonial quotes */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;   /* Roboto Condensed only — buttons, overlines, tags */
+
+  /* --- Display type scale (fluid) --- */
+  --fs-display:      clamp(3rem, 6.5vw, 5.75rem);   /* .h-display */
+  --fs-display-hero: clamp(3.25rem, 8vw, 7rem);     /* hero headline override */
+  --fs-h1:           clamp(2.5rem, 4.5vw, 3.75rem); /* .h1 / page headers */
+  --fs-h2:           clamp(2rem, 3.5vw, 3rem);      /* .h2 / section titles */
+  --fs-h3:           clamp(1.375rem, 2vw, 1.75rem); /* .h3 */
+
+  /* --- Fixed text scale (rem → px @16) --- */
+  --fs-3xs:  0.6875rem;  /* 11 — filters, tags, micro labels, fact labels */
+  --fs-2xs:  0.75rem;    /* 12 — overline, small labels, footer h4-ish */
+  --fs-xs:   0.8125rem;  /* 13 — utility bar, breadcrumb, btn--sm, meta */
+  --fs-sm:   0.875rem;   /* 14 — legend, secondary body, oac list */
+  --fs-base: 0.9375rem;  /* 15 — default UI / card body / nav / buttons */
+  --fs-md:   1rem;       /* 16 — body root, community paragraph */
+  --fs-lg:   1.0625rem;  /* 17 — tuition / intro paragraph */
+  --fs-xl:   1.125rem;   /* 18 — .lede, cta paragraph */
+  --fs-2xl:  1.1875rem;  /* 19 — hero paragraph */
+
+  /* --- Heading-ish fixed sizes (component titles) --- */
+  --fs-card-title:  1.5rem;    /* 24 — card h3 / video h3 / intro card h4 / inquiry h3 */
+  --fs-footer-h4:   1.25rem;   /* 20 — footer column heads */
+  --fs-name-lg:     1.375rem;  /* 22 — homepage testimonial name */
+
+  /* --- Line heights --- */
+  --lh-tight:   0.9;    /* stat numbers */
+  --lh-display: 0.95;   /* .h-display */
+  --lh-flush:   1;      /* .h1 / .h2 */
+  --lh-snug:    1.05;   /* .h3 / card titles */
+  --lh-heading: 1.1;
+  --lh-body:    1.65;   /* root body / lede */
+  --lh-relaxed: 1.7;    /* footer contact, mission copy */
+  --lh-quote:   1.4;    /* testimonial blockquote */
+
+  /* --- Letter-spacing scale --- */
+  --ls-tight:    0.01em;  /* display headings */
+  --ls-snug:     0.02em;  /* h3 / card titles / stat nums */
+  --ls-h3:       0.03em;  /* why-card / intro card h4 */
+  --ls-name:     0.04em;  /* testimonial name / quick-facts text */
+  --ls-06:       0.06em;  /* utility bar, footer h4, footer-bottom */
+  --ls-nav:      0.08em;  /* main nav */
+  --ls-btn:      0.12em;  /* buttons, filters */
+  --ls-label:    0.14em;  /* btn--sm, breadcrumb, card arrow, labels */
+  --ls-tag:      0.16em;  /* tags, quick-links, form labels */
+  --ls-eyebrow:  0.18em;  /* news tag, fact labels, stat labels, signup label */
+  --ls-wide:     0.20em;  /* hero pill, stat-strip label */
+  --ls-overline: 0.22em;  /* .overline / photo-slider eyebrow */
+  --ls-widest:   0.24em;  /* hero scroll cue */
+
+  /* ========================================================================
+     3. LAYOUT / SPACING
+     ======================================================================== */
+
+  --container-max:    1280px;  /* global .container */
+  --container-narrow: 1180px;  /* info-tabs, mission, oac, testimonial carousel */
+  --container-pad:    32px;    /* gutter on .container */
+
+  /* --- Global grid (12-col). ONE gutter system, used by every block. --- */
+  --grid-cols:        12;
+  --grid-gap:         24px;                    /* default — card / tile grids */
+  --grid-gap-split:   clamp(40px, 5vw, 64px);  /* 2-col content splits */
+  --grid-gap-tight:   12px;                    /* dense grids (gallery, logos) */
+
+  /* --- Section vertical rhythm --- */
+  --section-pad:     clamp(72px, 9vw, 112px);   /* standard section block */
+  --section-pad-cta: clamp(80px, 10vw, 128px);  /* CTA banner */
+  --section-head-mb: 56px;                      /* .section-head bottom margin */
+
+  /* --- Spacing scale (px) --- */
+  --space-0_5: 2px;
+  --space-1:   4px;
+  --space-1_5: 6px;
+  --space-2:   8px;
+  --space-2_5: 10px;
+  --space-3:   12px;
+  --space-3_5: 14px;
+  --space-4:   16px;
+  --space-4_5: 18px;
+  --space-5:   20px;
+  --space-5_5: 22px;
+  --space-6:   24px;
+  --space-6_5: 26px;
+  --space-7:   28px;
+  --space-8:   32px;
+  --space-9:   36px;
+  --space-10:  40px;
+  --space-11:  44px;
+  --space-12:  48px;
+  --space-13:  52px;
+  --space-14:  56px;
+  --space-16:  64px;
+  --space-18:  72px;
+  --space-20:  80px;
+  --space-22:  88px;
+  --space-24:  96px;
+  --space-28:  112px;
+  --space-32:  128px;
+
+  /* ========================================================================
+     4. RADIUS
+     ======================================================================== */
+  --radius-xs:     4px;    /* tags, legend swatches */
+  --radius-pilllet:5px;    /* active carousel dot (elongated) */
+  --radius-sm:     8px;    /* form inputs, caption box, alert, panel list item */
+  --radius-md:     12px;   /* cards, icon tiles, logo tiles, program cards */
+  --radius-lg:     14px;   /* info-tabs layout, accreditation, inquiry form, video card */
+  --radius-xl:     16px;   /* tuition image, testimonial card, community card */
+  --radius-pill:   999px;  /* buttons, pills, filters */
+  --radius-circle: 50%;    /* avatars, dots, rings, nav arrows */
+
+  /* ========================================================================
+     5. BORDERS
+     ======================================================================== */
+  --bw-hair:   1px;   /* default hairline */
+  --bw-btn:    2px;   /* button outline / menu-toggle bars are 2px */
+  --bw-accent: 3px;   /* nav underline, avatar/ring outline */
+  --bw-tab:    4px;   /* active tab marker, homepage avatar ring */
+  --bw-top:    6px;   /* stat-strip / quick-facts top accent */
+  --bw-cta:    10px;  /* cta-banner top gradient bar */
+  --border-hairline: 1px solid var(--border);
+
+  /* ========================================================================
+     6. ELEVATION (shadows)
+     ======================================================================== */
+  --shadow-xs:        0 4px 12px rgba(26,26,46,0.04);   /* oac logo tile rest */
+  --shadow-sm:        0 8px 24px rgba(26,26,46,0.08);   /* carousel nav */
+  --shadow-sm-dark:   0 8px 24px rgba(0,0,0,0.18);      /* nav on blue sections */
+  --shadow-md-04:     0 16px 32px rgba(26,26,46,0.04);  /* info-tabs layout */
+  --shadow-md-06:     0 16px 32px rgba(26,26,46,0.06);  /* card hover (why/intro) */
+  --shadow-md:        0 16px 32px rgba(26,26,46,0.08);  /* news/video/card hover */
+  --shadow-md-up:     0 12px 24px rgba(26,26,46,0.08);  /* oac logo hover */
+  --shadow-lg:        0 24px 48px rgba(26,26,46,0.10);  /* tuition image */
+  --shadow-lg-strong: 0 24px 48px rgba(26,26,46,0.20);  /* audience card hover */
+  --shadow-card-dark: 0 24px 48px rgba(0,0,0,0.18);     /* testimonial cards on blue */
+  --shadow-xl:        0 24px 60px rgba(0,0,0,0.18);     /* inquiry form */
+  --shadow-caption:   0 12px 32px rgba(0,0,0,0.25);     /* photo-slider caption */
+  --shadow-play:      0 8px 24px rgba(0,0,0,0.25);      /* video-card play button */
+  --shadow-focus:     0 0 0 3px rgba(4,123,193,0.15);   /* input focus ring */
+  --shadow-mascot:    0 18px 28px rgba(0,0,0,0.35);     /* hero paw drop-shadow */
+
+  /* ========================================================================
+     7. MOTION
+     ======================================================================== */
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);   /* signature easing */
+  --dur-xfast:   0.08s;   /* parallax follow */
+  --dur-fast:    0.2s;    /* color/border micro-transitions */
+  --dur:         0.25s;   /* default (buttons, hovers) */
+  --dur-slow:    0.3s;    /* card lift, panel fade */
+  --dur-slower:  0.4s;    /* carousel track */
+  --dur-slowest: 0.5s;    /* image zoom, photo track */
+  --transition-base: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ========================================================================
+     8. Z-INDEX
+     ======================================================================== */
+  --z-header:    100;  /* sticky header */
+  --z-nav-arrow: 10;   /* carousel / slider nav buttons */
+  --z-overlay:   3;    /* hero mascot, cta top bar */
+  --z-content:   2;    /* text above gradient overlays */
+  --z-gradient:  1;    /* card gradient layer */
+
+  /* ========================================================================
+     9. COMPONENT SHORTHANDS
+     ======================================================================== */
+  /* Buttons */
+  --btn-pad:        15px 28px;
+  --btn-pad-sm:     11px 20px;
+  --btn-font:       var(--fs-base);
+  --btn-font-sm:    var(--fs-xs);
+  --btn-radius:     var(--radius-pill);
+  --btn-border:     var(--bw-btn);
+
+  /* Cards */
+  --card-radius:    var(--radius-md);
+  --card-pad:       36px 32px;        /* why-card */
+  --card-border:    1px solid var(--border);
+
+  /* Icon tile (blue-tint square) */
+  --icon-tile:      52px;
+  --icon-tile-glyph:26px;
+
+  /* Form controls */
+  --input-pad:      11px 14px;
+  --input-radius:   var(--radius-sm);
+}

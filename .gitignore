@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+vendor/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.sublime-*
+
+# Env / local
+.env
+.env.*
+*.local
+
+# Build source maps (compiled CSS/JS in public/ ARE committed so the theme
+# runs without a build step; only maps are ignored)
+public/**/*.map
+
+# Never commit photographic media into the theme — brand SVGs in
+# src/img/shared/ are intentionally tracked; bitmaps are not.
+src/img/**/*.jpg
+src/img/**/*.jpeg
+src/img/**/*.png
+src/img/**/*.gif
+src/img/**/*.webp

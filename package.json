@@ -1,0 +1,26 @@
+{
+  "name": "stech-theme",
+  "version": "0.1.0",
+  "description": "STECH (Southwest Technical College) custom WordPress theme — Gutenberg/ACF block based.",
+  "private": true,
+  "author": "Quick Brown Fox",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:css": "sass src/sass/app.scss:public/css/app.css --style=compressed --no-source-map --load-path=node_modules",
+    "build:editor": "sass src/sass/editor-style.scss:public/css/editor-style.css --style=compressed --no-source-map --load-path=node_modules",
+    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=public/js/app.min.js --sourcemap=external",
+    "build": "npm-run-all build:css build:editor build:js",
+    "watch:css": "sass --watch src/sass/app.scss:public/css/app.css --style=expanded --load-path=node_modules",
+    "watch:js": "esbuild src/js/main.js --bundle --outfile=public/js/app.min.js --watch",
+    "watch": "npm-run-all --parallel watch:css watch:js",
+    "dev": "npm run watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.80.0"
+  }
+}

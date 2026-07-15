@@ -1,0 +1,50 @@
+// WordPress-specific glue the static brand system didn't need.
+// Uses tokens only.
+
+// Screen-reader-only utility (skip link, visually-hidden labels)
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  word-wrap: normal !important;
+}
+
+// Skip link — visible on focus for keyboard users (WCAG 2.4.1)
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: var(--space-3) var(--space-5);
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--font-condensed);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-btn);
+  text-transform: uppercase;
+  border-radius: 0 0 var(--radius-sm) 0;
+
+  &:focus {
+    left: 0;
+  }
+}
+
+// Core block alignment (Gutenberg wide/full) — the theme opts into alignwide/full
+.alignwide  { max-width: var(--container-max); margin-inline: auto; }
+.alignfull  { max-width: none; }
+.aligncenter { margin-inline: auto; }
+
+// Admin bar offset for the sticky header
+.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) {
+  .admin-bar .site-header { top: 46px; }
+}
+
+// Gravity Forms baseline — lean on tokens; GF ships its own reset we mostly keep.
+// Detailed GF theming lives in blocks/_inquiry-form.scss when built.

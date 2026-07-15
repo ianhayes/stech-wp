@@ -1,0 +1,25 @@
+// =============================================================
+// STECH theme — master stylesheet
+// Compiles to public/css/app.css (enqueued front-end + editor).
+//
+// Source of truth is the approved brand system:
+//   base/_tokens.scss              → every design token (color/type/space…)
+//   base/_components.scss          → shared components (buttons/nav/cards/forms…)
+//   base/_components-extended.scss → extended blocks + a11y (focus, reduced-motion)
+//
+// Per-block styles live in blocks/_{slug}.scss and are @use'd below as the
+// block library is built out. Rule: no raw hex/px/rem that isn't a token.
+// =============================================================
+
+// 1. Tokens first (defines the :root custom properties every partial consumes)
+@import 'base/tokens';
+
+// 2. Theme-local mixins / helpers (WP-specific: alignment, wp-admin bar offset)
+@import 'base/wordpress';
+
+// 3. Approved component + extended systems (the design, verbatim)
+@import 'base/components';
+@import 'base/components-extended';
+
+// 4. Block library (one partial per ACF block; appended as blocks are built)
+@import 'blocks/index';

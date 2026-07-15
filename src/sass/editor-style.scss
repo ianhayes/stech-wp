@@ -1,0 +1,9 @@
+// Gutenberg editor styles — load the full front-end system so ACF blocks
+// render 1:1 in the block editor. Compiles to public/css/editor-style.css.
+@import 'app';
+
+// Editor-only tweaks: give blocks breathing room in the canvas.
+.editor-styles-wrapper {
+  font-family: var(--font-body);
+  color: var(--ursa-gray);
+}

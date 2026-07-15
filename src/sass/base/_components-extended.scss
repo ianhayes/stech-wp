@@ -1,0 +1,417 @@
+/* ============================================================================
+   STECH COMPONENTS — EXTENDED  (net-new blocks, built from tokens.css)
+   ----------------------------------------------------------------------------
+   These blocks did NOT exist on the approved Round 2 pages — they are NEW,
+   Reusable, on-brand blocks composed entirely from the same tokens so future
+   content pages (About, Admissions, Cost & Aid, Contact, etc.) can be built
+   from a richer library while staying 100% on-brand.
+
+   Load order: tokens.css → components.css → components-extended.css
+   Every Bebas heading here sets font-weight:var(--fw-display) in its own rule
+   (no faux-bold). No raw hex / off-token values.
+   ============================================================================ */
+
+/* ---- Shared a11y additive layer (does not change resting visuals) ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--bw-accent) solid var(--blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+.page-header--blue-photo :focus-visible,
+.cta-banner :focus-visible,
+.cta-split :focus-visible,
+.quick-links__item:focus-visible,
+.statement :focus-visible,
+.announcement :focus-visible { outline-color: var(--white); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---- Mobile nav open-state (pairs with blocks.js menu toggle; fixes the
+        previously dead hamburger on the live pages) ---- */
+@media (max-width: 720px) {
+  .site-header .header-inner { position: relative; }
+  .main-nav.is-open {
+    display: flex; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: var(--white); border-bottom: var(--border-hairline);
+    padding: var(--space-2) var(--container-pad) var(--space-4);
+    box-shadow: var(--shadow-md); z-index: var(--z-header);
+  }
+  .main-nav.is-open a { padding: var(--space-3) 0; }
+}
+
+/* ============================== ANNOUNCEMENT BAR ============================== */
+.announcement { background: var(--blue); color: var(--white); }
+.announcement[hidden] { display: none; }
+.announcement__inner { position: relative; display: flex; align-items: center; justify-content: center; gap: var(--space-3); padding: var(--space-2_5) calc(var(--container-pad) + var(--space-8)); font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: var(--ls-tag); text-transform: uppercase; text-align: center; }
+.announcement a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.announcement__close { position: absolute; right: var(--container-pad); top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--white); cursor: pointer; font-size: 1.1rem; line-height: 1; opacity: 0.85; padding: var(--space-1); }
+.announcement__close:hover { opacity: 1; }
+
+/* ============================== FAQ / ACCORDION ============================== */
+.faq { background: var(--white); }
+.accordion { max-width: 860px; margin: 0 auto; }
+.accordion__item { border-bottom: var(--border-hairline); }
+.accordion__item:first-child { border-top: var(--border-hairline); }
+.accordion__trigger { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-6) 0; font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-md); letter-spacing: var(--ls-06); text-transform: uppercase; color: var(--ink); transition: color var(--dur-fast); }
+.accordion__trigger:hover { color: var(--blue); }
+.accordion__icon { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+.accordion__icon::before, .accordion__icon::after { content: ""; position: absolute; background: var(--blue); transition: transform var(--dur) var(--ease); }
+.accordion__icon::before { top: 50%; left: 1px; right: 1px; height: 2px; transform: translateY(-50%); }
+.accordion__icon::after { left: 50%; top: 1px; bottom: 1px; width: 2px; transform: translateX(-50%); }
+.accordion__trigger[aria-expanded="true"] .accordion__icon::after { transform: translateX(-50%) scaleY(0); }
+.accordion__panel { overflow: hidden; max-height: 0; transition: max-height var(--dur-slow) var(--ease); }
+.accordion__panel-inner { padding: 0 0 var(--space-6); font-family: var(--font-body); font-size: var(--fs-base); line-height: var(--lh-body); color: var(--stech-gray); max-width: 720px; }
+
+/* ============================== STEPS / PROCESS ============================== */
+.steps { background: var(--surface); }
+.steps__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
+.step { position: relative; }
+.step__num { position: relative; z-index: 1; width: 52px; height: 52px; border-radius: var(--radius-circle); background: var(--blue); color: var(--white); font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.5rem; line-height: 1; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-5); }
+.step:not(:last-child) .step__num::after { content: ""; position: absolute; top: 50%; left: 100%; width: calc(var(--space-7) + 100% - 52px); height: 2px; background: var(--border); transform: translateY(-50%); z-index: 0; }
+.step h3 { font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-card-title); letter-spacing: var(--ls-h3); text-transform: uppercase; color: var(--ink); margin: 0 0 var(--space-2_5); line-height: var(--lh-snug); }
+.step p { font-family: var(--font-body); font-size: var(--fs-base); line-height: 1.6; color: var(--stech-gray); margin: 0; }
+
+/* ============================== CHECKLIST ============================== */
+.checklist { background: var(--white); }
+.checklist__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--space-10); max-width: 940px; margin: 0; }
+/* Column variants */
+.checklist--3 .checklist__grid { grid-template-columns: repeat(3, 1fr); max-width: 1120px; }
+.checklist--4 .checklist__grid { grid-template-columns: repeat(4, 1fr); max-width: 1200px; }
+@media (max-width: 1024px) { .checklist--3 .checklist__grid, .checklist--4 .checklist__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px)  { .checklist--3 .checklist__grid, .checklist--4 .checklist__grid { grid-template-columns: 1fr; } }
+.checklist__item { display: flex; align-items: flex-start; gap: var(--space-3); font-family: var(--font-body); font-size: var(--fs-md); line-height: 1.5; color: var(--ursa-gray); padding: var(--space-2_5) 0; }
+.checklist__check { flex-shrink: 0; width: 24px; height: 24px; border-radius: var(--radius-circle); background: var(--blue-tint); color: var(--blue); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.checklist__check svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================== PRICING / TUITION TABLE ============================== */
+.tuition-table { background: var(--surface); }
+.price-table { max-width: 880px; margin: 0 auto; background: var(--white); border: var(--card-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md-04); }
+.price-table__row { display: grid; grid-template-columns: 1fr auto; gap: var(--space-4); padding: var(--space-5) var(--space-7); border-bottom: var(--border-hairline); align-items: center; }
+.price-table__row:last-child { border-bottom: 0; }
+.price-table__row--head { background: var(--ink); }
+.price-table__row--total { background: var(--blue-soft); }
+.price-table__label { font-family: var(--font-body); font-size: var(--fs-md); color: var(--ink); }
+.price-table__row--head .price-table__label { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--white); }
+.price-table__sub { display: block; font-family: var(--font-body); font-size: var(--fs-sm); color: var(--stech-gray); margin-top: 2px; }
+.price-table__value { font-family: var(--font-display); font-weight: var(--fw-display); font-size: 1.5rem; line-height: 1; color: var(--blue); letter-spacing: var(--ls-snug); }
+.price-table__row--head .price-table__value { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--white); }
+
+/* ============================== COMPARISON TABLE ============================== */
+.compare { background: var(--white); }
+.compare-table { width: 100%; max-width: 980px; margin: 0 auto; border-collapse: collapse; }
+.compare-table th, .compare-table td { padding: var(--space-4) var(--space-5); text-align: left; border-bottom: var(--border-hairline); font-family: var(--font-body); font-size: var(--fs-base); color: var(--ursa-gray); }
+.compare-table thead th { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--ink); border-bottom: var(--bw-btn) solid var(--ink); }
+.compare-table tbody tr:hover { background: var(--surface); }
+.compare-table td.is-yes { color: var(--blue); font-weight: var(--fw-medium); }
+.compare-table .col-highlight { background: var(--blue-soft); }
+
+/* ============================== FACULTY / STAFF CARDS ============================== */
+.people { background: var(--surface); }
+.people__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
+.person-card { background: var(--white); border: var(--card-border); border-radius: var(--radius-lg); overflow: hidden; text-align: center; padding: var(--space-7) var(--space-5) var(--space-6); transition: transform var(--dur), box-shadow var(--dur), border-color var(--dur-fast); }
+.person-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue); }
+.person-card__avatar { width: 96px; height: 96px; border-radius: var(--radius-circle); object-fit: cover; margin: 0 auto var(--space-4); border: var(--bw-accent) solid var(--blue-tint); display: block; }
+.person-card h3 { font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-name-lg); letter-spacing: var(--ls-snug); text-transform: uppercase; color: var(--ink); margin: 0 0 var(--space-1); line-height: var(--lh-snug); }
+.person-card__role { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-3xs); letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--blue); display: block; margin-bottom: var(--space-3); }
+.person-card p { font-family: var(--font-body); font-size: var(--fs-sm); line-height: 1.55; color: var(--stech-gray); margin: 0; }
+
+/* ============================== LOCATIONS / MAP ============================== */
+.locations { background: var(--white); }
+.locations__inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--grid-gap-split); align-items: stretch; }
+.locations__map { border-radius: var(--radius-xl); overflow: hidden; min-height: 380px; background: var(--surface); border: var(--card-border); position: relative; }
+.locations__map iframe, .locations__map img { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; object-fit: cover; }
+.locations__list { display: flex; flex-direction: column; }
+.location-card { padding: var(--space-6) 0; border-bottom: var(--border-hairline); }
+.location-card:first-child { padding-top: 0; }
+.location-card:last-child { border-bottom: 0; }
+.location-card h3 { font-family: var(--font-display); font-weight: var(--fw-display); font-size: var(--fs-card-title); letter-spacing: var(--ls-h3); text-transform: uppercase; color: var(--ink); margin: 0 0 var(--space-2); line-height: var(--lh-snug); }
+.location-card address { font-style: normal; font-family: var(--font-body); font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--stech-gray); }
+.location-card address a { color: var(--blue); }
+
+/* ============================== CONTACT BLOCK (info + form) ============================== */
+.contact-block { background: var(--surface); }
+.contact-block__inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--grid-gap-split); align-items: start; }
+.contact-block__info .overline { margin-bottom: var(--space-3_5); }
+.contact-block__info h2 { margin: 0 0 var(--space-5); }
+.contact-block__info p { font-family: var(--font-body); font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--stech-gray); margin: 0 0 var(--space-6); }
+/* reuses .inquiry-form for the form card */
+
+/* ============================== STATEMENT / PULL-QUOTE ============================== */
+.statement { background: var(--ink); position: relative; overflow: hidden; isolation: isolate; padding: clamp(96px, 13vw, 168px) 0; }
+.statement > .container { position: relative; z-index: 2; }
+.statement__inner { max-width: 980px; margin: 0 auto; text-align: center; }
+.statement__bg-icon { position: absolute; z-index: 0; pointer-events: none; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(360px, 44vw, 720px); opacity: 0.07; }
+.statement__bg-icon img { width: 100%; height: auto; display: block; filter: brightness(0) invert(1); }
+.statement__mark { font-family: var(--font-display); font-weight: var(--fw-display); font-size: 5rem; line-height: 0.5; color: var(--blue-light); display: block; margin-bottom: var(--space-5); }
+.statement blockquote { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.1; letter-spacing: var(--ls-tight); text-transform: uppercase; color: var(--white); margin: 0 0 var(--space-6); }
+.statement__cite { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--blue-light); }
+
+/* ============================== FEATURE ROW (alternating side-image) ============================== */
+.feature-row { background: var(--white); }
+.feature-row__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap-split); align-items: center; }
+.feature-row--flip .feature-row__media { order: 2; }
+.feature-row__media { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow-lg); }
+.feature-row__media img { width: 100%; height: 100%; object-fit: cover; }
+.feature-row__text .overline { margin-bottom: var(--space-3_5); }
+.feature-row__text h2 { margin: 0 0 var(--space-5); }
+.feature-row__text p { font-family: var(--font-body); font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--stech-gray); margin: 0 0 var(--space-6); }
+
+/* ============================== ICON FEATURE GRID (4-up, reuses .why-card) ============================== */
+.feature-grid { background: var(--surface); }
+.feature-grid__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
+
+/* ============================== GALLERY / BENTO ============================== */
+.gallery { background: var(--white); }
+.gallery__grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: var(--grid-gap-tight); }
+.gallery__item { border-radius: var(--radius-md); overflow: hidden; position: relative; }
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slowest) ease; }
+.gallery__item:hover img { transform: scale(1.05); }
+.gallery__item--tall { grid-row: span 2; }
+.gallery__item--wide { grid-column: span 2; }
+
+/* ============================== LOGO MARQUEE (scrolling partners) ============================== */
+.logo-marquee { background: var(--surface); overflow: hidden; }
+.logo-marquee__track { display: flex; gap: var(--space-12); align-items: center; width: max-content; animation: logo-marquee 32s linear infinite; }
+@keyframes logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.logo-marquee:hover .logo-marquee__track { animation-play-state: paused; }
+.logo-marquee__logo { height: 56px; flex-shrink: 0; display: flex; align-items: center; }
+.logo-marquee__logo img { height: 100%; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: filter var(--dur), opacity var(--dur); }
+.logo-marquee__logo:hover img { filter: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .logo-marquee__track { animation: none; flex-wrap: wrap; } }
+
+/* ============================== RESOURCES / DOWNLOADS ============================== */
+.resources { background: var(--white); }
+.resources__list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-3); }
+.resource { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-5) var(--space-6); border: var(--card-border); border-radius: var(--radius-md); transition: border-color var(--dur-fast), box-shadow var(--dur-fast); text-decoration: none; }
+.resource:hover { border-color: var(--blue); box-shadow: var(--shadow-md-06); }
+.resource__icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--blue-tint); color: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.resource__icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.resource__body { flex: 1; }
+.resource__title { font-family: var(--font-condensed); font-weight: var(--fw-bold); font-size: var(--fs-md); letter-spacing: var(--ls-06); text-transform: uppercase; color: var(--ink); display: block; }
+.resource__meta { font-family: var(--font-body); font-size: var(--fs-sm); color: var(--stech-gray); }
+.resource__arrow { color: var(--blue); flex-shrink: 0; }
+
+/* ============================== CTA SPLIT (image + text) ============================== */
+.cta-split { background: var(--blue); color: var(--white); }
+.cta-split__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap-split); align-items: center; }
+.cta-split__media { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4 / 3; }
+.cta-split__media img { width: 100%; height: 100%; object-fit: cover; }
+.cta-split__text .overline { color: var(--blue-light); margin-bottom: var(--space-3_5); }
+.cta-split__text h2 { color: var(--white); margin: 0 0 var(--space-4); }
+.cta-split__text p { color: var(--on-dark-88); font-size: var(--fs-lg); line-height: var(--lh-body); margin: 0 0 var(--space-7); }
+
+/* ============================== PLAIN PAGE HEADER (no photo, content pages) ============================== */
+.page-header--plain { background: var(--surface); border-bottom: var(--border-hairline); padding: var(--space-12) 0 var(--space-10); position: relative; isolation: isolate; overflow: hidden; }
+.page-header--plain .breadcrumb { color: var(--stech-gray); margin-bottom: var(--space-4); }
+.page-header--plain .breadcrumb a { color: var(--stech-gray); }
+.page-header--plain .page-header__title { color: var(--ink); }
+.page-header--plain .page-header__lede { color: var(--stech-gray); }
+.page-header--plain .page-header__paw { position: absolute; right: -40px; top: -30px; width: clamp(200px, 22vw, 320px); opacity: 0.05; pointer-events: none; z-index: -1; transform: rotate(-12deg); }
+.page-header--plain .page-header__paw img { width: 100%; height: auto; }
+
+/* ============================== PROSE / RICH CONTENT ============================== */
+.prose { max-width: 760px; margin: 0 auto; }
+.prose > :first-child { margin-top: 0; }
+.prose p { font-family: var(--font-body); font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--ursa-gray); margin: 0 0 var(--space-5); }
+.prose h2 { margin: var(--space-10) 0 var(--space-4); }
+.prose h3 { margin: var(--space-8) 0 var(--space-3); }
+.prose ul, .prose ol { margin: 0 0 var(--space-5); padding-left: var(--space-5); }
+.prose li { font-family: var(--font-body); font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--ursa-gray); margin-bottom: var(--space-2); }
+.prose a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.prose blockquote { border-left: var(--bw-tab) solid var(--blue); padding-left: var(--space-5); margin: var(--space-7) 0; font-style: italic; color: var(--stech-gray); }
+
+/* ============================== RESPONSIVE ============================== */
+@media (max-width: 1024px) {
+  .steps__grid { grid-template-columns: repeat(2, 1fr); }
+  .step:nth-child(2n) .step__num::after { display: none; }
+  .people__grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid__grid { grid-template-columns: repeat(2, 1fr); }
+  .locations__inner { grid-template-columns: 1fr; }
+  .contact-block__inner { grid-template-columns: 1fr; }
+  .feature-row__inner { grid-template-columns: 1fr; }
+  .feature-row--flip .feature-row__media { order: 0; }
+  .cta-split__inner { grid-template-columns: 1fr; }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .steps__grid { grid-template-columns: 1fr; }
+  .step .step__num::after { display: none; }
+  .checklist__grid { grid-template-columns: 1fr; }
+  .people__grid { grid-template-columns: 1fr 1fr; }
+  .feature-grid__grid { grid-template-columns: 1fr; }
+  .price-table__row { padding: var(--space-4) var(--space-5); }
+  .compare-table th, .compare-table td { padding: var(--space-3) var(--space-3); font-size: var(--fs-sm); }
+  .gallery__grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+}
+
+/* ============================================================================
+   REVISIONS — client review 2026-06-01 (fixes + new variants)
+   ============================================================================ */
+
+/* [a] Utility bar hidden on mobile */
+@media (max-width: 720px) { .utility-bar { display: none; } }
+
+/* [b] Nav CTA button — base ".main-nav a" was overriding the button text color.
+       Make the Apply button white with more horizontal padding. */
+.main-nav a.btn { color: var(--white); }
+.main-nav a.btn--primary, .main-nav a.btn--primary:hover { color: var(--white); padding-left: var(--space-7); padding-right: var(--space-7); }
+.main-nav a.btn--ghost { color: var(--ink); }
+.main-nav a.btn--ghost:hover { color: var(--white); }
+
+/* [c] Deadline pill — more prominent (solid white on blue) */
+.page-header__deadline { background: var(--white); color: var(--blue-dark); border-color: var(--white); box-shadow: var(--shadow-sm-dark); }
+.page-header__deadline .page-header__deadline-dot { background: var(--blue); box-shadow: 0 0 0 4px rgba(4,123,193,0.20); }
+
+/* [d] Quick-facts text values match the numeric stats */
+.quick-facts__num--text { color: var(--blue); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: var(--ls-snug); }
+
+/* [e] Info-tabs — reserve height so switching tabs doesn't resize the block */
+.info-tabs__panels { min-height: 340px; }
+
+/* [f] Announcement bar — tighter side padding on mobile so text doesn't wrap badly */
+@media (max-width: 720px) {
+  .announcement__inner { padding-left: var(--space-3); padding-right: var(--space-9); gap: var(--space-2); font-size: var(--fs-3xs); letter-spacing: var(--ls-06); }
+  .announcement__close { right: var(--space-2); }
+}
+
+/* [g] Plain page header — current breadcrumb crumb in brand blue */
+.page-header--plain .breadcrumb__current { color: var(--blue); }
+
+/* [h] Logo marquee — larger logos, tighter spacing */
+.logo-marquee__logo { height: 110px; }
+.logo-marquee__track { gap: var(--space-10); }
+
+/* [i] Static logo grid — alternative to the marquee for a small fixed set (N columns) */
+.logo-grid { background: var(--surface); }
+.logo-grid__row { display: grid; grid-template-columns: repeat(var(--logo-cols, 8), 1fr); gap: var(--space-5); align-items: center; }
+.logo-grid__logo { display: flex; align-items: center; justify-content: center; height: 100px; }
+.logo-grid__logo img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); opacity: 0.75; transition: filter var(--dur), opacity var(--dur); }
+.logo-grid__logo:hover img { filter: none; opacity: 1; }
+@media (max-width: 1024px) { .logo-grid__row { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 720px)  { .logo-grid__row { grid-template-columns: repeat(2, 1fr); } }
+
+/* [j] Inquiry form — centered standalone + a larger variant */
+.inquiry-form--center { margin-left: auto; margin-right: auto; }
+.inquiry-form--lg { max-width: 640px; padding: var(--space-10) var(--space-10) var(--space-9); }
+.inquiry-form--lg .inquiry-form__head h3 { font-size: 1.875rem; }
+.inquiry-form--lg .inquiry-form__head { margin-bottom: var(--space-6); }
+.inquiry-form--lg .inquiry-form__field { margin-bottom: var(--space-5); }
+.inquiry-form--lg .inquiry-form__row { gap: var(--space-4); }
+.inquiry-form--lg .inquiry-form__field input, .inquiry-form--lg .inquiry-form__field select { padding: var(--space-3_5) var(--space-4); }
+
+/* [k] Locations — scrollable list variant (for 5–10 locations) */
+.locations--scroll .locations__list { max-height: 440px; overflow-y: auto; padding-right: var(--space-4); scrollbar-width: thin; }
+.locations--scroll .locations__list::-webkit-scrollbar { width: 6px; }
+.locations--scroll .locations__list::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--radius-pill); }
+
+/* [l] Prose with left image — narrower, vertically-oriented image + more copy room */
+.prose--media { max-width: 1040px; display: grid; grid-template-columns: 320px 1fr; gap: clamp(32px, 4vw, 64px); align-items: start; }
+.prose--media .prose__media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); position: sticky; top: var(--space-8); }
+.prose--media .prose__media img { width: 100%; height: auto; display: block; }
+.prose--media .prose__body > :first-child { margin-top: 0; }
+@media (max-width: 720px) { .prose--media { grid-template-columns: 1fr; } .prose--media .prose__media { position: static; max-width: 360px; } }
+
+/* [m] Outcomes — 4 stats per row, tighter gap */
+.outcomes__row { grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 2.4vw, 32px); }
+@media (max-width: 1024px) { .outcomes__row { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px)  { .outcomes__row { grid-template-columns: 1fr; } }
+
+/* [n] Animated stat ring — SVG progress ring (replaces the static bordered circle) */
+.stat-ring__circle { position: relative; width: clamp(140px, 14vw, 176px); aspect-ratio: 1; border: 0 !important; display: block; margin-bottom: var(--space-5); }
+.stat-ring__circle svg { width: 100%; height: 100%; transform: rotate(-90deg); display: block; overflow: visible; }
+.stat-ring__track { fill: none; stroke: var(--blue-tint); stroke-width: 8; }
+.stat-ring__bar { fill: none; stroke: var(--blue); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1.3s var(--ease); }
+.stat-ring__num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* [o] Animated placement pie (smooth conic sweep via registered angle props) */
+@property --pa { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@property --pb { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.placement-pie__chart { --pa: 0deg; --pb: 0deg; background: conic-gradient(var(--data-amber) 0deg var(--pa), var(--blue) var(--pa) var(--pb), var(--stech-gray) var(--pb) 360deg); transition: --pa 1.3s var(--ease), --pb 1.3s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .stat-ring__bar, .placement-pie__chart { transition: none; } }
+
+/* ---- Content text helpers (so pages never style paragraphs inline) ---- */
+/* Left-aligned lead-in: overline + heading + body copy */
+.lead-in { max-width: 820px; }
+.lead-in .overline { margin-bottom: var(--space-3_5); }
+.lead-in h2 { margin: 0 0 var(--space-4); }
+.lead-in p { font-family: var(--font-body); font-size: var(--fs-lg); line-height: var(--lh-body); color: var(--stech-gray); margin: 0 0 var(--space-4); }
+.lead-in p:last-child { margin-bottom: 0; }
+.lead-in--center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Fine-print / supporting note */
+.text-note { font-family: var(--font-body); font-size: var(--fs-sm); line-height: var(--lh-body); color: var(--stech-gray); }
+.text-note--center { text-align: center; }
+
+/* Section-head subhead paragraph (muted) — keeps the margin:0 from components.css */
+.section-head p { font-family: var(--font-body); font-size: var(--fs-base); line-height: var(--lh-body); color: var(--stech-gray); }
+
+/* Left-aligned section header — same spacing rules as .section-head, not centered */
+.section-head--left { text-align: left; max-width: none; margin-left: 0; margin-right: 0; }
+
+/* ============================================================================
+   GLOBAL GRID SYSTEM  (best-practice: one consistent 12-col grid + gutter)
+   ----------------------------------------------------------------------------
+   The single grid used across all blocks/pages. Consistent gutters + responsive
+   so layouts never drift between blocks, with span utilities for flexibility.
+     Even rows:     <div class="grid grid--3"> … </div>
+     Asymmetric:    <div class="grid"><div class="col-span-8">…</div><div class="col-span-4">…</div></div>
+     Gap variants:  .grid--split (wide content split) · .grid--tight (dense)
+     Responsive:    .col-md-* (≤1024) · everything stacks ≤720 (or .col-sm-*)
+   ============================================================================ */
+.grid { display: grid; grid-template-columns: repeat(var(--grid-cols, 12), minmax(0, 1fr)); gap: var(--grid-gap); }
+.grid > * { min-width: 0; }
+
+/* Even-column shortcuts (most card/tile rows) */
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid--6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+/* Gutter variants */
+.grid--split { gap: var(--grid-gap-split); }
+.grid--tight { gap: var(--grid-gap-tight); }
+.grid--align-center { align-items: center; }
+.grid--align-start  { align-items: start; }
+
+/* Column spans (against the 12-col base) */
+.col-span-1{grid-column:span 1}.col-span-2{grid-column:span 2}.col-span-3{grid-column:span 3}
+.col-span-4{grid-column:span 4}.col-span-5{grid-column:span 5}.col-span-6{grid-column:span 6}
+.col-span-7{grid-column:span 7}.col-span-8{grid-column:span 8}.col-span-9{grid-column:span 9}
+.col-span-10{grid-column:span 10}.col-span-11{grid-column:span 11}.col-span-12{grid-column:span 12}
+
+/* Responsive — tablet (≤1024) */
+@media (max-width: 1024px) {
+  .grid--5, .grid--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid--3, .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .col-md-12{grid-column:span 12}.col-md-6{grid-column:span 6}.col-md-4{grid-column:span 4}.col-md-3{grid-column:span 3}
+}
+/* Responsive — mobile (≤720): stack everything unless a .col-sm-* says otherwise */
+@media (max-width: 720px) {
+  .grid--2, .grid--3, .grid--4, .grid--5, .grid--6 { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; gap: var(--grid-gap); }
+  .col-sm-12{grid-column:span 12}.col-sm-6{grid-column:span 6}
+}
+
+/* People grid — single/centered variant (e.g. one leadership card) */
+.people__grid--center { grid-template-columns: minmax(280px, 360px); justify-content: center; }
+
+/* Hero fact unit suffix (e.g. the "mo" in 11mo) */
+.page-header__fact-unit { font-size: 0.6em; }
+
+/* Mission + Philosophy — Ursa watermark variant (bear.svg behind content,
+   same treatment as the testimonial paw: oversized, white-filtered, low opacity) */
+.mission-philosophy--ursa { position: relative; overflow: hidden; isolation: isolate; }
+.mission-philosophy--ursa .mission-philosophy__inner { position: relative; z-index: 2; }
+.mission-philosophy__bg-icon {
+  position: absolute; z-index: 0; pointer-events: none;
+  top: 50%; right: -3%; transform: translateY(-50%);
+  width: clamp(360px, 40vw, 640px); opacity: 0.08;
+}
+.mission-philosophy__bg-icon img { width: 100%; height: auto; display: block; filter: brightness(0) invert(1); }
+@media (max-width: 720px) { .mission-philosophy__bg-icon { right: -25%; opacity: 0.06; } }
+
+/* Tight section rhythm — for thin strips (logo bars, etc.) that should NOT take the full --section-pad. A named exception, never an inline override. */
+section.block--tight { padding: var(--space-8) 0; }
