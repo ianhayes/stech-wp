@@ -68,6 +68,16 @@ add_action( 'init', function () {
 } );
 
 /**
+ * Resolve /programs/<slug>/ to a single Program even though a composed
+ * /programs/ PAGE exists (the page would otherwise shadow the CPT and 404).
+ * The page still owns /programs/ itself; only deeper single-segment paths map
+ * to the Program CPT.
+ */
+add_action( 'init', function () {
+	add_rewrite_rule( '^programs/([^/]+)/?$', 'index.php?program=$matches[1]', 'top' );
+}, 20 );
+
+/**
  * Relabel core Posts as "News" to match the IA without a separate CPT.
  */
 add_filter( 'post_type_labels_post', function ( $labels ) {
