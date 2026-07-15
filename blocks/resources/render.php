@@ -23,13 +23,15 @@ if ( ! $heading && ! $has_items && $is_preview ) {
 <section<?php stech_block_attrs( $block, 'block resources' ); ?>>
 	<div class="container">
 		<?php if ( $eyebrow || $heading ) : ?>
-			<div class="section-head">
-				<?php if ( $eyebrow ) : ?>
-					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
-				<?php endif; ?>
-				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
-				<?php endif; ?>
+			<div class="news__head" style="margin-bottom:24px">
+				<div class="news__head-text">
+					<?php if ( $eyebrow ) : ?>
+						<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
+					<?php endif; ?>
+					<?php if ( $heading ) : ?>
+						<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<?php endif; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 

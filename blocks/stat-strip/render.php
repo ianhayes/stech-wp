@@ -21,7 +21,7 @@ if ( ! $has_stats ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'stat-strip' ); ?>>
+<section<?php stech_block_attrs( $block, 'stat-strip' ); ?> aria-label="<?php echo esc_attr__( 'At a glance', 'stech' ); ?>">
 	<div class="stat-strip__inner">
 		<?php
 		while ( have_rows( 'stat_strip_stats' ) ) :

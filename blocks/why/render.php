@@ -32,7 +32,7 @@ if ( ! $heading && ! $overline && ! $has_cards ) {
 					<span class="overline"><?php echo esc_html( $overline ); ?></span>
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 				<?php if ( $lede ) : ?>
 					<p class="lede"><?php echo wp_kses_post( $lede ); ?></p>

@@ -51,13 +51,7 @@ $render_card = static function ( $args ) {
 				<span class="news-card__tag"><?php echo esc_html( $tag ); ?></span>
 			<?php endif; ?>
 			<?php if ( $card_head ) : ?>
-				<h3>
-					<?php if ( $href ) : ?>
-						<a href="<?php echo esc_url( $href ); ?>"<?php echo $rel; // esc'd in helper. ?>><?php echo esc_html( $card_head ); ?></a>
-					<?php else : ?>
-						<?php echo esc_html( $card_head ); ?>
-					<?php endif; ?>
-				</h3>
+				<h3><?php echo esc_html( $card_head ); ?></h3>
 			<?php endif; ?>
 			<?php if ( $excerpt ) : ?>
 				<p><?php echo esc_html( $excerpt ); ?></p>
@@ -76,13 +70,19 @@ $render_card = static function ( $args ) {
 						<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
 					<?php endif; ?>
 					<?php if ( $heading ) : ?>
-						<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+						<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 					<?php endif; ?>
 					<?php if ( $lede ) : ?>
 						<p class="lede"><?php echo esc_html( $lede ); ?></p>
 					<?php endif; ?>
 				</div>
-				<?php echo stech_link_tag( $cta, 'btn btn--ghost', __( 'All News', 'stech' ) ); // phpcs:ignore WordPress.Security.EscapeOutput — escaped in helper. ?>
+					<?php
+					$cta_link = stech_link( $cta );
+					if ( $cta_link ) :
+						$cta_label = $cta_link['title'] ?: esc_html__( 'All News', 'stech' );
+						?>
+						<a class="btn btn--ghost btn--sm" href="<?php echo $cta_link['url']; // esc_url'd in helper. ?>"<?php echo $cta_link['target'] . $cta_link['rel']; // esc'd in helper. ?>><?php echo $cta_label; // esc'd above. ?> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+					<?php endif; ?>
 			</div>
 		<?php endif; ?>
 

@@ -67,6 +67,18 @@
 			]
 		},
 		{
+			"key": "field_stech_outcomes_pie_aria",
+			"label": "Pie Accessible Description",
+			"name": "outcomes_pie_aria",
+			"type": "text",
+			"instructions": "Screen-reader description of the pie chart. Leave blank to auto-generate from the segments, e.g. \"Job placement data: 28% Employed LPN, 69% Continuing Ed\".",
+			"conditional_logic": [
+				[
+					{ "field": "field_stech_outcomes_show_pie", "operator": "==", "value": "1" }
+				]
+			]
+		},
+		{
 			"key": "field_stech_outcomes_pie_legend",
 			"label": "Pie Segments",
 			"name": "outcomes_pie_legend",

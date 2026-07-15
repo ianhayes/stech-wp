@@ -20,6 +20,16 @@
 			"wrapper": { "width": "50" }
 		},
 		{
+			"key": "field_stech_checklist_lede",
+			"label": "Lede",
+			"name": "checklist_lede",
+			"type": "textarea",
+			"instructions": "Optional intro paragraph shown below the heading, e.g. \"A few things to have ready…\".",
+			"rows": 3,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
 			"key": "field_stech_checklist_columns",
 			"label": "Columns",
 			"name": "checklist_columns",
@@ -80,5 +90,5 @@
 	"active": true,
 	"description": "",
 	"show_in_rest": 0,
-	"modified": 1720900000
+	"modified": 1752537600
 }

@@ -33,7 +33,7 @@ if ( ! $eyebrow && ! $heading && ! $text && ! $cards && $is_preview ) {
 				<?php endif; ?>
 
 				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 
 				<?php if ( $text ) : ?>
@@ -63,7 +63,7 @@ if ( ! $eyebrow && ! $heading && ! $text && ! $cards && $is_preview ) {
 							<div class="programs-intro__icon">
 								<?php echo stech_icon( $icon ?: 'prog-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted inline SVG. ?>
 							</div>
-							<div>
+							<div class="programs-intro__body">
 								<?php if ( $card_head ) : ?>
 									<h4><?php echo esc_html( $card_head ); ?></h4>
 								<?php endif; ?>

@@ -68,7 +68,7 @@ if ( ! $heading && ! $cards && $is_preview ) {
 					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>

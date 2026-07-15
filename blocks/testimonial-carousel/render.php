@@ -123,7 +123,7 @@ $pages = array_chunk( $slides, 2 );
 			<button type="button" class="testimonial-carousel__nav testimonial-carousel__nav--next" aria-label="<?php esc_attr_e( 'Next testimonials', 'stech' ); ?>" data-next>
 				<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
 			</button>
-			<div class="testimonial-carousel__dots" aria-label="<?php esc_attr_e( 'Testimonial pages', 'stech' ); ?>" data-dots></div>
+			<div class="testimonial-carousel__dots" role="tablist" aria-label="<?php esc_attr_e( 'Testimonial pages', 'stech' ); ?>" data-dots></div>
 		</div>
 	</div>
 </section>

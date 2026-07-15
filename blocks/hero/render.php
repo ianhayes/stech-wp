@@ -25,7 +25,7 @@ if ( ! $headline && ! $text && ! $pill && $is_preview ) {
 	return;
 }
 ?>
-<section<?php stech_block_attrs( $block, 'hero' ); ?>>
+<section<?php stech_block_attrs( $block, 'hero' ); ?> aria-label="<?php echo esc_attr__( 'Welcome banner', 'stech' ); ?>">
 	<?php if ( $bg && ! empty( $bg['ID'] ) ) : ?>
 		<div class="hero__bg"><?php echo wp_get_attachment_image( (int) $bg['ID'], 'stech-hero', false, array( 'alt' => '' ) ); ?></div>
 	<?php endif; ?>
@@ -71,6 +71,6 @@ if ( ! $headline && ! $text && ! $pill && $is_preview ) {
 	</div>
 
 	<?php if ( $mascot ) : ?>
-		<div class="hero__mascot"><?php stech_the_svg( 'paw', array( 'aria-hidden' => 'true' ) ); ?></div>
+		<div class="hero__mascot" aria-hidden="true" style="--mascot-right:5%; --mascot-bottom:-40px; --mascot-width:clamp(180px,22vw,320px);"><?php stech_the_svg( 'paw', array( 'aria-hidden' => 'true' ) ); ?></div>
 	<?php endif; ?>
 </section>

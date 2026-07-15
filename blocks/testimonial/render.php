@@ -22,7 +22,7 @@ if ( ! $quote && ! $name && $is_preview ) {
 }
 ?>
 <section<?php stech_block_attrs( $block, 'block testimonial' ); ?>>
-	<div class="testimonial__bg-icon"><img src="<?php echo esc_url( STECH_IMG . '/shared/paw.svg' ); ?>" alt=""></div>
+	<div class="testimonial__bg-icon" aria-hidden="true"><img src="<?php echo esc_url( STECH_IMG . '/shared/paw.svg' ); ?>" alt=""></div>
 	<div class="container">
 		<div class="testimonial__card">
 			<div class="testimonial__mark" aria-hidden="true">&ldquo;</div>

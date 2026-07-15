@@ -19,6 +19,16 @@
 			"wrapper": { "width": "50" }
 		},
 		{
+			"key": "field_stech_people_lede",
+			"label": "Lede",
+			"name": "people_lede",
+			"type": "textarea",
+			"instructions": "Intro paragraph shown under the heading, e.g. \"Our faculty and staff are qualified…\".",
+			"rows": 3,
+			"new_lines": "",
+			"wrapper": { "width": "100" }
+		},
+		{
 			"key": "field_stech_people_source",
 			"label": "Source",
 			"name": "people_source",

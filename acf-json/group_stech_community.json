@@ -3,6 +3,31 @@
 	"title": "Block: Community",
 	"fields": [
 		{
+			"key": "field_stech_community_overline",
+			"label": "Section Overline",
+			"name": "community_overline",
+			"type": "text",
+			"instructions": "Short kicker above the section heading, e.g. \"Community & Business\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_community_heading",
+			"label": "Section Heading",
+			"name": "community_heading",
+			"type": "text",
+			"instructions": "Section heading, e.g. \"Beyond the Certificate\".",
+			"wrapper": { "width": "50" }
+		},
+		{
+			"key": "field_stech_community_lede",
+			"label": "Section Lede",
+			"name": "community_lede",
+			"type": "textarea",
+			"rows": 2,
+			"instructions": "Intro paragraph under the section heading.",
+			"wrapper": { "width": "100" }
+		},
+		{
 			"key": "field_stech_community_cards",
 			"label": "Cards",
 			"name": "community_cards",

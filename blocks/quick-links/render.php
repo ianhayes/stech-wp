@@ -37,7 +37,7 @@ if ( ! function_exists( 'stech_quick_links_inline_svg' ) ) {
 	}
 }
 ?>
-<section<?php stech_block_attrs( $block, 'quick-links' ); ?>>
+<section<?php stech_block_attrs( $block, 'quick-links' ); ?> aria-label="<?php esc_attr_e( 'Quick links', 'stech' ); ?>">
 	<div class="quick-links__grid">
 		<?php
 		while ( have_rows( 'quick_links_items' ) ) :
@@ -48,10 +48,15 @@ if ( ! function_exists( 'stech_quick_links_inline_svg' ) ) {
 			$icon_name = get_sub_field( 'quick_links_items_icon_name' );
 
 			// Prefer an admin-uploaded SVG override; otherwise fall back to the
-			// design icon library. Always render an icon so spacing is preserved.
+			// design icon library. Validate the icon name (legacy/invalid names
+			// like 'edit' resolve to '') and always fall back to a known-good
+			// design icon so a real SVG is guaranteed to render.
 			$svg = stech_quick_links_inline_svg( $icon_svg );
 			if ( '' === $svg ) {
-				$svg = stech_icon( $icon_name ?: 'quicklink-01' );
+				$svg = stech_icon( $icon_name );
+			}
+			if ( '' === $svg ) {
+				$svg = stech_icon( 'quicklink-01' );
 			}
 
 			$href   = $link ? $link['url'] : '#';

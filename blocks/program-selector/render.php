@@ -33,7 +33,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 				<?php if ( $lede ) : ?>
 					<p class="lede"><?php echo esc_html( $lede ); ?></p>
@@ -41,7 +41,7 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 			</div>
 		<?php endif; ?>
 
-		<div class="programs__filters" data-filters>
+		<div class="programs__filters" data-filters role="tablist" aria-label="<?php esc_attr_e( 'Filter programs by category', 'stech' ); ?>">
 			<?php
 			if ( have_rows( 'program_selector_filters' ) ) :
 				$fi = 0;
@@ -55,13 +55,13 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 					}
 					$pressed = 1 === $fi ? 'true' : 'false';
 					?>
-					<button class="programs__filter" data-filter="<?php echo esc_attr( $f_category ?: 'all' ); ?>" aria-pressed="<?php echo esc_attr( $pressed ); ?>"><?php echo esc_html( $f_label ); ?></button>
+					<button type="button" role="tab" class="programs__filter" data-filter="<?php echo esc_attr( $f_category ?: 'all' ); ?>" aria-pressed="<?php echo esc_attr( $pressed ); ?>"><?php echo esc_html( $f_label ); ?></button>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
 
-		<div class="carousel">
-			<button class="carousel__nav carousel__nav--prev" data-prev aria-label="<?php esc_attr_e( 'Previous', 'stech' ); ?>"><?php echo stech_icon( 'nav-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
+		<div class="carousel" data-carousel>
+			<button type="button" class="carousel__nav carousel__nav--prev" data-prev aria-label="<?php esc_attr_e( 'Previous', 'stech' ); ?>"><?php echo stech_icon( 'nav-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
 			<div class="carousel__viewport">
 				<div class="carousel__track" data-track>
 					<?php if ( have_rows( 'program_selector_cards' ) ) : ?>
@@ -105,8 +105,8 @@ if ( ! $heading && ! $has_cards && $is_preview ) {
 					<?php endif; ?>
 				</div>
 			</div>
-			<button class="carousel__nav carousel__nav--next" data-next aria-label="<?php esc_attr_e( 'Next', 'stech' ); ?>"><?php echo stech_icon( 'nav-02' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
-			<div class="carousel__pagination" data-dots></div>
+			<button type="button" class="carousel__nav carousel__nav--next" data-next aria-label="<?php esc_attr_e( 'Next', 'stech' ); ?>"><?php echo stech_icon( 'nav-02' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?></button>
+			<div class="carousel__pagination" data-dots role="tablist" aria-label="<?php esc_attr_e( 'Program pages', 'stech' ); ?>"></div>
 		</div>
 
 		<?php

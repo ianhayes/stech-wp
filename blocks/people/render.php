@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 $eyebrow  = get_field( 'people_eyebrow' );
 $heading  = get_field( 'people_heading' );
+$lede     = get_field( 'people_lede' );
 $source   = get_field( 'people_source' ) ?: 'manual';
 $centered = (bool) get_field( 'people_centered' );
 $count    = (int) get_field( 'people_count' );
@@ -57,13 +58,16 @@ $render_card = static function ( $args ) {
 ?>
 <section<?php stech_block_attrs( $block, 'people block' ); ?>>
 	<div class="container">
-		<?php if ( $eyebrow || $heading ) : ?>
+		<?php if ( $eyebrow || $heading || $lede ) : ?>
 			<div class="section-head">
 				<?php if ( $eyebrow ) : ?>
 					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
 					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+				<?php endif; ?>
+				<?php if ( $lede ) : ?>
+					<p><?php echo esc_html( $lede ); ?></p>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>

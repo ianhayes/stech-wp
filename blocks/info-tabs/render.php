@@ -26,7 +26,7 @@ if ( ! $eyebrow && ! $heading && ! $has_tabs ) {
 $uid = 'it-' . substr( md5( $block['id'] ?? uniqid( '', true ) ), 0, 8 );
 $i   = 0;
 ?>
-<section<?php stech_block_attrs( $block, 'block info-tabs' ); ?>>
+<section<?php stech_block_attrs( $block, 'block info-tabs' ); ?> aria-label="<?php esc_attr_e( 'Program details', 'stech' ); ?>">
 	<div class="info-tabs__container">
 		<?php if ( $eyebrow || $heading ) : ?>
 			<div class="info-tabs__head">
@@ -34,21 +34,21 @@ $i   = 0;
 					<span class="overline"><?php echo esc_html( $eyebrow ); ?></span>
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
-					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="h1"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( $has_tabs ) : ?>
 			<div class="info-tabs__layout">
-				<div class="info-tabs__nav" role="tablist">
+				<div class="info-tabs__nav" role="tablist" aria-label="<?php esc_attr_e( 'Program details tabs', 'stech' ); ?>" aria-orientation="vertical">
 					<?php
 					while ( have_rows( 'info_tabs_tabs' ) ) :
 						the_row();
 						$label = get_sub_field( 'info_tabs_tabs_label' );
 						$tid   = $uid . '-' . $i;
 						?>
-						<button type="button" class="info-tabs__btn" role="tab" aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>" data-tab="<?php echo esc_attr( $tid ); ?>"><?php echo esc_html( $label ); ?></button>
+						<button type="button" class="info-tabs__btn" id="btn-<?php echo esc_attr( $tid ); ?>" role="tab" aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>" aria-controls="tab-<?php echo esc_attr( $tid ); ?>" data-tab="<?php echo esc_attr( $tid ); ?>"><?php echo esc_html( $label ); ?></button>
 						<?php
 						$i++;
 					endwhile;
@@ -64,7 +64,7 @@ $i   = 0;
 						$alert_icon = get_sub_field( 'info_tabs_tabs_alert_icon' );
 						$tid        = $uid . '-' . $i;
 						?>
-						<div class="info-tabs__panel" data-panel="<?php echo esc_attr( $tid ); ?>" aria-hidden="<?php echo 0 === $i ? 'false' : 'true'; ?>">
+						<div class="info-tabs__panel" id="tab-<?php echo esc_attr( $tid ); ?>" role="tabpanel" aria-labelledby="btn-<?php echo esc_attr( $tid ); ?>" data-panel="<?php echo esc_attr( $tid ); ?>" aria-hidden="<?php echo 0 === $i ? 'false' : 'true'; ?>">
 							<?php if ( $alert ) : ?>
 								<div class="info-tabs__panel__alert">
 									<?php echo stech_icon( $alert_icon ?: 'alert-01' ); // phpcs:ignore WordPress.Security.EscapeOutput — trusted theme asset. ?>

@@ -26,6 +26,7 @@ if ( ! $heading && ! $overline && ! $intro && ! $has_orgs && ! $has_logos ) {
 }
 ?>
 <section<?php stech_block_attrs( $block, 'block oac-section' ); ?>>
+	<div class="container">
 	<div class="oac">
 		<?php if ( $overline ) : ?>
 			<span class="overline"><?php echo esc_html( $overline ); ?></span>
@@ -79,5 +80,6 @@ if ( ! $heading && ! $overline && ! $intro && ! $has_orgs && ! $has_logos ) {
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
+	</div>
 	</div>
 </section>

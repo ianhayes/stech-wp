@@ -16,12 +16,28 @@ $show_pie = get_field( 'outcomes_show_pie' );
 
 // Build the pie's comma-separated data-segments from the legend rows.
 $pie_label   = get_field( 'outcomes_pie_label' );
+$pie_aria    = get_field( 'outcomes_pie_aria' );
 $pie_legend  = get_field( 'outcomes_pie_legend' );
 $pie_values  = array();
+$pie_parts   = array();
 if ( $show_pie && is_array( $pie_legend ) ) {
 	foreach ( $pie_legend as $row ) {
-		$pie_values[] = (float) ( $row['outcomes_legend_value'] ?? 0 );
+		$val           = (float) ( $row['outcomes_legend_value'] ?? 0 );
+		$pie_values[]  = $val;
+		$row_label     = trim( (string) ( $row['outcomes_legend_label'] ?? '' ) );
+		if ( '' !== $row_label ) {
+			$pie_parts[] = $val . '% ' . $row_label;
+		}
 	}
+}
+
+// Accessible description for the chart: explicit field, else built from the
+// legend, else a safe generic fallback.
+$pie_aria = trim( (string) $pie_aria );
+if ( '' === $pie_aria ) {
+	$pie_aria = ! empty( $pie_parts )
+		? __( 'Job placement data:', 'stech' ) . ' ' . implode( ', ', $pie_parts )
+		: __( 'Job placement data', 'stech' );
 }
 $has_pie = $show_pie && ! empty( $pie_values );
 
@@ -53,7 +69,7 @@ if ( empty( $rings ) && ! $has_pie ) {
 							<span class="stat-ring__num" data-suffix="<?php echo esc_attr( $suffix ); ?>">0</span>
 						</div>
 						<?php if ( $label ) : ?>
-							<span class="stat-ring__label"><?php echo esc_html( $label ); ?></span>
+							<p class="stat-ring__label"><?php echo esc_html( $label ); ?></p>
 						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>
@@ -61,9 +77,9 @@ if ( empty( $rings ) && ! $has_pie ) {
 
 			<?php if ( $has_pie ) : ?>
 				<div class="placement-pie" data-segments="<?php echo esc_attr( implode( ',', $pie_values ) ); ?>">
-					<div class="placement-pie__chart"></div>
+					<div class="placement-pie__chart" role="img" aria-label="<?php echo esc_attr( $pie_aria ); ?>"></div>
 					<?php if ( $pie_label ) : ?>
-						<span class="placement-pie__label"><?php echo esc_html( $pie_label ); ?></span>
+						<p class="placement-pie__label"><?php echo esc_html( $pie_label ); ?></p>
 					<?php endif; ?>
 					<div class="placement-pie__legend">
 						<?php foreach ( $pie_legend as $row ) : ?>
@@ -77,7 +93,7 @@ if ( empty( $rings ) && ! $has_pie ) {
 							?>
 							<div class="placement-pie__legend-item">
 								<span class="placement-pie__legend-swatch placement-pie__legend-swatch--<?php echo esc_attr( $swatch ); ?>"></span>
-								<?php echo esc_html( trim( $leg_label . ' ' . ( '' !== $leg_value ? $leg_value . '%' : '' ) ) ); ?>
+								<span><?php echo esc_html( trim( $leg_label . ' ' . ( '' !== $leg_value ? $leg_value . '%' : '' ) ) ); ?></span>
 							</div>
 						<?php endforeach; ?>
 					</div>

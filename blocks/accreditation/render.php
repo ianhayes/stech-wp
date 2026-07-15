@@ -72,7 +72,7 @@ $dir_link  = stech_link( $link );
 								<a class="accreditation__name" href="<?php echo $name_link['url']; // esc'd in helper. ?>"<?php echo $name_link['target'] . $name_link['rel']; ?>><?php echo $name_link['title']; ?></a>
 							<?php endif; ?>
 							<?php if ( $address ) : ?>
-								<span class="accreditation__address"><?php echo esc_html( $address ); ?></span>
+								<address class="accreditation__address"><?php echo nl2br( esc_html( $address ) ); ?></address>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>

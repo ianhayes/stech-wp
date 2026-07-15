@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 $overline = get_field( 'checklist_overline' );
 $heading  = get_field( 'checklist_heading' );
+$lede     = get_field( 'checklist_lede' );
 $columns  = get_field( 'checklist_columns' );
 
 $is_preview = ! empty( $block['is_preview'] );
@@ -40,6 +41,9 @@ if ( '3' === $columns ) {
 				<?php endif; ?>
 				<?php if ( $heading ) : ?>
 					<h2 class="h2"><?php echo esc_html( $heading ); ?></h2>
+				<?php endif; ?>
+				<?php if ( $lede ) : ?>
+					<p><?php echo esc_html( $lede ); ?></p>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
