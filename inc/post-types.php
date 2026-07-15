@@ -74,8 +74,24 @@ add_action( 'init', function () {
  * to the Program CPT.
  */
 add_action( 'init', function () {
+	// Maps /programs/<slug>/ to a Program CPT single (the /programs/ PAGE would
+	// otherwise shadow the CPT and 404).
 	add_rewrite_rule( '^programs/([^/]+)/?$', 'index.php?program=$matches[1]', 'top' );
 }, 20 );
+
+/**
+ * If /programs/<slug>/ matched the CPT rule but no Program with that slug
+ * exists AND a real PAGE lives there (e.g. course-schedules), serve the page.
+ */
+add_filter( 'request', function ( $qv ) {
+	if ( ! empty( $qv['program'] ) && ! get_page_by_path( $qv['program'], OBJECT, 'program' ) ) {
+		$page = get_page_by_path( 'programs/' . $qv['program'], OBJECT, 'page' );
+		if ( $page ) {
+			return array( 'pagename' => 'programs/' . $qv['program'] );
+		}
+	}
+	return $qv;
+} );
 
 /**
  * Relabel core Posts as "News" to match the IA without a separate CPT.
