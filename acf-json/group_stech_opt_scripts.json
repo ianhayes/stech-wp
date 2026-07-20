@@ -1,0 +1,11 @@
+{
+	"key": "group_stech_opt_scripts",
+	"title": "Scripts & Analytics",
+	"fields": [
+		{ "key": "field_stech_opt_custom_css", "label": "Custom CSS", "name": "custom_css", "type": "textarea", "rows": 8, "instructions": "Optional CSS added site-wide. Leave blank unless you know what you're doing." },
+		{ "key": "field_stech_opt_custom_js", "label": "Custom JS (footer)", "name": "custom_js", "type": "textarea", "rows": 6, "instructions": "Optional JavaScript / tracking snippets output before </body>. Include the <script> tags." },
+		{ "key": "field_stech_opt_gmaps", "label": "Google Maps API Key", "name": "google_maps_api_key", "type": "text", "instructions": "Needed only for the interactive map field in the Locations block." }
+	],
+	"location": [[{ "param": "options_page", "operator": "==", "value": "stech-scripts" }]],
+	"menu_order": 0, "position": "normal", "style": "default", "label_placement": "top", "active": true, "show_in_rest": 0, "modified": 1721000000
+}

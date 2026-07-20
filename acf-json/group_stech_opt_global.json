@@ -1,0 +1,12 @@
+{
+	"key": "group_stech_opt_global",
+	"title": "Global (Header / Footer)",
+	"fields": [
+		{ "key": "field_stech_opt_footer_h1", "label": "Footer Column 1 Heading", "name": "footer_col_1_heading", "type": "text", "instructions": "Heading above the first footer link column (links come from Appearance → Menus → Footer Column 1)." },
+		{ "key": "field_stech_opt_footer_h2", "label": "Footer Column 2 Heading", "name": "footer_col_2_heading", "type": "text", "instructions": "Heading above the second footer link column (Menus → Footer Column 2)." },
+		{ "key": "field_stech_opt_footer_h3", "label": "Footer Column 3 Heading", "name": "footer_col_3_heading", "type": "text", "instructions": "Heading above the third footer link column (Menus → Footer Column 3)." },
+		{ "key": "field_stech_opt_global_note", "label": "Note", "name": "", "type": "message", "message": "The logo is set under Appearance → Customize → Site Identity. Navigation menus are managed under Appearance → Menus (locations: Primary, Utility, Footer 1–3, Legal)." }
+	],
+	"location": [[{ "param": "options_page", "operator": "==", "value": "stech-global" }]],
+	"menu_order": 0, "position": "normal", "style": "default", "label_placement": "top", "active": true, "show_in_rest": 0, "modified": 1721000000
+}

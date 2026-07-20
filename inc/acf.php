@@ -39,15 +39,17 @@ add_action( 'acf/init', function () {
 		'redirect'   => true,
 	) );
 
-	foreach ( array(
-		'Global'     => __( 'Global (Header / Footer)', 'stech' ),
-		'Announcement' => __( 'Announcement Bar', 'stech' ),
-		'Contact'    => __( 'Contact & Locations', 'stech' ),
-		'Scripts'    => __( 'Scripts & Analytics', 'stech' ),
-	) as $title => $menu ) {
+	$subs = array(
+		'stech-global'       => array( 'Global Settings', __( 'Global (Header / Footer)', 'stech' ) ),
+		'stech-announcement' => array( 'Announcement Bar', __( 'Announcement Bar', 'stech' ) ),
+		'stech-contact'      => array( 'Contact & Locations', __( 'Contact & Locations', 'stech' ) ),
+		'stech-scripts'      => array( 'Scripts & Analytics', __( 'Scripts & Analytics', 'stech' ) ),
+	);
+	foreach ( $subs as $slug => $labels ) {
 		acf_add_options_sub_page( array(
-			'page_title'  => $title . ' ' . __( 'Settings', 'stech' ),
-			'menu_title'  => $menu,
+			'page_title'  => $labels[0],
+			'menu_title'  => $labels[1],
+			'menu_slug'   => $slug,
 			'parent_slug' => 'stech-settings',
 		) );
 	}

@@ -1,0 +1,10 @@
+{
+	"key": "group_stech_opt_announcement",
+	"title": "Announcement Bar",
+	"fields": [
+		{ "key": "field_stech_opt_ann_enabled", "label": "Show Announcement Bar", "name": "announcement_enabled", "type": "true_false", "ui": 1, "instructions": "Turn the site-wide announcement bar on or off. It appears above the header." },
+		{ "key": "field_stech_opt_ann_text", "label": "Announcement Text", "name": "announcement_text", "type": "wysiwyg", "tabs": "visual", "media_upload": 0, "toolbar": "basic", "instructions": "The message shown in the announcement bar. You can add a link." }
+	],
+	"location": [[{ "param": "options_page", "operator": "==", "value": "stech-announcement" }]],
+	"menu_order": 0, "position": "normal", "style": "default", "label_placement": "top", "active": true, "show_in_rest": 0, "modified": 1721000000
+}

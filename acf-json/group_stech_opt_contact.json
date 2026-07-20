@@ -1,0 +1,12 @@
+{
+	"key": "group_stech_opt_contact",
+	"title": "Contact & Locations",
+	"fields": [
+		{ "key": "field_stech_opt_contact_phone", "label": "Phone", "name": "contact_phone", "type": "text", "instructions": "Main phone number shown in the utility bar and footer, e.g. (435) 586-2899." },
+		{ "key": "field_stech_opt_contact_email", "label": "Email", "name": "contact_email", "type": "email", "instructions": "Main contact email shown in the utility bar and footer." },
+		{ "key": "field_stech_opt_contact_location", "label": "Location (short)", "name": "contact_location", "type": "text", "instructions": "Short location shown in the utility bar, e.g. Cedar City, UT." },
+		{ "key": "field_stech_opt_contact_address", "label": "Full Address", "name": "contact_address", "type": "textarea", "rows": 3, "new_lines": "br", "instructions": "Street address shown in the footer. One line per row." }
+	],
+	"location": [[{ "param": "options_page", "operator": "==", "value": "stech-contact" }]],
+	"menu_order": 0, "position": "normal", "style": "default", "label_placement": "top", "active": true, "show_in_rest": 0, "modified": 1721000000
+}
