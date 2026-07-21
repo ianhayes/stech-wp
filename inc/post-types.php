@@ -77,7 +77,20 @@ add_action( 'init', function () {
 	// Maps /programs/<slug>/ to a Program CPT single (the /programs/ PAGE would
 	// otherwise shadow the CPT and 404).
 	add_rewrite_rule( '^programs/([^/]+)/?$', 'index.php?program=$matches[1]', 'top' );
+
+	// Deep PAGES nested under /programs/ (e.g.
+	// /programs/transfer-pathways/suu-dual-enrollment/) are otherwise captured by
+	// the Program CPT's auto-generated attachment rewrite rules and 404. Route a
+	// two-segments-deep /programs/ path to the request filter, which serves the
+	// matching PAGE when one exists.
+	add_rewrite_rule( '^programs/([^/]+/[^/]+)/?$', 'index.php?stech_prog_page=$matches[1]', 'top' );
 }, 20 );
+
+/** Register the internal query var used to resolve deep /programs/ pages. */
+add_filter( 'query_vars', function ( $vars ) {
+	$vars[] = 'stech_prog_page';
+	return $vars;
+} );
 
 /**
  * If /programs/<slug>/ matched the CPT rule but no Program with that slug
@@ -88,6 +101,14 @@ add_filter( 'request', function ( $qv ) {
 		$page = get_page_by_path( 'programs/' . $qv['program'], OBJECT, 'page' );
 		if ( $page ) {
 			return array( 'pagename' => 'programs/' . $qv['program'] );
+		}
+	}
+	// Deep /programs/<a>/<b>/ path: serve the matching PAGE when one exists,
+	// otherwise let it 404 naturally.
+	if ( ! empty( $qv['stech_prog_page'] ) ) {
+		$path = 'programs/' . $qv['stech_prog_page'];
+		if ( get_page_by_path( $path, OBJECT, 'page' ) ) {
+			return array( 'pagename' => $path );
 		}
 	}
 	return $qv;
