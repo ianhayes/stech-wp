@@ -1577,9 +1577,6 @@ section.block--tight { padding: var(--space-8) 0; }
   .gform_confirmation_message { font-family: var(--font-body); color: var(--ink); }
 }
 
-// Keep the header form card from spilling past the section; let the header grow with it.
-.page-header--with-form {
-  overflow: visible;
-  .page-header__inner { align-items: start; }
-  .inquiry-form { align-self: start; }
-}
+// The header grows to contain the form; the compact GF styling above keeps the
+// form card from being much taller than the left column (which read as "overhang").
+.page-header--with-form .inquiry-form { align-self: start; }
