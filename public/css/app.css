@@ -1,4 +1,4 @@
-/* Compiled by concatenation (node toolchain unavailable). Rebuild with: npm run build */
+/* Compiled by concatenation. Rebuild with: npm run build */
 /* ============================================================================
    STECH BRAND TOKENS  —  single source of truth
    ----------------------------------------------------------------------------
@@ -1482,3 +1482,104 @@ section.block { padding: var(--section-pad) 0; }
 
 /* Tight section rhythm — for thin strips (logo bars, etc.) that should NOT take the full --section-pad. A named exception, never an inline override. */
 section.block--tight { padding: var(--space-8) 0; }
+// Style Gravity Forms to match the approved .inquiry-form / .contact-block design,
+// so a real GF (which ships its own tall, unbranded markup) looks like the mockup
+// and no longer overflows the page-header form card.
+
+.inquiry-form,
+.contact-block__form {
+
+  .gform_wrapper { margin: 0; }
+  .gform_heading { display: none; } // we render our own head (overline + h3 + intro)
+
+  // GF 2.5+ lays fields out in a grid; force a clean single-column stack.
+  .gform_fields {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3_5) !important;
+  }
+
+  .gfield { margin: 0 !important; }
+
+  // Labels — match .inquiry-form__field label
+  .gfield_label {
+    font-family: var(--font-condensed);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-3xs);
+    letter-spacing: var(--ls-tag);
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 var(--space-1_5);
+    display: block;
+  }
+  .gfield_required { color: var(--form-required); }
+
+  // Inputs / selects / textareas — match the design's field styling
+  .ginput_container input[type="text"],
+  .ginput_container input[type="email"],
+  .ginput_container input[type="tel"],
+  .ginput_container input[type="number"],
+  .ginput_container select,
+  .ginput_container textarea,
+  input.gform-theme__no-reset--input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    color: var(--ink);
+    padding: var(--input-pad);
+    border: var(--card-border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    box-sizing: border-box;
+  }
+  .ginput_container textarea { min-height: 96px; }
+  .ginput_container input:focus,
+  .ginput_container select:focus,
+  .ginput_container textarea:focus {
+    outline: 0;
+    border-color: var(--blue);
+    box-shadow: var(--shadow-focus);
+  }
+
+  // Two-up name row when GF uses complex name fields
+  .ginput_complex { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .ginput_complex span { display: flex; flex-direction: column; }
+
+  // Submit button — match .btn.btn--primary.btn--block
+  .gform_footer { margin: var(--space-5) 0 0; padding: 0; }
+  .gform_footer input[type="submit"],
+  .gform_footer button,
+  .gform-button {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-condensed);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-base);
+    letter-spacing: var(--ls-btn);
+    text-transform: uppercase;
+    padding: var(--btn-pad);
+    border: var(--bw-btn) solid var(--blue);
+    border-radius: var(--radius-pill);
+    background: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    transition: var(--transition-base);
+  }
+  .gform_footer input[type="submit"]:hover,
+  .gform_footer button:hover,
+  .gform-button:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-2px); }
+
+  // Validation + confirmation messages
+  .gfield_description.validation_message,
+  .gform_validation_errors { color: var(--form-required); font-size: var(--fs-sm); }
+  .gform_confirmation_message { font-family: var(--font-body); color: var(--ink); }
+}
+
+// Keep the header form card from spilling past the section; let the header grow with it.
+.page-header--with-form {
+  overflow: visible;
+  .page-header__inner { align-items: start; }
+  .inquiry-form { align-self: start; }
+}

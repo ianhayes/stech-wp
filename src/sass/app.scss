@@ -20,6 +20,7 @@
 // 3. Approved component + extended systems (the design, verbatim)
 @import 'base/components';
 @import 'base/components-extended';
+@import 'base/gravity-forms';
 
 // 4. Block library (one partial per ACF block; appended as blocks are built)
 @import 'blocks/index';
